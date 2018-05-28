@@ -19,7 +19,7 @@ var gulp = require('gulp'),
     root = 'application',
     dest = 'release',
     assets = 'includes',
-    file = 'nuc',
+    file = 'clerk',
     min = 'lite',
     mails = 'mails',
     css = 'stylesheets',
@@ -37,10 +37,7 @@ var gulp = require('gulp'),
       ' *  \n'+
       ' *  Last update on: <%= new Date().getUTCFullYear() %>/'+
       '<%= new Date().getUTCMonth()+1 %>/<%= new Date().getUTCDate() %>\n'+
-      ' *  ©<%= new Date().getFullYear() %> Yahia Refaiea. all rights reserved.\n'+
-      ' *  Released under the <%= pkg.license %> license.\n'+
-      ' *  Source code available on GitHub on:\n'+
-      ' *  https://github.com/YahiaRefaiea/nucubuc-survey/\n'+
+      ' *  ©<%= new Date().getFullYear() %> Clerk. all rights reserved.\n'+
       ' */\n\n';
 
 
@@ -62,10 +59,7 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        root: JSON.parse(fs.readFileSync(root+'/data/root.json')),
-        present: JSON.parse(fs.readFileSync(root+'/data/present.json')),
-        callback: JSON.parse(fs.readFileSync(root+'/data/callback.json')),
-        questions: JSON.parse(fs.readFileSync(root+'/data/questions.json'))
+        // root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
       }
      }))
     .pipe(gulp.dest(dest));
@@ -77,8 +71,7 @@ gulp.task('mails', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        root: JSON.parse(fs.readFileSync(root+'/data/root.json')),
-        questions: JSON.parse(fs.readFileSync(root+'/data/questions.json'))
+        // root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
       }
      }))
     .pipe(gulp.dest(dest+'/'+mails));
@@ -87,16 +80,7 @@ gulp.task('mails', function() {
 
 //  BABEL
 var babelSrc = [
-  root+'/babel/lib/jquery-2.2.4.js',
-  root+'/babel/lib/jpreloader.js',
-  root+'/babel/lib/tippy.all.min.js',
-  root+'/babel/molecules/range.js',
-  root+'/babel/molecules/spans.js',
-  root+'/babel/molecules/nucubuc.js',
-  root+'/babel/molecules/pops.js',
-  root+'/babel/organisms/present.js',
-  root+'/babel/organisms/survey.js',
-  root+'/babel/molecules/loader.js'
+  // root+'/babel/lib/jquery-2.2.4.js',
 ];
 gulp.task('babel', function() {
   return gulp.src(babelSrc)

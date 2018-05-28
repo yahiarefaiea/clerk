@@ -1,17 +1,18 @@
 {
-  "name": "nucubuc-survey",
-  "version": "1.0.2",
-  "description": "Nucubuc has come to an end",
+  "name": "clerk",
+  "version": "1.0.0",
+  "description": "A platform that helps find the right fit for a company",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/YahiaRefaiea/nucubuc-survey.git"
+    "url": "git+https://github.com/nuotron/clerk.git"
   },
   "author": "Yahia Refaiea <hello@yahiarefaiea.com>",
   "license": "MIT",
+  "url": "http://clerk.technology",
   "bugs": {
-    "url": "https://github.com/YahiaRefaiea/nucubuc-survey/issues"
+    "url": "https://github.com/nuotron/clerk/issues"
   },
-  "homepage": "https://github.com/YahiaRefaiea/nucubuc-survey#readme",
+  "homepage": "https://github.com/nuotron/clerk#readme",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",

@@ -1,6 +1,6 @@
-# Nucubuc Survey
+# Clerk
 
-A tiny survey we built before closing our company.
+A platform that helps find the right fit for a company.
 
 
 ## Used Commands
