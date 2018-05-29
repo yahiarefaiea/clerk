@@ -25,8 +25,6 @@ var gulp = require('gulp'),
     css = 'stylesheets',
     js = 'javascripts',
     img = 'images',
-    font = 'fonts',
-    php = 'php',
 
     //  BANNER COMMENT
     comment =
@@ -59,7 +57,7 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        // root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
+        root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
       }
      }))
     .pipe(gulp.dest(dest));
@@ -71,7 +69,7 @@ gulp.task('mails', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        // root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
+        root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
       }
      }))
     .pipe(gulp.dest(dest+'/'+mails));
@@ -80,7 +78,7 @@ gulp.task('mails', function() {
 
 //  BABEL
 var babelSrc = [
-  // root+'/babel/lib/jquery-2.2.4.js',
+  // root+'/babel/lib/jquery-2.2.4.js'
 ];
 gulp.task('babel', function() {
   return gulp.src(babelSrc)
@@ -111,13 +109,6 @@ gulp.task('stylus', function() {
 });
 
 
-//  FONTS
-gulp.task('fonts', function() {
-  return gulp.src(root+'/font/**/*')
-    .pipe(gulp.dest(dest+'/'+assets+'/'+font));
-});
-
-
 //  IMAGES
 gulp.task('img', function() {
   return gulp.src(root+'/img/**/*')
@@ -132,30 +123,22 @@ gulp.task('htaccess', function() {
 });
 
 
-//  PHP
-gulp.task('php', function() {
-  return gulp.src(root+'/php/**/*')
-    .pipe(gulp.dest(dest+'/'+assets+'/'+php));
-});
-
-
 //  WATCH
 gulp.task('watch', function() {
   gulp.watch([root+'/pug/**/*', root+'/data/**/*'], ['pug', 'mails', browserSync.reload]);
   gulp.watch(root+'/babel/**/*', ['babel', browserSync.reload]);
   gulp.watch(root+'/stylus/**/*', ['stylus', browserSync.reload]);
-  gulp.watch(root+'/font/**/*', ['fonts', browserSync.reload]);
   gulp.watch(root+'/img/**/*', ['img', browserSync.reload]);
 });
 
 
 //  DEFAULT
 gulp.task('default', function() {
-  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img', 'browserSync', 'watch']);
+  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img', 'browserSync', 'watch']);
 });
 
 
 //  RELEASE
 gulp.task('release', function() {
-  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'fonts', 'img', 'htaccess', 'php']);
+  runSequence(['del', 'pug', 'mails', 'babel', 'stylus', 'img', 'htaccess']);
 });
