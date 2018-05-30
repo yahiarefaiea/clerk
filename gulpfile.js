@@ -82,6 +82,7 @@ var babelSrc = [
   root+'/babel/lib/jpreloader.js',
   root+'/babel/lib/tippy.all.min.js',
   root+'/babel/molecules/clerk.js',
+  root+'/babel/molecules/tippy.js',
   root+'/babel/molecules/loader.js'
 ];
 gulp.task('babel', function() {
