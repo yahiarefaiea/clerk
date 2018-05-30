@@ -1,0 +1,30 @@
+doctype html
+html(lang=root.lang dir=root.dir)
+  
+  //- HEAD
+  head
+    
+    //- TITLE AND META TAGS
+    block title
+      title= root.title
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    block meta
+      meta(name="description" content=root.description)
+      meta(name="author" content=root.author)
+      meta(property="og:url" content=root.url)
+      meta(property="og:image" content=root.url+"includes/images/opengraph.png")
+    
+    //- INCLUDES
+    link(rel="icon" type="image/png" href="includes/images/favicon.png")
+    link(rel="stylesheet" href="includes/stylesheets/clerk.lite.css")
+    script(src="includes/javascripts/clerk.lite.js")
+  
+  //- BODY
+  body.waiting.page
+    
+    //- CONTENT
+    block content
+    
+    img(src="includes/images/clerk-logo.png" style="display: none" title=root.author alt=root.author)
+    img(src="includes/images/clerk-symbol.png" style="display: none" title=root.author alt=root.author)
