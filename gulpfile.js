@@ -78,7 +78,11 @@ gulp.task('mails', function() {
 
 //  BABEL
 var babelSrc = [
-  // root+'/babel/lib/jquery-2.2.4.js'
+  root+'/babel/lib/jquery-2.2.4.js',
+  root+'/babel/lib/jpreloader.js',
+  root+'/babel/lib/tippy.all.min.js',
+  root+'/babel/molecules/clerk.js',
+  root+'/babel/molecules/loader.js'
 ];
 gulp.task('babel', function() {
   return gulp.src(babelSrc)
