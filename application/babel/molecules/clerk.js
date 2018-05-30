@@ -11,12 +11,12 @@ function iterationCount() {
 //  ITERATION CLEAR
 function iterationClear(callback) {
   if(x<2) x= 2  //  At least run twice
-  $('#clerk .symbol > div')
+  $('#clerk svg, #clerk circle')
     .attr('style', 'animation-iteration-count: '+x+'; -webkit-animation-iteration-count: '+x+';')
   clearInterval(iteration)
   setTimeout(function() {
     $('body').removeClass('waiting')
-    $('#clerk .symbol > div').removeAttr('style')
+    $('#clerk svg, #clerk circle').removeAttr('style')
     x= 1
     callback()
   }, 1500)
