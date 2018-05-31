@@ -3,13 +3,15 @@ heading1-height= baseline*1.5
 heading2-height= baseline*1.25
 small-height= baseline*.75
 
-link-color= text-dark-alt
 link-height= 10px
-link-bg= rgba(0, 0, 0, .2)
+link-bg= border-dark
+link-color-hover= text-dark-alt
+link-height-hover= 3px
+link-bg-hover= blue
 
 //  HEADING
-h1, h2, h3,
-.h1, .h2, .h3
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4
   margin: 0
   margin-bottom: baseline*.25
   color: heading-color
@@ -24,6 +26,11 @@ h2, .h2
 h3, .h3
   font-size: font-heading3
   font-weight: weight-regular
+h4, .h4
+  font-size: font-heading4
+  font-weight: weight-regular
+  line-height: small-height
+  color: text-light
 
 //  PARAGRAPH
 p, .p
@@ -53,10 +60,11 @@ a
       display: block
       makeAbsolute: auto 0 15% 0
       height: link-height
-      transform: translateY(translate)
+      background-color: link-bg
       hasTransition()
     &:hover, &:focus
-      color: link-color
+      color: link-color-hover
       &:before
-        background-color: link-bg
-        transform: translateY(0)
+        bottom: 0
+        height: link-height-hover
+        background-color: link-bg-hover
