@@ -1,3 +1,6 @@
-svg#clerk(version="1.1" viewBox="0 0 66 66" title=root.author)
-  - for (var a = 0; a < 5; a++)
-    circle(cx="33" cy="33" r="27")
+#clerk
+  svg.symbol(version="1.1" viewBox="0 0 66 66" title=root.author)
+    - for (var a = 0; a < 5; a++)
+      circle(cx="33" cy="33" r="27")
+  
+  .loading= root.loading
