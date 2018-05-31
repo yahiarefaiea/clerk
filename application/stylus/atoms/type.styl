@@ -1,0 +1,61 @@
+heading-color= text-dark-alt
+heading1-height= baseline*1.5
+heading2-height= baseline*1.25
+small-height= baseline*.75
+
+link-color= text-dark-alt
+link-height= 10px
+link-bg= rgba(0, 0, 0, .2)
+
+//  HEADING
+h1, h2, h3,
+.h1, .h2, .h3
+  margin: 0
+  color: heading-color
+  font-weight: weight-bold
+
+h1, .h1
+  font-size: font-heading1
+  line-height: heading1-height
+h2, .h2
+  font-size: font-heading2
+  line-height: heading2-height
+h3, .h3
+  font-size: font-heading3
+  font-weight: weight-regular
+
+//  PARAGRAPH
+p, .p
+  margin: 0
+
+//  SMALL
+small, .small
+  font-size: font-small
+  line-height: small-height
+
+//  ANCHOR
+a
+  cursor: pointer
+  color: inherit
+  hasTransition()
+  hasOutline()
+  &, &:hover
+    text-decoration: none
+  &.link
+    display: inline-block
+    position: relative
+
+    //  HOVER EFFECT
+    &:before
+      content: ''
+      z-index: -1
+      display: block
+      makeAbsolute: auto 0 15% 0
+      height: link-height
+      transform: translateY(translate)
+      hasTransition()
+    &:hover, &:focus
+      color: link-color
+      &:before
+        background-color: link-bg
+        transform: translateY(0)
