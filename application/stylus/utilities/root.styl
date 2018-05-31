@@ -1,0 +1,42 @@
+*, *:before, *:after
+  box-sizing: border-box
+
+html, body
+  width: 100%
+  height: 100%
+  min-height: 550px
+@media (min-width: delta)
+  html, body
+    overflow: hidden
+
+body
+  position: relative
+  direction: dir
+  text-align: align
+  font-family: family-body
+  font-size: font-default
+  font-weight: weight-regular
+  line-height: baseline
+  background-color: background
+  color: text-default
+  -webkit-font-smoothing: antialiased
+
+img
+  user-select: none
+
+::selection
+  background: selection-bg
+  color: selection-color
+::-moz-selection
+  background: selection-bg
+  color: selection-color
+
+.clear
+  content: ''
+  clear: both
+  display: table
+
+.wrapper
+  position: relative
+  overflow: hidden
+  height: 100%

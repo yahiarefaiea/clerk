@@ -1,0 +1,94 @@
+baseline= 28px
+translate= baseline/2
+
+//  RESPONSIVE
+alpha= 320px
+beta= 500px
+gamma= 600px
+delta= 992px
+
+//  COLORS
+blue= #00add5
+blue-shade= #0098bb
+dark-blue= #2c3f6f
+blue-high= #f4f7fa
+blue-low= #80d6ea
+
+background= white
+background-alt= #f2f2f2
+border-default= #eee
+border-dark= #ddd
+
+text-dark-alt= #464646
+text-dark= #545454
+text-default= #727272
+text-light= #929292
+text-light-alt= #aaa
+
+selection-bg= blue-shade
+selection-color= white
+
+//  OUTLINE
+outline= 1px dashed
+outline-color= text-dark-alt
+hasOutline(clr= outline-color)
+  &, &:hover
+    outline: outline transparent
+  &:not(:hover):focus
+    outline: outline clr
+
+//  FOCUS EFFECT
+focusEffect(clr= rgba(255, 255, 255, .5))
+  &:after
+    content: ''
+    z-index: 1
+    display: block
+    makeAbsolute: 0 50% 0 50%
+    background-color: clr
+  &:focus:after
+    {align}: 0
+    {align-alt}: 0
+    background-color: transparent
+    hasTransition()
+
+//  ABSOLUTE
+makeAbsolute(tp=0, al=0, btm=auto, alt=auto)
+  position: absolute
+  if(tp!=auto)
+    top: tp
+  if(al!=auto)
+    {align}: al
+  if(btm!=auto)
+    bottom: btm
+  if(alt!=auto)
+    {align-alt}: alt
+
+//  TRANSITION
+step= .03
+pattern= 1.16
+duration= .5s
+durationAlt= duration*3
+easing= cubic-bezier(0.190,1.000,0.220,1.000)
+hasTransition(dur=duration, dly=0, d=0)
+  transition: all (dur+d) easing unit(dly+d, 's')
+multiTransition(min, max, dur=duration, dly=0, last=false)
+  d= 0
+  for i in min..max
+    d= (d+step)*pattern
+    if(last!=true)
+      &:nth-child({i})
+        hasTransition: dur dly d
+    if(last==true)
+      &:nth-last-child({i})
+        hasTransition: dur dly d
+
+//  GRABBABLE
+grabbable()
+  cursor: move
+  cursor: grab
+  cursor: -moz-grab
+  cursor: -webkit-grab
+  &:active
+    cursor: grabbing
+    cursor: -moz-grabbing
+    cursor: -webkit-grabbing
