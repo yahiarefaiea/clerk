@@ -96,14 +96,16 @@ grabbable()
 //  DIMENSIONS
 containerWidth= 60%
 
-switchHeight= 213px
-pageHeight= switchHeight
+authHeight= {
+  switch: 213px,
+  signUp: 324px,
+  forgot: 265px
+}
 
-authHeight= 324px
-authForgotHeight= 265px
+pageHeight= authHeight.switch
 
 personalityHeight= {
-  start: switchHeight,
+  start: authHeight.switch,
   gender: 223px,
   birth: 223px,
   mobile: 223px,
