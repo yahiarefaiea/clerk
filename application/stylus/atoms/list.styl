@@ -1,9 +1,15 @@
+counter-width= baseline*.75
+counter-margin= baseline*.5
+counter-color= text-light
+bullet-size= 8px
+
 ul, ol, li
   list-style: none
   list-style-type: none
   margin: 0
   padding: 0
 
+//  BLOCKS
 ul, ol
   &.blocks
     display: block
@@ -21,3 +27,38 @@ ul, ol
         width: 100%
         > li
           width: 50%
+
+//  LIST
+ul, ol
+  &.list
+    &.inline > li
+      display: inline-block
+    > li
+      display: block
+      position: relative
+      padding-{align}: counter-width + counter-margin
+      &:before
+        display: block
+        position: absolute
+        top: 0
+        {align-alt}: 100%
+        margin-{align-alt}: -(counter-width)
+
+//  UNORDERED LIST
+ul.list > li:before
+  content: ''
+  top: 50%
+  width: bullet-size
+  height: bullet-size
+  margin-top: -(bullet-size /2) + 1px
+  border-radius: 50%
+  background-color: counter-color
+
+//  ORDERED LIST
+ol.list
+  counter-reset: item
+  > li:before
+    content: counter(item) '.'
+    counter-increment: item
+    text-align: align-alt
+    color: counter-color
