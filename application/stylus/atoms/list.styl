@@ -1,3 +1,4 @@
+list-height= baseline*1.25
 counter-width= baseline*.75
 counter-margin= baseline*.5
 counter-color= text-light
@@ -37,6 +38,7 @@ ul, ol
       display: block
       position: relative
       padding-{align}: counter-width + counter-margin
+      line-height: list-height
       &:before
         display: block
         position: absolute
@@ -47,7 +49,7 @@ ul, ol
 //  UNORDERED LIST
 ul.list > li:before
   content: ''
-  top: 50%
+  top: (list-height / 2)
   width: bullet-size
   height: bullet-size
   margin-top: -(bullet-size /2) + 1px
