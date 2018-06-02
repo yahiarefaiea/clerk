@@ -19,19 +19,19 @@
     &:nth-child({i}) > span
       multiTransition: 1 15 duration step*i
 
-.headline.spans > span
+.headline .spans > span
   transform: translateY(headline-height)
   &:not(:last-child)
     margin-{align-alt}: 8px
 
-.h1.spans > span
+.h1 .spans > span
   transform: translateY(heading1-height)
   &:not(:last-child)
     margin-{align-alt}: 6px
 
 .h2, .h3
-  &.spans > span:not(:last-child)
+  .spans > span:not(:last-child)
     margin-{align-alt}: 4px
 
-.h2.spans > span
+.h2 .spans > span
   transform: translateY(heading2-height)
