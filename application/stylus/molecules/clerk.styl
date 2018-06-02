@@ -1,71 +1,83 @@
 clerk-width= 66px
 clerk-margin= baseline*1.5
-clerkPathLength= 142px, 128px, 114px, 98px, 84px
-clerkPathLengthFull= 168px
+clerk-scale= .666
+clerk-scale-shortcut= -((clerk-width -(clerk-width * clerk-scale)) /2)
+clerk-symbol-length= 142px, 128px, 114px, 99px, 85px
+clerk-symbol-length-full= 168px
 
-clerkMargin(container)
-  margin-top: -(container/2) + clerk-width + clerk-margin
+clerkMargin(container, margin=clerk-margin)
+  margin-top: -(container/2) + clerk-width + margin
 
 //  CLERK
 #clerk
-  makeAbsolute: 50% 50%
+  makeAbsolute: 0 (100% - containerWidth)
   width: clerk-width
   height: clerk-width
-  margin-top: -(pageHeight/2)
-  margin-{align}: -(clerk-width/2)
   hasTransition: durationAlt
-  background-color: red
+  margin-top: clerk-scale-fix + containerMarginVert
+  margin-{align}: clerk-scale-fix + containerMarginHorz
+  transform: scale(1 * clerk-scale)
   .symbol,
   .symbol circle
     transition: all durationAlt ease
     animation: none
 
+
+
+
+
+// .loading #clerk
+//   makeAbsolute: 50% 50%
+//   margin-top: -(loadingHeight/2)
+//   margin-{align}: -(clerk-width/2)
+//   transform: scale(1)
+
 // .waiting #clerk
-//   margin-{align}: -(nucubuc-origin/2)
-@media (min-width: delta)
-  body:not(.page) #clerk,
-  .auth #clerk
-    {align}: 50% + ((100% - containerWidth)/2)
+//   margin-{align}: -(clerk-origin/2)
+// @media (min-width: delta)
+//   body:not(.loading) #clerk,
+//   .auth #clerk
+//     {align}: 50% + ((100% - containerWidth)/2)
 // .callback #clerk
-//   margin-top: -(pageHeight/2) !important
+//   margin-top: -(loadingHeight/2) !important
 
 // .questions
-//   &.feeling #nucubuc
+//   &.feeling #clerk
 //     margin-top: -(feelingHeight/2)
 
 //  SYMBOL
-#clerk .symbol
-  width: clerk-width
-  height: clerk-width
-  fill: none
-  stroke: blue
-  stroke-linecap: round
-  stroke-width: 12
-  transform: rotate(30deg)
-.waiting #clerk .symbol
-  animation: rotate durationAlt ease infinite
-  @keyframes rotate
-    100%
-      transform: rotate(389deg)
+// #clerk .symbol
+//   width: clerk-width
+//   height: clerk-width
+//   fill: none
+//   stroke: blue
+//   stroke-linecap: round
+//   stroke-width: 12
+//   transform: rotate(30deg)
+// .waiting #clerk .symbol
+//   animation: rotate durationAlt ease infinite
+//   @keyframes rotate
+//     100%
+//       transform: rotate(389deg)
 
 //  CIRCLE
-#clerk .symbol circle
-  opacity: .35
-  &:nth-child(5)
-    opacity: 1
-  for i in 1..5
-    &:nth-child({i})
-      stroke-dasharray: clerkPathLength[i - 1]
-      stroke-dashoffset: -((clerkPathLength[0] - clerkPathLength[i - 1]) /2)
-.waiting #clerk .symbol circle
-  opacity: 0
-  stroke-dasharray: clerkPathLengthFull
-  stroke-dashoffset: clerkPathLengthFull
-  &:nth-child(5)
-    opacity: 1
-    animation: dashoffset durationAlt ease infinite
-    @keyframes dashoffset
-      49.5%, 50.5%
-        stroke-dashoffset: 0
-      100%
-        stroke-dashoffset: -(clerkPathLengthFull)
+// #clerk .symbol circle
+//   opacity: .35
+//   &:nth-child(5)
+//     opacity: 1
+//   for i in 1..5
+//     &:nth-child({i})
+//       stroke-dasharray: clerkPathLength[i - 1]
+//       stroke-dashoffset: -((clerkPathLength[0] - clerkPathLength[i - 1]) /2)
+// .waiting #clerk .symbol circle
+//   opacity: 0
+//   stroke-dasharray: clerkPathLengthFull
+//   stroke-dashoffset: clerkPathLengthFull
+//   &:nth-child(5)
+//     opacity: 1
+//     animation: dashoffset durationAlt ease infinite
+//     @keyframes dashoffset
+//       49.5%, 50.5%
+//         stroke-dashoffset: 0
+//       100%
+//         stroke-dashoffset: -(clerkPathLengthFull)
