@@ -11,7 +11,7 @@ $(document).ready(function() {
     setTimeout(function() {
       iterationClear(function() {
         //  CALLBACK
-        $('body').removeClass('page')
+        $('body').removeClass('loading')
         tippyInit()
       })
     }, 200)
