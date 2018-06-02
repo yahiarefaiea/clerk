@@ -24,9 +24,10 @@ clerkMargin(container, margin=clerk-margin)
     animation: none
 .loading #clerk
   makeAbsolute: 50% 50%
-  margin-top: -(loadingHeight/2)
   margin-{align}: -(clerk-width/2)
   transform: scale(1)
+.loading #clerk
+  margin-top: -(loadingHeight/2) !important
 @media (min-width: delta)
   #clerk
     {align}: 100% - containerWidth
