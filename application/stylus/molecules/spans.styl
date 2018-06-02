@@ -29,6 +29,9 @@
   &:not(:last-child)
     margin-{align-alt}: 6px
 
-.h2.spans > span:not(:last-child),
-.h3.spans > span:not(:last-child)
-  margin-{align-alt}: 4px
+.h2, .h3
+  &.spans > span:not(:last-child)
+    margin-{align-alt}: 4px
+
+.h2.spans > span
+  transform: translateY(heading2-height)
