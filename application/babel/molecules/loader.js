@@ -13,6 +13,9 @@ $(document).ready(function() {
         //  CALLBACK
         $('body').removeClass('loading')
         tippyInit()
+        setTimeout(function() {
+          $('#loading').remove()
+        }, 1500)
       })
     }, 200)
   })
