@@ -1,4 +1,5 @@
 heading-color= text-dark-alt
+headline-height= baseline*1.25
 heading1-height= baseline*1.5
 heading2-height= baseline*1.25
 small-height= baseline*.75
@@ -11,12 +12,16 @@ link-bg-hover= blue
 
 //  HEADING
 h1, h2, h3, h4,
-.h1, .h2, .h3, .h4
+.h1, .h2, .h3, .h4, .headline
   margin: 0
   margin-bottom: baseline*.25
-  color: heading-color
   font-weight: weight-bold
+  color: heading-color
 
+.headline
+  font-size: font-headline
+  font-weight: weight-regular
+  line-height: headline-height
 h1, .h1
   font-size: font-heading1
   line-height: heading1-height
