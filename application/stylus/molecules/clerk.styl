@@ -18,53 +18,54 @@ clerkMargin(container, margin=clerk-margin)
   margin-{align}: clerk-scale-shortcut + baseline
   transform: scale(clerk-scale)
   .symbol,
-  .symbol circle:nth-child(5)
+  .symbol circle
     transition: all durationAlt ease
     animation: none
-
+.loading #clerk
+  makeAbsolute: 50% 50%
+  margin-top: -(loadingHeight/2)
+  margin-{align}: -(clerk-width/2)
+  transform: scale(1)
 @media (min-width: delta)
   #clerk
     {align}: 100% - containerWidth
     margin-{align}: clerk-scale-shortcut + containerMarginHorz
-  .loading #clerk
-    makeAbsolute: 50% 50%
-    margin-top: -(loadingHeight/2)
-    margin-{align}: -(clerk-width/2)
-    transform: scale(1)
 
 //  SYMBOL
-// #clerk .symbol
-//   width: clerk-width
-//   height: clerk-width
-//   fill: none
-//   stroke: blue
-//   stroke-linecap: round
-//   stroke-width: 12
-//   transform: rotate(30deg)
-// .waiting #clerk .symbol
-//   animation: rotate durationAlt ease infinite
-//   @keyframes rotate
-//     100%
-//       transform: rotate(389deg)
+#clerk .symbol
+  width: clerk-width
+  height: clerk-width
+  fill: none
+  stroke: blue
+  stroke-linecap: round
+  stroke-width: 12
+  transform: rotate(30deg)
+.waiting #clerk .symbol
+  animation: clerkRotate durationAlt ease infinite
+  @keyframes clerkRotate
+    100%
+      transform: rotate(30deg + (360deg - 1deg))
+.loading #clerk .symbol
+  stroke: white
 
 //  CIRCLE
-// #clerk .symbol circle
-//   opacity: .35
-//   &:nth-child(5)
-//     opacity: 1
-//   for i in 1..5
-//     &:nth-child({i})
-//       stroke-dasharray: clerkPathLength[i - 1]
-//       stroke-dashoffset: -((clerkPathLength[0] - clerkPathLength[i - 1]) /2)
-// .waiting #clerk .symbol circle
-//   opacity: 0
-//   stroke-dasharray: clerkPathLengthFull
-//   stroke-dashoffset: clerkPathLengthFull
-//   &:nth-child(5)
-//     opacity: 1
-//     animation: dashoffset durationAlt ease infinite
-//     @keyframes dashoffset
-//       49.5%, 50.5%
-//         stroke-dashoffset: 0
-//       100%
-//         stroke-dashoffset: -(clerkPathLengthFull)
+#clerk .symbol circle
+  opacity: .35
+  &:nth-child(5)
+    opacity: 1
+  for i in 1..5
+    &:nth-child({i})
+      stroke-dasharray: clerk-symbol-length[i - 1]
+      stroke-dashoffset: -((clerk-symbol-length[0] - clerk-symbol-length[i - 1]) /2)
+.waiting #clerk .symbol circle
+  opacity: 0
+  stroke-dasharray: clerk-symbol-length-full
+  stroke-dashoffset: clerk-symbol-length-full
+  &:nth-child(5)
+    opacity: 1
+    animation: clerkDashoffset durationAlt ease infinite
+    @keyframes clerkDashoffset
+      49.5%, 50.5%
+        stroke-dashoffset: 0
+      100%
+        stroke-dashoffset: -(clerk-symbol-length-full)
