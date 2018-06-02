@@ -10,40 +10,27 @@ clerkMargin(container, margin=clerk-margin)
 
 //  CLERK
 #clerk
-  makeAbsolute: 0 (100% - containerWidth)
+  makeAbsolute: 0 0
   width: clerk-width
   height: clerk-width
   hasTransition: durationAlt
-  margin-top: clerk-scale-fix + containerMarginVert
-  margin-{align}: clerk-scale-fix + containerMarginHorz
-  transform: scale(1 * clerk-scale)
+  margin-top: clerk-scale-shortcut + containerMarginVert
+  margin-{align}: clerk-scale-shortcut + baseline
+  transform: scale(clerk-scale)
   .symbol,
-  .symbol circle
+  .symbol circle:nth-child(5)
     transition: all durationAlt ease
     animation: none
 
-
-
-
-
-// .loading #clerk
-//   makeAbsolute: 50% 50%
-//   margin-top: -(loadingHeight/2)
-//   margin-{align}: -(clerk-width/2)
-//   transform: scale(1)
-
-// .waiting #clerk
-//   margin-{align}: -(clerk-origin/2)
-// @media (min-width: delta)
-//   body:not(.loading) #clerk,
-//   .auth #clerk
-//     {align}: 50% + ((100% - containerWidth)/2)
-// .callback #clerk
-//   margin-top: -(loadingHeight/2) !important
-
-// .questions
-//   &.feeling #clerk
-//     margin-top: -(feelingHeight/2)
+@media (min-width: delta)
+  #clerk
+    {align}: 100% - containerWidth
+    margin-{align}: clerk-scale-shortcut + containerMarginHorz
+  .loading #clerk
+    makeAbsolute: 50% 50%
+    margin-top: -(loadingHeight/2)
+    margin-{align}: -(clerk-width/2)
+    transform: scale(1)
 
 //  SYMBOL
 // #clerk .symbol
