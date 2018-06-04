@@ -1,0 +1,16 @@
+mark
+  position: relative
+  // display: inline-block
+  color: inherit
+  background-color: transparent
+  &:before
+    content: ''
+    z-index: -1
+    display: block
+    makeAbsolute: auto 0 0 100%
+    height: 50%
+    background-color: link-bg
+    transition: inherit
+    // hasTransition: durationAlt duration*.5
+.current mark:before
+  {align-alt}: 0

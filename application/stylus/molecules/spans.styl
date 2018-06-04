@@ -1,6 +1,6 @@
 .spans
   white-space: nowrap
-.spans > span
+.spans > *
   display: inline-block
   opacity: 0
   transform: translateY(baseline)
@@ -9,29 +9,29 @@
   &:not(:last-child)
     margin-{align-alt}: 3px
 .current .spans
-  > span
+  > *
     z-index: 1
     opacity: 1
     transform: translateY(0) !important
     multiTransition: 1 15 duration step
     cursor: auto
   for i in 2..4
-    &:nth-child({i}) > span
+    &:nth-child({i}) > *
       multiTransition: 1 15 duration step*i
 
-.headline .spans > span
+.headline .spans > *
   transform: translateY(headline-height)
   &:not(:last-child)
     margin-{align-alt}: 8px
 
-.h1 .spans > span
+.h1 .spans > *
   transform: translateY(heading1-height)
   &:not(:last-child)
     margin-{align-alt}: 6px
 
 .h2, .h3
-  .spans > span:not(:last-child)
+  .spans > *:not(:last-child)
     margin-{align-alt}: 4px
 
-.h2 .spans > span
+.h2 .spans > *
   transform: translateY(heading2-height)

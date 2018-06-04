@@ -1,4 +1,5 @@
 $(document).ready(function() {
+  turnSpans($('.spans'))
   iterationCount()
 
   // JPRELOADER INIT
