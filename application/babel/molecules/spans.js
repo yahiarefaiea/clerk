@@ -1,15 +1,30 @@
-$(document).ready(function() {
+function turnSpans(elements) {
 
-  var paragraphs = $('.spans')
+  //  LOOP THROUGH ELEMENTS
+  for (i = 0; i < elements.length; i++) {
+    var content = $(elements[i]).contents()
 
-  for (i = 0; i < paragraphs.length; i++) {
-    var paragraph = $(paragraphs[i])
-    var spans = paragraph.text().split(' ')
-    paragraph.empty()
+    //  LOOP THROUGH CONTENTS
+    for (j = 0; j < content.length; j++) {
+      var processed = $.trim($(content[j]).text()).replace(/\s\s+/g, ' ')
 
-    $.each(spans, function(i, span) {
-      paragraph.append($('<span>').text(span))
-    })
+      //  ESCAPE EMPTY CONTENT
+      if(processed != '') {
+
+        //  CHECK IF CONTENT IS TEXT OR TAG
+        if($(content[j]).html() === undefined) {
+          var spans = processed.split(' ')
+
+          //  WRAP AND APPEND SPANS
+          $.each(spans, function(k, span) {
+            $(content[j]).before($('<span>' + span + '</span>'))
+          })
+
+          $(content[j]).remove()
+        } else {
+          $(content[j]).text(processed)
+        }
+      }
+    }
   }
-
-})
+}
