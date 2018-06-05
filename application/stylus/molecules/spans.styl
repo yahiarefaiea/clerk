@@ -1,3 +1,12 @@
+spansTransition(min, max, dur=duration, dly=0)
+  d= 0
+  for i in min..max
+    d= (d+step)*pattern
+    &:nth-child({i})
+      hasTransition: dur dly d
+      &:before
+        hasTransition: dur (dly*10) d
+
 .spans
   white-space: nowrap
 .spans > *
@@ -6,32 +15,37 @@
   transform: translateY(baseline)
   hasTransition()
   cursor: default
-  &:not(:last-child)
-    margin-{align-alt}: 3px
+  &:not(:first-child)
+    margin-{align}: 3px
+.spans > mark:before
+  {align-alt}: 100%
+  hasTransition: unit(step, 's') duration
 .current .spans
+  > mark:before
+    {align-alt}: 0
   > *
     z-index: 1
     opacity: 1
     transform: translateY(0) !important
-    multiTransition: 1 15 duration step
+    spansTransition: 1 15 duration step
     cursor: auto
   for i in 2..4
     &:nth-child({i}) > *
-      multiTransition: 1 15 duration step*i
+      spansTransition: 1 15 duration step*i
 
 .headline .spans > *
   transform: translateY(headline-height)
-  &:not(:last-child)
-    margin-{align-alt}: 8px
+  &:not(:first-child)
+    margin-{align}: 8px
 
 .h1 .spans > *
   transform: translateY(heading1-height)
-  &:not(:last-child)
-    margin-{align-alt}: 6px
+  &:not(:first-child)
+    margin-{align}: 6px
 
 .h2, .h3
-  .spans > *:not(:last-child)
-    margin-{align-alt}: 4px
+  .spans > *:not(:first-child)
+    margin-{align}: 4px
 
 .h2 .spans > *
   transform: translateY(heading2-height)
