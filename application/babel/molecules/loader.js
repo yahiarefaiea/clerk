@@ -1,5 +1,6 @@
 $(document).ready(function() {
   turnSpans($('.spans'))
+  tippyInit()
   iterationCount()
 
   // JPRELOADER INIT
@@ -13,7 +14,6 @@ $(document).ready(function() {
       iterationClear(function() {
         //  CALLBACK
         $('body').removeClass('loading')
-        tippyInit()
         setTimeout(function() {
           $('#loading').remove()
         }, 1500)
