@@ -11,12 +11,11 @@ spansTransition(min, max, dur=duration, dly=0)
   white-space: nowrap
 .spans > *
   display: inline-block
+  margin-{align-alt}: 3px
   opacity: 0
   transform: translateY(baseline)
   hasTransition()
   cursor: default
-  &:not(:first-child)
-    margin-{align}: 3px
 .current .spans
   > *
     z-index: 1
@@ -35,18 +34,16 @@ spansTransition(min, max, dur=duration, dly=0)
   {align-alt}: 0
 
 .headline .spans > *
+  margin-{align-alt}: 8px
   transform: translateY(headline-height)
-  &:not(:first-child)
-    margin-{align}: 8px
 
 .h1 .spans > *
+  margin-{align-alt}: 6px
   transform: translateY(heading1-height)
-  &:not(:first-child)
-    margin-{align}: 6px
 
 .h2, .h3
-  .spans > *:not(:first-child)
-    margin-{align}: 4px
+  .spans > *
+    margin-{align-alt}: 4px
 
 .h2 .spans > *
   transform: translateY(heading2-height)
