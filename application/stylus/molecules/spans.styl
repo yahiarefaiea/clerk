@@ -17,12 +17,7 @@ spansTransition(min, max, dur=duration, dly=0)
   cursor: default
   &:not(:first-child)
     margin-{align}: 3px
-.spans > mark:before
-  {align-alt}: 100%
-  hasTransition: unit(step, 's') duration
 .current .spans
-  > mark:before
-    {align-alt}: 0
   > *
     z-index: 1
     opacity: 1
@@ -32,6 +27,12 @@ spansTransition(min, max, dur=duration, dly=0)
   for i in 2..4
     &:nth-child({i}) > *
       spansTransition: 1 15 duration step*i
+
+.spans > mark:before
+  {align-alt}: 100%
+  hasTransition: unit(step, 's') duration
+.current .spans > mark:before
+  {align-alt}: 0
 
 .headline .spans > *
   transform: translateY(headline-height)
