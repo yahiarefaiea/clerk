@@ -5,7 +5,7 @@ spansTransition(min, max, dur=duration, dly=0)
     &:nth-child({i})
       hasTransition: dur dly d
       &:before
-        hasTransition: dur (dly*10) d
+        hasTransition: dur (dly + duration) d
 
 .spans
   white-space: nowrap
@@ -24,7 +24,7 @@ spansTransition(min, max, dur=duration, dly=0)
     transform: translateY(0) !important
     spansTransition: 1 15 duration step
     cursor: auto
-  for i in 2..4
+  for i in 2..5
     &:nth-child({i}) > *
       spansTransition: 1 15 duration step*i
 
