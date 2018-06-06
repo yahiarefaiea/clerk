@@ -2,6 +2,8 @@ var Router = {
 	classes: [],
 	session: '',
 
+	//	save user object info
+
 	route: function(url) {
 		//  this will return identified == true && user == company || user == applicant
 		// this.checkSession()
@@ -9,11 +11,14 @@ var Router = {
 		//  this will process the url and return an array of classes
 		this.checkURL(url)
 
+		// recieve and update data
+
 		//	These classes should be added
 		var classes = this.classes.toString().replace(/,/g, ' ')
 		$('.wrapper').attr('class', 'wrapper ' + classes)
 
 		// this.updateURL(url)
+		//	and update title
 	},
 	checkURL: function(url) {
 		//	get url form the browser

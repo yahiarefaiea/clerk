@@ -12,6 +12,7 @@ $(document).ready(function() {
   }, function() {
     setTimeout(function() {
       iterationClear(function() {
+        
         //  CALLBACK
         Router.route('home')
         $('body').removeClass('loading')
