@@ -13,6 +13,7 @@ $(document).ready(function() {
     setTimeout(function() {
       iterationClear(function() {
         //  CALLBACK
+        Router.route('home')
         $('body').removeClass('loading')
         setTimeout(function() {
           $('#loading').remove()

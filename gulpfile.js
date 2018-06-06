@@ -86,6 +86,7 @@ var babelSrc = [
   root+'/babel/molecules/clerk.js',
   // root+'/babel/molecules/pops.js',
   root+'/babel/molecules/tippy.js',
+  root+'/babel/organisms/router.js',
   root+'/babel/molecules/loader.js'
 ];
 gulp.task('babel', function() {
