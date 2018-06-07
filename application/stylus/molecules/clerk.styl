@@ -7,7 +7,7 @@ clerk-symbol-length-full= 168px
 
 clerkFlat-height= baseline
 clerkFlat-width= 74px
-clerkFlatpathLength= (48 22 44 16 49)
+clerkFlat-length= (48 22 44 16 49)
 
 clerkMargin(container, margin=clerk-margin)
   margin-top: -(container/2) + clerk-width + margin
@@ -77,6 +77,7 @@ clerkMargin(container, margin=clerk-margin)
 
 //  CLERK FLAT
 #clerkFlat
+  display: block
   width: clerkFlat-width
   height: clerkFlat-height
   svg
@@ -84,15 +85,15 @@ clerkMargin(container, margin=clerk-margin)
     fill: none
     stroke: white
     stroke-linecap: round
-    stroke-linejoin:round
+    stroke-linejoin: round
     stroke-width: 4
     path
       opacity: 0
       multiTransition: 1 5 durationAlt duration
-      for letter, i in clerkFlatpathLength
+      for length, i in clerkFlat-length
         &:nth-child({i + 1})
-          stroke-dasharray: letter
-          stroke-dashoffset: -(letter)
+          stroke-dasharray: length
+          stroke-dashoffset: -(length)
 @media (min-width: delta)
   .app #clerkFlat svg path
     opacity: 1
