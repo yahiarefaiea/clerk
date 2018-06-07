@@ -12,9 +12,10 @@ $(document).ready(function() {
   }, function() {
     setTimeout(function() {
       iterationClear(function() {
-        
+
         //  CALLBACK
         Router.route('home')
+        Pops.init()
         $('body').removeClass('loading')
         setTimeout(function() {
           $('#loading').remove()
