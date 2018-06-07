@@ -15,14 +15,14 @@ popsSize= 420px
 
 //  BACKGROUND
 #land .background
-  makeAbsolute: 0 0 0 100%
+  makeAbsolute: 0 0 0 -150%
   hasTransition: durationAlt
   background-color: blue
-.loading #land .background
-  {align-alt}: -150%
-@media (min-width: delta)
-  #land .background
-    {align-alt}: 0
+.app #land .background
+  {align-alt}: 0
+@media (max-width: delta - 1)
+  .app #land .background
+    {align-alt}: 100%
 
 //  Z-INDEX
 #pops,
