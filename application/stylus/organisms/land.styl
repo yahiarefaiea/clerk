@@ -25,6 +25,17 @@ popsSize= 420px
   #land .background
     {align-alt}: 0
 
+//  POPS
+#pops
+  makeAbsolute: 50% 50%
+  margin-top: -(loadingHeight/2) + (clerk-width/2) - (popsSize/2)
+  margin-{align}: -(popsSize/2)
+  hasTransition: durationAlt step
+  opacity: 0
+@media (min-width: delta)
+  .app #pops
+    opacity: .2
+
 //  CLERK FLAT
 #land #clerkFlat
   makeAbsolute: landPaddingVert landPaddingHorz
