@@ -19,6 +19,8 @@ var Router = {
 
 		// this.updateURL(url)
 		//	and update title
+
+		//	add callback somewhere
 	},
 	checkURL: function(url) {
 		//	get url form the browser
