@@ -1,0 +1,24 @@
+landPaddingVert= baseline*2
+landPaddingHorz= baseline*1.5
+
+popsSize= 420px
+
+#land
+  z-index: 0
+  makeAbsolute: 0 0 0 containerWidth
+  a
+    hasOutline: white
+@media (min-width: delta)
+  #land
+    z-index: 9
+
+//  BACKGROUND
+#land .background
+  makeAbsolute: 0 0 0 100%
+  hasTransition: durationAlt
+  background-color: blue
+.loading #land .background
+  {align-alt}: -150%
+@media (min-width: delta)
+  #land .background
+    {align-alt}: 0
