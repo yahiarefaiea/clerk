@@ -4,15 +4,15 @@ landPaddingHorz= baseline*1.5
 popsSize= 420px
 
 #land
-  z-index: 0
+  z-index: 9
   makeAbsolute: 0 0 0 containerWidth
   a
     hasOutline: white
-.loading #land
-  z-index: 9
-@media (min-width: delta)
-  #land
-    z-index: 9
+@media (max-width: delta - 1)
+  .wrapper:not(.loading) #land
+    z-index: 0
+  .app #land
+    visibility: hidden
 
 //  BACKGROUND
 #land .background
@@ -24,6 +24,18 @@ popsSize= 420px
 @media (min-width: delta)
   #land .background
     {align-alt}: 0
+
+//  Z-INDEX
+#pops,
+#clerkFlat,
+#land .navigation,
+#land .headlines
+  z-index: -1
+.app #pops,
+.app #clerkFlat,
+.app #land .navigation,
+.app #land .headlines
+  z-index: 2
 
 //  POPS
 #pops
@@ -37,5 +49,5 @@ popsSize= 420px
     opacity: .2
 
 //  CLERK FLAT
-#land #clerkFlat
+#clerkFlat
   makeAbsolute: landPaddingVert landPaddingHorz
