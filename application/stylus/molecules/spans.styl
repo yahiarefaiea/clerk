@@ -5,7 +5,7 @@ spansTransition(min, max, dur=duration, dly=0)
     &:nth-child({i})
       hasTransition: dur dly d
       &:before
-        hasTransition: dur (dly + duration) d
+        hasTransition: dur (dly + step*6) d
 
 .spans
   white-space: nowrap
