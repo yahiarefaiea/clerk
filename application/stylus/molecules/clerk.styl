@@ -5,6 +5,10 @@ clerk-scale-shortcut= -((clerk-width -(clerk-width * clerk-scale)) /2)
 clerk-symbol-length= 142px, 128px, 114px, 99px, 85px
 clerk-symbol-length-full= 168px
 
+clerkFlat-height= baseline
+clerkFlat-width= 74px
+clerkFlatpathLength= (48 22 44 16 49)
+
 clerkMargin(container, margin=clerk-margin)
   margin-top: -(container/2) + clerk-width + margin
 
@@ -33,6 +37,7 @@ clerkMargin(container, margin=clerk-margin)
 
 //  SYMBOL
 #clerk .symbol
+  display: block
   width: clerk-width
   height: clerk-width
   fill: none
@@ -69,3 +74,26 @@ clerkMargin(container, margin=clerk-margin)
         stroke-dashoffset: 0
       100%
         stroke-dashoffset: -(clerk-symbol-length-full)
+
+//  CLERK FLAT
+#clerkFlat
+  width: clerkFlat-width
+  height: clerkFlat-height
+  svg
+    display: block
+    fill: none
+    stroke: white
+    stroke-linecap: round
+    stroke-linejoin:round
+    stroke-width: 4
+    path
+      opacity: 0
+      multiTransition: 1 5 durationAlt duration
+      for letter, i in clerkFlatpathLength
+        &:nth-child({i + 1})
+          stroke-dasharray: letter
+          stroke-dashoffset: -(letter)
+@media (min-width: delta)
+  .app #clerkFlat svg path
+    opacity: 1
+    stroke-dashoffset: 0
