@@ -11,25 +11,23 @@ clerkMargin(container, margin=clerk-margin)
 //  CLERK
 #clerk
   z-index: 10
-  makeAbsolute: 0 0
+  makeAbsolute: 50% 50%
   width: clerk-width
   height: clerk-width
   hasTransition: durationAlt
-  margin-top: clerk-scale-shortcut + containerMarginVert
-  margin-{align}: clerk-scale-shortcut + baseline
-  transform: scale(clerk-scale)
+  margin-top: -(loadingHeight/2)
+  margin-{align}: -(clerk-width/2)
   .symbol,
   .symbol circle
     transition: all durationAlt ease
     animation: none
-.loading #clerk
-  makeAbsolute: 50% 50%
-  margin-{align}: -(clerk-width/2)
-  transform: scale(1)
-.loading #clerk
-  margin-top: -(loadingHeight/2) !important
+.app #clerk
+  makeAbsolute: 0 0
+  margin-top: clerk-scale-shortcut + containerMarginVert
+  margin-{align}: clerk-scale-shortcut + baseline
+  transform: scale(clerk-scale)
 @media (min-width: delta)
-  #clerk
+  .app #clerk
     {align}: 100% - containerWidth
     margin-{align}: clerk-scale-shortcut + containerMarginHorz
 
@@ -38,7 +36,7 @@ clerkMargin(container, margin=clerk-margin)
   width: clerk-width
   height: clerk-width
   fill: none
-  stroke: blue
+  stroke: white
   stroke-linecap: round
   stroke-width: 12
   transform: rotate(30deg)
@@ -47,8 +45,8 @@ clerkMargin(container, margin=clerk-margin)
   @keyframes clerkRotate
     100%
       transform: rotate(30deg + (360deg - 1deg))
-.loading #clerk .symbol
-  stroke: white
+.app #clerk .symbol
+  stroke: blue
 
 //  CIRCLE
 #clerk .symbol circle
