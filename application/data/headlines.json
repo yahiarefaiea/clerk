@@ -1,0 +1,30 @@
+[
+  {
+    "location": "app",
+    "text": [
+      "Puts the right person",
+      "in the <mark>right position</mark>."
+    ]
+  }, {
+    "location": "personal-information",
+    "text": ["<mark>Personal information</mark>"]
+  }, {
+    "location": "contact-information",
+    "text": ["<mark>Contact information</mark>"]
+  }, {
+    "location": "professional-experience",
+    "text": ["<mark>Professional experience</mark>"]
+  }, {
+    "location": "personality-and-interests",
+    "text": ["<mark>Personality and interests</mark>"]
+  }, {
+    "location": "insights",
+    "text": ["<mark>Personality insights</mark>"]
+  }, {
+    "location": "vacancy",
+    "text": ["Apply for a <mark>vacancy</mark>"]
+  }, {
+    "location": "applicants",
+    "text": ["Applicants for a <mark>vacancy</mark>"]
+  }
+]

@@ -57,7 +57,8 @@ gulp.task('pug', function() {
     .pipe(pug({
       pretty: true,
       data: {
-        root: JSON.parse(fs.readFileSync(root+'/data/root.json'))
+        root: JSON.parse(fs.readFileSync(root+'/data/root.json')),
+        headlines: JSON.parse(fs.readFileSync(root+'/data/headlines.json'))
       }
      }))
     .pipe(gulp.dest(dest));

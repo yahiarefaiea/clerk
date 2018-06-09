@@ -4,7 +4,7 @@
   .background
   
   //- POPS
-  canvas#pops(width='420' height='420')
+  canvas#pops(width='420' height='420' title='Do you like me?')
   
   //- CLERK FLAT
   a#clerkFlat(href='#' title=root.author)
@@ -14,3 +14,10 @@
       path(d="M43.7,22.2c-0.9,0.5-1.9,0.8-3,0.8c-3.3,0-6-2.7-6-6s2.7-6,6-6c3.3,0,6,2.7,6,6h-12")
       path(d="M58.3,11c-3.3,0-6,2.7-6,6v6")
       path(d="M72,23c-0.2-0.3-4.9-6.9-5-7l5-5l-8,8v4V5")
+  
+  //- HEADLINES
+  ul.headlines
+    each headline in headlines
+      li.headline(data-location=headline.location)
+        each line in headline.text
+          .spans !{line}
