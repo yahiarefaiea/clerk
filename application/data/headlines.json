@@ -25,6 +25,6 @@
     "text": ["Apply for a <mark>vacancy</mark>"]
   }, {
     "location": "applicants",
-    "text": ["Applicants for a <mark>vacancy</mark>"]
+    "text": ["<mark>Applicants</mark> for a vacancy"]
   }
 ]
