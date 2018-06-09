@@ -1,7 +1,7 @@
 $(document).ready(function() {
   turnSpans($('.spans'))
   tippyInit()
-  iterationCount()
+  Clerk.wait()
 
   // JPRELOADER INIT
   $('body').jpreLoader({
@@ -11,16 +11,12 @@ $(document).ready(function() {
     splashVPos: 0
   }, function() {
     setTimeout(function() {
-      iterationClear(function() {
-
-        //  CALLBACK
-        Router.route('home')
-        Pops.init()
-        $('#loading').removeClass('loading')
-        setTimeout(function() {
-          $('#loading').remove()
-        }, 1500)
-      })
+      Router.route('home')
+      Pops.init()
+      $('#loading').removeClass('loading')
+      setTimeout(function() {
+        $('#loading').remove()
+      }, 1500)
     }, 200)
   })
 })
