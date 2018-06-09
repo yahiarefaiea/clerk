@@ -45,7 +45,7 @@ clerkMargin(container, margin=clerk-margin)
   stroke-linecap: round
   stroke-width: 12
   transform: rotate(30deg)
-.waiting #clerk .symbol
+#clerk.waiting .symbol
   animation: clerkRotate durationAlt ease infinite
   @keyframes clerkRotate
     100%
@@ -62,7 +62,7 @@ clerkMargin(container, margin=clerk-margin)
     &:nth-child({i})
       stroke-dasharray: clerk-symbol-length[i - 1]
       stroke-dashoffset: -((clerk-symbol-length[0] - clerk-symbol-length[i - 1]) /2)
-.waiting #clerk .symbol circle
+#clerk.waiting .symbol circle
   opacity: 0
   stroke-dasharray: clerk-symbol-length-full
   stroke-dashoffset: clerk-symbol-length-full
