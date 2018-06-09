@@ -16,7 +16,7 @@ $(document).ready(function() {
         //  CALLBACK
         Router.route('home')
         Pops.init()
-        $('body').removeClass('loading')
+        $('#loading').removeClass('loading')
         setTimeout(function() {
           $('#loading').remove()
         }, 1500)
