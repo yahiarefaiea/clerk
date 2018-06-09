@@ -89,7 +89,7 @@ clerkMargin(container, margin=clerk-margin)
     stroke-width: 4
     path
       opacity: 0
-      multiTransition: 1 5 durationAlt duration
+      multiTransition: 1 5 durationAlt
       for length, i in clerkFlat-length
         &:nth-child({i + 1})
           stroke-dasharray: length
@@ -97,4 +97,5 @@ clerkMargin(container, margin=clerk-margin)
 @media (min-width: delta)
   .app #clerkFlat svg path
     opacity: 1
+    multiTransition: 1 5 durationAlt duration
     stroke-dashoffset: 0
