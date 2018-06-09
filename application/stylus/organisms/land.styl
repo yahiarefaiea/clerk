@@ -60,3 +60,16 @@ popsSize= 420px
     color: white
     mark:before
       background-color: blue-shade
+@media (min-width: delta)
+  .personality.personal-information #land .headlines .headline[data-location='personal-information'],
+  .personality.contact-information #land .headlines .headline[data-location='contact-information'],
+  .personality.professional-experience #land .headlines .headline[data-location='professional-experience'],
+  .personality.personality-and-interests #land .headlines .headline[data-location='personality-and-interests'],
+  .personality.insights #land .headlines .headline[data-location='insights'],
+  .identified--applicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
+  .identified--company.applicants #land .headlines .headline[data-location='applicants'],
+  .app:not(.personality) #land .headlines .headline[data-location='app'],
+  .app:not(.apply) #land .headlines .headline[data-location='app'],
+  .app:not(.applicants) #land .headlines .headline[data-location='app']
+    .spans
+      spansCurrent()
