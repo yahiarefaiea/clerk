@@ -7,16 +7,7 @@ spansTransition(min, max, dur=duration, dly=0)
       &:before
         hasTransition: dur (dly + step*6) d
 
-.spans
-  white-space: nowrap
-.spans > *
-  display: inline-block
-  margin-{align-alt}: 3px
-  opacity: 0
-  transform: translateY(baseline)
-  hasTransition()
-  cursor: default
-.current .spans
+spansCurrent()
   > *
     z-index: 1
     opacity: 1
@@ -26,12 +17,24 @@ spansTransition(min, max, dur=duration, dly=0)
   for i in 2..5
     &:nth-child({i}) > *
       spansTransition: 1 15 duration step*i
+  > mark:before
+    {align-alt}: 0
 
-.spans > mark:before
-  {align-alt}: 100%
-  hasTransition: unit(step, 's') duration
-.current .spans > mark:before
-  {align-alt}: 0
+.spans
+  white-space: nowrap
+.spans
+  > *
+    display: inline-block
+    margin-{align-alt}: 3px
+    opacity: 0
+    transform: translateY(baseline)
+    hasTransition()
+    cursor: default
+  > mark:before
+    {align-alt}: 100%
+    hasTransition: unit(step, 's') duration
+.current .spans
+  spansCurrent()
 
 .headline .spans > *
   margin-{align-alt}: 8px
