@@ -1,25 +1,25 @@
 var Clerk = {
   duration: 1500,
   iteration: 0,
-
   processing : false,
   enough : false,
   interval: null,
   callback : null,
+  selector : '#clerk .symbol, #clerk .symbol circle',
 
   //  WAIT
   wait: function() {
-    if(this.processing == false) {
-      this.processing = true
-      $('body').addClass('waiting')
-      this.waiting()
-      this.interval = setInterval(this.waiting, this.duration)
+    if(Clerk.processing != true) {
+      Clerk.processing = true
+      $('#clerk').addClass('waiting')
+      Clerk.waiting()
+      Clerk.interval = setInterval(Clerk.waiting, Clerk.duration)
     }
   },
 
   //  WAITING
   waiting: function() {
-    if(Clerk.enough == false) {
+    if(Clerk.enough != true) {
       Clerk.iteration = ++Clerk.iteration
       return
     }
@@ -29,30 +29,35 @@ var Clerk = {
 
   //  STOP
   stop: function(callback) {
-    if(this.processing == true) {
-      this.enough = true
-      this.callback = callback
+    if(Clerk.processing == true) {
+      Clerk.enough = true
+      Clerk.callback = callback
 
-      $('#clerk .symbol, #clerk .symbol circle').attr('style',
-      'animation-iteration-count: '+this.iteration+
-      '; -webkit-animation-iteration-count: '+this.iteration+';')
+      $(Clerk.selector).attr('style',
+      'animation-iteration-count: ' + Clerk.iteration +
+      '; -webkit-animation-iteration-count: ' + Clerk.iteration + ';')
     }
   },
 
   //  STOPPING
   stopping: function() {
-    clearInterval(this.interval)
+    clearInterval(Clerk.interval)
     if(typeof Clerk.callback === 'function' && Clerk.callback)
       Clerk.callback()
 
-    setTimeout(function() {
-      Clerk.iteration = 0
-      Clerk.processing = false
-      Clerk.enough = false
-      $('body').removeClass('waiting')
-      $('#clerk .symbol, #clerk .symbol circle').removeAttr('style')
+    //  do we really need a setTimeout?
+    setTimeout(Clerk.reset, 200)
+  },
 
-      Clerk.callback = null
-    }, 200)
+  //  RESET
+  reset: function() {
+    Clerk.iteration = 0
+    Clerk.processing = false
+    Clerk.enough = false
+    Clerk.interval = null
+    Clerk.callback = null
+
+    $('#clerk').removeClass('waiting')
+    $(Clerk.selector).removeAttr('style')
   }
 }
