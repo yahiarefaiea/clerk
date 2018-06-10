@@ -20,7 +20,7 @@ var Clerk = {
   //  WAITING
   waiting: function() {
     if(Clerk.enough != true) {
-      Clerk.iteration = ++Clerk.iteration
+      ++Clerk.iteration
       return
     }
 
