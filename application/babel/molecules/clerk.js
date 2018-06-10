@@ -45,7 +45,6 @@ var Clerk = {
     if(typeof Clerk.callback === 'function' && Clerk.callback)
       Clerk.callback()
 
-    //  do we really need a setTimeout?
     setTimeout(Clerk.reset, 200)
   },
 
