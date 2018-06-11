@@ -9,6 +9,11 @@ block content
     //- LAND
     include ../includes/land
     
+    //- BURGER
+    a#burger(href='#')
+      - for (var a = 0; a < 3; a++)
+        div
+    
     //- CLERK
     include ../includes/clerk
     #loading.loading= root.loading
