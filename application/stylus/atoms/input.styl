@@ -16,7 +16,7 @@ range-height= 6px
 range-track-color= border-dark
 range-progress-color= blue
 range-thumb-size= 16px
-range-thumb-shadow= 0 0 0 7px rgba(198, 87, 160, .21)
+range-thumb-shadow= 0 0 0 7px rgba(0, 173, 213, .21)
 range-label-height= baseline*.75
 range-label-margin= baseline*.25
 
@@ -180,6 +180,7 @@ input[type=range]
 
 //  RANGE ELEMENT
 .range
+  position: relative
   padding-bottom: range-label-height + range-label-margin + range-margin
   ul
     makeAbsolute: auto 0 range-label-height 0
