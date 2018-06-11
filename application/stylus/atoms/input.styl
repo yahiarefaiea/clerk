@@ -1,0 +1,206 @@
+input-height= baseline*1.25
+input-padding= 0
+input-border= 3px
+input-radius= 0
+
+input-family= inherit
+input-font= inherit
+input-weight= inherit
+
+input-bg= transparent
+input-color= text-dark
+input-placeholder= text-light
+
+range-margin= baseline/2
+range-height= 6px
+range-track-color= border-dark
+range-progress-color= blue
+range-thumb-size= 16px
+range-thumb-shadow= 0 0 0 7px rgba(198, 87, 160, .21)
+range-label-height= baseline*.75
+range-label-margin= baseline*.25
+
+form
+  margin: 0
+
+//  INPUT AND TEXTAREA
+input, textarea
+  display: block
+  width: 100%
+  height: input-height
+  margin: 0
+  padding: input-padding
+  border: none
+  border-radius: input-radius
+
+  font-family: input-family
+  font-size: input-font
+  font-weight: input-weight
+  line-height: input-height
+  vertical-align: middle
+
+  hasTransition()
+  background-color: input-bg
+  color: input-color
+
+  &,
+  &:hover,
+  &:focus
+    outline: 0
+    box-shadow: none
+
+  +placeholder()
+    color: input-placeholder
+    opacity: 1 !important
+
+  //  YELLOW BACKGROUND CHROME
+  &:-webkit-autofill
+    -webkit-box-shadow: inset 0 0 0 1000px background
+
+//  TEXTAREA
+textarea
+  resize: none
+  box-sizing: content-box
+  min-height: auto
+  height: baseline*4 + 1px
+  line-height: baseline
+  padding-bottom: baseline*.25 - 1px
+
+//  FIELD
+.field
+  position: relative
+  border-bottom: input-border solid border-dark
+  .effect
+    makeAbsolute: auto 30% (- input-border) 30%
+    height: input-border
+    hasTransition()
+  input, textarea
+    &:hover ~ .effect,
+    &:focus ~ .effect
+      background-color: blue
+    &:hover ~ .effect
+      {align}: 20%
+      {align-alt}: 20%
+    &:focus ~ .effect
+      {align}: 0
+      {align-alt}: 0
+.fields .field:not(:last-child)
+  margin-bottom: baseline*.75
+
+//  INPUT HIDDEN
+inputHidden()
+  overflow: hidden
+  position: absolute
+  margin: -1px
+  padding: 0
+  border: 0
+  width: 1px
+  height: 1px
+  opacity: 0
+  visibility: hidden
+  clip: rect(0 0 0 0)
+
+//  RADIO
+.radio
+  display: block
+  input
+    inputHidden()
+  .button
+    margin: 0 auto
+    buttonDisabled()
+    focusEffect(rgba(0, 0, 0, .25))
+    &:hover
+      buttonNormal()
+  input:checked ~ .button
+    buttonHover()
+    hasTransition: duration step*3
+    &:after
+      background-color: transparent
+
+//  RANGE TRACK AND THUMB
+rangeTrack()
+  width: 100%
+  height: range-height
+  border: none
+  border-radius: (range-height/2)
+  background-color: range-track-color
+rangeThumb()
+  width: range-thumb-size
+  height: range-thumb-size
+  border: 0
+  border-radius: 50%
+  hasTransition()
+  box-shadow: range-thumb-shadow
+  background-color: range-progress-color
+rangeLongShadow(color)
+  size= -((range-thumb-size - range-height)/2)
+  val= -8px 0 0 size color
+  for i in (9..(273 - 8 - 3))
+    val= val, unit(- i, 'px') 0 0 size color
+  return val
+
+//  RANGE
+input[type=range]
+  overflow: hidden
+  width: 100%
+  height: range-height + range-margin*2
+  appearance: none
+  grabbable()
+
+  //  MOZ
+  &::-moz-range-track,
+  &::-moz-range-progress
+    rangeTrack()
+  &::-moz-range-progress
+    background-color: range-progress-color
+  &::-moz-range-thumb
+    rangeThumb()
+  &::-moz-focus-outer
+    border: 0
+
+  //  WEBKIT
+  &::-webkit-slider-runnable-track
+    rangeTrack()
+  &::-webkit-slider-thumb
+    rangeThumb()
+    appearance: none
+    margin-top: ((range-height - range-thumb-size)/2)
+    box-shadow: range-thumb-shadow, rangeLongShadow(range-progress-color)
+
+  //  MS
+  &::-ms-track
+    rangeTrack()
+  &::-ms-fill-upper
+    background-color: range-track-color
+  &::-ms-fill-lower
+    background-color: range-progress-color
+  &::-ms-thumb
+    rangeThumb()
+    margin-top: 0
+
+//  RANGE ELEMENT
+.range
+  padding-bottom: range-label-height + range-label-margin + range-margin
+  ul
+    makeAbsolute: auto 0 range-label-height 0
+    li
+      makeAbsolute: range-label-height 0
+      line-height: range-label-height
+      font-weight: weight-bold
+      color: range-progress-color
+      opacity: 0
+      hasTransition()
+      cursor: default
+      &:last-child
+        {align}: auto
+        {align-alt}: 0
+      &:not(:first-child):not(:last-child)
+        transform: translateX(-50%)
+      for i in ((5 - 4)..(5 - 1))
+        &:nth-child({i})
+          {align}: (100%/(5 - 1))*(i - 1)
+      &.current
+        top: 0
+        opacity: 1
+        hasTransition: duration step
+        cursor: auto
