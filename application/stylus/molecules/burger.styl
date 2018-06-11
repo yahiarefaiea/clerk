@@ -9,6 +9,7 @@ burger-margin= ((clerk-width * clerk-scale) - (burger-gap*2 + burger-height*3)) 
   width: burger-width
   height: burger-gap*2 + burger-height*3
   margin-top: burger-margin
+  hasOutline: transparent
   > div
     makeAbsolute: 0 burger-width auto 0
     height: burger-height
@@ -28,7 +29,16 @@ burger-margin= ((clerk-width * clerk-scale) - (burger-gap*2 + burger-height*3)) 
         {align}: 0
       &:nth-child(3)
         {align}: burger-width - 13px
-  .app #burger:hover > div,
-  .app #burger:focus > div,
-  .menu--open .app #burger > div
-    {align}: 0
+    &:hover > div
+      {align}: 0
+  .app.menu--open #burger > div
+    &:nth-child(2)
+      {align}: burger-width
+    &:nth-child(1),
+    &:nth-child(3)
+      top: burger-gap + burger-height
+      {align}: 0
+    &:nth-child(1)
+      transform: rotate(-45deg)
+    &:nth-child(3)
+      transform: rotate(45deg)
