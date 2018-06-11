@@ -56,29 +56,6 @@ popsSize= 420px
 #clerkFlat
   makeAbsolute: landPaddingVert landPaddingHorz
 
-//  HEADLINES
-#land .headlines
-  makeAbsolute: auto landPaddingHorz landPaddingVert
-  .headline
-    makeAbsolute: auto 0 0
-    white-space: nowrap
-    color: white
-    mark:before
-      background-color: blue-shade
-@media (min-width: delta)
-  .personality.personal-information #land .headlines .headline[data-location='personal-information'],
-  .personality.contact-information #land .headlines .headline[data-location='contact-information'],
-  .personality.professional-experience #land .headlines .headline[data-location='professional-experience'],
-  .personality.personality-and-interests #land .headlines .headline[data-location='personality-and-interests'],
-  .personality.insights #land .headlines .headline[data-location='insights'],
-  .identified--applicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
-  .identified--company.applicants #land .headlines .headline[data-location='applicants'],
-  .app:not(.personality) #land .headlines .headline[data-location='app'],
-  .app:not(.apply) #land .headlines .headline[data-location='app'],
-  .app:not(.applicants) #land .headlines .headline[data-location='app']
-    .spans
-      spansCurrent()
-
 //  MENU
 #land .menu
   makeAbsolute: landPaddingVert auto auto 0
@@ -86,7 +63,6 @@ popsSize= 420px
   nav
     white-space: nowrap
     makeAbsolute: 0 auto auto 0
-    // display: none
     visibility: hidden
     li
       display: inline-block
@@ -112,3 +88,26 @@ popsSize= 420px
         opacity: 1
         transform: translateY(0)
         multiTransition: 1 3 duration duration
+
+//  HEADLINES
+#land .headlines
+  makeAbsolute: auto landPaddingHorz landPaddingVert
+  .headline
+    makeAbsolute: auto 0 0
+    white-space: nowrap
+    color: white
+    mark:before
+      background-color: blue-shade
+@media (min-width: delta)
+  .personality.personal-information #land .headlines .headline[data-location='personal-information'],
+  .personality.contact-information #land .headlines .headline[data-location='contact-information'],
+  .personality.professional-experience #land .headlines .headline[data-location='professional-experience'],
+  .personality.personality-and-interests #land .headlines .headline[data-location='personality-and-interests'],
+  .personality.insights #land .headlines .headline[data-location='insights'],
+  .identified--applicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
+  .identified--company.applicants #land .headlines .headline[data-location='applicants'],
+  .app:not(.personality) #land .headlines .headline[data-location='app'],
+  .app:not(.apply) #land .headlines .headline[data-location='app'],
+  .app:not(.applicants) #land .headlines .headline[data-location='app']
+    .spans
+      spansCurrent()

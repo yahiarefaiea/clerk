@@ -58,8 +58,8 @@ gulp.task('pug', function() {
       pretty: true,
       data: {
         root: JSON.parse(fs.readFileSync(root+'/data/root.json')),
-        headlines: JSON.parse(fs.readFileSync(root+'/data/headlines.json')),
-        menu: JSON.parse(fs.readFileSync(root+'/data/menu.json'))
+        menu: JSON.parse(fs.readFileSync(root+'/data/menu.json')),
+        headlines: JSON.parse(fs.readFileSync(root+'/data/headlines.json'))
       }
      }))
     .pipe(gulp.dest(dest));

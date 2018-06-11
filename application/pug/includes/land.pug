@@ -15,16 +15,16 @@
       path(d="M58.3,11c-3.3,0-6,2.7-6,6v6")
       path(d="M72,23c-0.2-0.3-4.9-6.9-5-7l5-5l-8,8v4V5")
   
-  //- HEADLINES
-  ul.headlines
-    each headline in headlines
-      li.headline(data-location=headline.location)
-        each line in headline.text
-          .spans !{line}
-  
   //- MENU
   .menu
     each navigation in menu
       nav(data-permission=navigation.permission): ul
         each item in navigation.items
           li: a.link.router(href='#' + item.location title=item.text)= item.text
+  
+  //- HEADLINES
+  ul.headlines
+    each headline in headlines
+      li.headline(data-location=headline.location)
+        each line in headline.text
+          .spans !{line}
