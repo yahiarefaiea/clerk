@@ -21,3 +21,10 @@
       li.headline(data-location=headline.location)
         each line in headline.text
           .spans !{line}
+  
+  //- MENU
+  .menu
+    each navigation in menu
+      nav(data-permission=navigation.permission): ul
+        each item in navigation.items
+          li: a.link.router(href='#' + item.location title=item.text)= item.text

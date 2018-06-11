@@ -32,12 +32,12 @@ popsSize= 420px
   z-index: -1
 .app #pops,
 .app #clerkFlat,
-.app #land .links,
+.app #land .menu,
 .app #land .headlines
   z-index: 2
 .auth #pops,
 .auth #clerkFlat,
-.auth #land .links,
+.auth #land .menu,
 .auth #land .headlines
   hasTransition: durationAlt*2
 
@@ -78,3 +78,37 @@ popsSize= 420px
   .app:not(.applicants) #land .headlines .headline[data-location='app']
     .spans
       spansCurrent()
+
+//  MENU
+#land .menu
+  makeAbsolute: landPaddingVert auto auto 0
+  margin-{align-alt}: landPaddingHorz
+  nav
+    white-space: nowrap
+    makeAbsolute: 0 auto auto 0
+    // display: none
+    visibility: hidden
+    li
+      display: inline-block
+      margin-{align}: baseline*1.25
+      transform: translateY(clerkFlat-height)
+      opacity: 0
+      hasTransition()
+      .link
+        line-height: clerkFlat-height
+        color: white
+        &:before
+          background-color: blue-shade
+        &:hover, &:focus
+          &:before
+            background-color: white
+@media (min-width: delta)
+  .app
+    &.anonymous #land .menu nav[data-permission='anonymous'],
+    &.identified--applicant #land .menu nav[data-permission='applicant'],
+    &.identified--company #land .menu nav[data-permission='company']
+      visibility: visible
+      li
+        opacity: 1
+        transform: translateY(0)
+        multiTransition: 1 3 duration duration

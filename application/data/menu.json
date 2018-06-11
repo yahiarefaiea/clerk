@@ -1,0 +1,42 @@
+[
+  {
+    "permission": "anonymous",
+    "items": [
+      {
+        "text": "Vacancies",
+        "location": "vacancies"
+      }, {
+        "text": "Sign in",
+        "location": ""
+      }
+    ]
+  }, {
+    "permission": "applicant",
+    "items": [
+      {
+        "text": "Vacancies",
+        "location": "vacancies"
+      }, {
+        "text": "Personality",
+        "location": "personality"
+      }, {
+        "text": "Sign out",
+        "location": "sign-out"
+      }
+    ]
+  }, {
+    "permission": "company",
+    "items": [
+      {
+        "text": "Dashboard",
+        "location": ""
+      }, {
+        "text": "Profile",
+        "location": "profile"
+      }, {
+        "text": "Sign out",
+        "location": "sign-out"
+      }
+    ]
+  }
+]
