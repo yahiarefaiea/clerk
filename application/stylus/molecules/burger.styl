@@ -4,7 +4,7 @@ burger-gap= 4px
 burger-margin= ((clerk-width * clerk-scale) - (burger-gap*2 + burger-height*3)) * .5
 
 #burger
-  z-index: 20
+  z-index: 0
   makeAbsolute: containerMarginVert auto auto baseline
   width: burger-width
   height: burger-gap*2 + burger-height*3
@@ -18,15 +18,16 @@ burger-margin= ((clerk-width * clerk-scale) - (burger-gap*2 + burger-height*3)) 
       top: burger-gap + burger-height
     &:nth-child(3)
       top: burger-gap*2 + burger-height*2
-
 @media (max-width: delta - 1)
-  .app #burger > div
-    &:nth-child(1)
-      {align}: burger-width - 9px
-    &:nth-child(2)
-      {align}: 0
-    &:nth-child(3)
-      {align}: burger-width - 13px
+  .app #burger
+    z-index: 10
+    > div
+      &:nth-child(1)
+        {align}: burger-width - 9px
+      &:nth-child(2)
+        {align}: 0
+      &:nth-child(3)
+        {align}: burger-width - 13px
   .app #burger:hover > div,
   .app #burger:focus > div,
   .menu--open .app #burger > div
