@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  var labeledInput = $('.field.labeled:not(.stop) input')
+  var labeledInput = $('.field.labeled:not(.blocked) input')
 
   labeledInput.focus(function() {
     $(this).parent().addClass('animate')
