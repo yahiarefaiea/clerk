@@ -1,0 +1,122 @@
+.row:after
+  @extend .clear
+
+.column, .columns
+  width: 100%
+  float: align
+
+//  For devices larger than beta
+@media (min-width: beta)
+  .column, .columns
+    margin-{align}: 4%
+    &:first-child
+      margin-{align}: 0
+
+  .one.column,
+  .one.columns
+    width: 4.66666666667%
+  .two.columns
+    width: 13.3333333333%
+  .three.columns
+    width: 22%
+  .four.columns
+    width: 30.6666666667%
+  .five.columns
+    width: 39.3333333333%
+  .six.columns
+    width: 48%
+  .seven.columns
+    width: 56.6666666667%
+  .eight.columns
+    width: 65.3333333333%
+  .nine.columns
+    width: 74.0%
+  .ten.columns
+    width: 82.6666666667%
+  .eleven.columns
+    width: 91.3333333333%
+  .twelve.columns
+    width: 100%
+    margin-{align}: 0
+
+  .one-third.column
+    width: 30.6666666667%
+  .two-thirds.column
+    width: 65.3333333333%
+
+  .one-half.column
+    width: 48%
+
+//  For devices larger than gamma
+@media (min-width: gamma)
+  .tablet-one.column,
+  .tablet-one.columns
+    width: 4.66666666667%
+  .tablet-two.columns
+    width: 13.3333333333%
+  .tablet-three.columns
+    width: 22%
+  .tablet-four.columns
+    width: 30.6666666667%
+  .tablet-five.columns
+    width: 39.3333333333%
+  .tablet-six.columns
+    width: 48%
+  .tablet-seven.columns
+    width: 56.6666666667%
+  .tablet-eight.columns
+    width: 65.3333333333%
+  .tablet-nine.columns
+    width: 74.0%
+  .tablet-ten.columns
+    width: 82.6666666667%
+  .tablet-eleven.columns
+    width: 91.3333333333%
+  .tablet-twelve.columns
+    width: 100%
+    margin-{align}: 0
+
+  .tablet-one-third.column
+    width: 30.6666666667%
+  .tablet-two-thirds.column
+    width: 65.3333333333%
+
+  .tablet-one-half.column
+    width: 48%
+
+//  For devices larger than delta
+@media (min-width: delta)
+  .desktop-one.column,
+  .desktop-one.columns
+    width: 4.66666666667%
+  .desktop-two.columns
+    width: 13.3333333333%
+  .desktop-three.columns
+    width: 22%
+  .desktop-four.columns
+    width: 30.6666666667%
+  .desktop-five.columns
+    width: 39.3333333333%
+  .desktop-six.columns
+    width: 48%
+  .desktop-seven.columns
+    width: 56.6666666667%
+  .desktop-eight.columns
+    width: 65.3333333333%
+  .desktop-nine.columns
+    width: 74.0%
+  .desktop-ten.columns
+    width: 82.6666666667%
+  .desktop-eleven.columns
+    width: 91.3333333333%
+  .desktop-twelve.columns
+    width: 100%
+    margin-{align}: 0
+
+  .desktop-one-third.column
+    width: 30.6666666667%
+  .desktop-two-thirds.column
+    width: 65.3333333333%
+
+  .desktop-one-half.column
+    width: 48%
