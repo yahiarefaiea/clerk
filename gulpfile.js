@@ -59,7 +59,8 @@ gulp.task('pug', function() {
       data: {
         root: JSON.parse(fs.readFileSync(root+'/data/root.json')),
         menu: JSON.parse(fs.readFileSync(root+'/data/menu.json')),
-        headlines: JSON.parse(fs.readFileSync(root+'/data/headlines.json'))
+        headlines: JSON.parse(fs.readFileSync(root+'/data/headlines.json')),
+        auth: JSON.parse(fs.readFileSync(root+'/data/auth.json'))
       }
      }))
     .pipe(gulp.dest(dest));
@@ -91,6 +92,7 @@ var babelSrc = [
   root+'/babel/molecules/pops.js',
   root+'/babel/molecules/tippy.js',
   root+'/babel/organisms/router.js',
+  root+'/babel/templates/auth.js',
   root+'/babel/molecules/loader.js'
 ];
 gulp.task('babel', function() {
