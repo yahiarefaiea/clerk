@@ -91,35 +91,34 @@ textarea
 .fields > *:not(:last-child)
   margin-bottom: baseline*.75
 
-// LABEL
+//  LABEL
 label
   display: block
   width: 100%
   margin: 0
   padding: input-padding
-  @extend .small
+  font-size: font-small
   line-height: label-height
   color: input-placeholder
 
-// LABELED
+//  LABELED
 .field.labeled,
 .fields-group.labeled
   padding-top: input-padding + label-height
-
   label
     makeAbsolute: label-height 0
     hasTransition()
     font-size: input-font
     line-height: input-height
     cursor: text
-
   &.animate label,
   &.blocked label
     top: 0
-    @extend .small
+    font-size: font-small
     line-height: label-height
 
-ul.date
+//  FIELDS GROUP: DATE
+.fields-group.date ul
   position: relative
   &:before
     content: ''
