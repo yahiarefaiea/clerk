@@ -1,12 +1,13 @@
 .template
-  z-index: 8
-  makeAbsolute: 0 (100% - containerWidth) 0 0
-  hasTransition: durationAlt
-  padding: 0 containerMarginHorz 0
   overflow-y: auto
+  z-index: 0
+  makeAbsolute: 0 (100% - containerWidth) 0 0
+  padding: 0 containerMarginHorz 0
+  hasTransition: durationAlt
   .container
-    padding: (containerMarginVert + 66px + 21px) 0 containerMarginVert
-
+    padding: (containerMarginVert + (clerk-width * clerk-scale) + baseline*.75) 0 containerMarginVert
+.app .template
+  z-index: 8
 @media (max-width: delta - 1)
   .template
     {align}: 0
