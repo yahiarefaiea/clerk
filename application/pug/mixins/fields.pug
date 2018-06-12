@@ -1,12 +1,18 @@
 //- FIELD
 mixin field(name, placeholder, id=false, type='text')
   .field
-    input(id=id type=type name=name placeholder=placeholder)
+    if type == 'textarea'
+      textarea(id=id name=name placeholder=placeholder)
+    else
+      input(id=id type=type name=name placeholder=placeholder)
     .effect
 
 //- FIELD LABELED
 mixin fieldLabeled(name, label, id=name, type='text')
   .field.labeled(class!=attributes.class)
     label(for=id)= label
-    input(id=id type=type name=name)
+    if type == 'textarea'
+      textarea(id=id name=name)
+    else
+      input(id=id type=type name=name)
     .effect
