@@ -83,6 +83,7 @@ var babelSrc = [
   root+'/babel/lib/jquery-2.2.4.js',
   root+'/babel/lib/jpreloader.js',
   root+'/babel/lib/tippy.all.min.js',
+  root+'/babel/molecules/input.js',
   root+'/babel/molecules/range.js',
   root+'/babel/molecules/spans.js',
   root+'/babel/molecules/clerk.js',

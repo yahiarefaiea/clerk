@@ -24,10 +24,13 @@ ul, ol
       > li
         float: align
         width: auto
-      &.halves
+      &.halves,
+      &.thirds
         width: 100%
-        > li
-          width: 50%
+      &.halves > li
+        width: 50%
+      &.thirds > li
+          width: (100% / 3)
 
 //  LIST
 ul, ol
