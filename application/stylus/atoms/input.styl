@@ -13,7 +13,7 @@ input-placeholder= text-light
 
 label-height= baseline*.75
 
-range-margin= baseline/2
+range-margin= baseline*.5
 range-height= 6px
 range-track-color= border-dark
 range-progress-color= blue
@@ -96,7 +96,6 @@ label
   display: block
   width: 100%
   margin: 0
-  padding: input-padding
   font-size: font-small
   line-height: label-height
   color: input-placeholder
@@ -118,7 +117,7 @@ label
     line-height: label-height
 
 //  FIELDS GROUP: DATE
-.fields-group.date ul
+.fields-group.date
   position: relative
   &:before
     content: ''
@@ -127,7 +126,7 @@ label
     makeAbsolute: auto 0 0 0
     height: input-border
     background-color: border-dark
-  li.field
+  ul li.field
     width: baseline*2 !important
     &:first-child
       border-color: border-dark-alt
