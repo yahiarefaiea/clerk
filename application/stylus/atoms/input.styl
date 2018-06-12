@@ -11,6 +11,8 @@ input-bg= transparent
 input-color= text-dark
 input-placeholder= text-light
 
+label-height= baseline*.75
+
 range-margin= baseline/2
 range-height= 6px
 range-track-color= border-dark
@@ -67,8 +69,10 @@ textarea
   padding-bottom: baseline*.25 - 1px
 
 //  FIELD
-.field
+.field,
+.fields-group
   position: relative
+.field
   border-bottom: input-border solid border-dark
   .effect
     makeAbsolute: auto 30% (- input-border) 30%
@@ -84,8 +88,52 @@ textarea
     &:focus ~ .effect
       {align}: 0
       {align-alt}: 0
-.fields .field:not(:last-child)
+.fields > *:not(:last-child)
   margin-bottom: baseline*.75
+
+// LABEL
+label
+  display: block
+  width: 100%
+  margin: 0
+  padding: input-padding
+  @extend .small
+  line-height: label-height
+  color: input-placeholder
+
+// LABELED
+.field.labeled,
+.fields-group.labeled
+  padding-top: input-padding + label-height
+
+  label
+    makeAbsolute: label-height 0
+    hasTransition()
+    font-size: input-font
+    line-height: input-height
+    cursor: text
+
+  &.animate label,
+  &.blocked label
+    top: 0
+    @extend .small
+    line-height: label-height
+
+ul.date
+  position: relative
+  &:before
+    content: ''
+    z-index: -1
+    display: block
+    makeAbsolute: auto 0 0 0
+    height: input-border
+    background-color: border-dark
+  li.field
+    width: baseline*2 !important
+    &:first-child
+      border-color: border-dark-alt
+    input
+      text-align: center
 
 //  INPUT HIDDEN
 inputHidden()
