@@ -3,7 +3,15 @@ $(document).ready(function() {
   tippyInit()
   Clerk.wait()
 
-  // JPRELOADER INIT
+  //  HIDE ON SCROLL
+  $('.template').scroll(function() {
+    if(this.scrollTop > 21)
+      $('#clerk, #burger').addClass('hidden')
+    else
+      $('#clerk, #burger').removeClass('hidden')
+  })
+
+  //  JPRELOADER INIT
   $('body').jpreLoader({
     showSplash: false,
     showPercentage: false,
