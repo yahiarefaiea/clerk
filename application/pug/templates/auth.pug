@@ -10,9 +10,7 @@
   
   //- SWITCH
   #switch
-    .h3
-      each line in auth.switch.headline
-        .spans= line
+    .h3: .spans= auth.switch.headline
     ul.fields.blocks.inline.halves
       each option in auth.switch.options
         li: a.button.router(href='#' + option.location title=option.text)= option.text
