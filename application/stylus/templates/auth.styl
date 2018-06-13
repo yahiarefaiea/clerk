@@ -63,21 +63,24 @@
   .h3 .spans
     spansCurrent()
 
+//  INTRO
+#intro
+  makeAbsolute: 50% 0 auto 0
+
 //  GLOBAL
 #switch
   makeAbsolute: 50% 50%
   width: input-width
   margin-{align}: -(input-width*.5)
 
-//  INTRO
-#intro
-  makeAbsolute: 50% 0 auto 0
+#intro,
+#switch
   clerkMargin: authHeight.switch
 
 //  SWITCH
 #switch
-  clerkMargin: authHeight.switch
   .h3
+    position: relative
     height: baseline*2
     .spans
       makeAbsolute: 0 50%
