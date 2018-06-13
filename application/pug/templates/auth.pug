@@ -1,0 +1,18 @@
+#auth
+  
+  //- BACKGROUND
+  .background
+  
+  //- SWITCH
+  #switch
+    ul.h3
+      each headline in auth.switch.headline
+        li
+          each line in headline
+            .spans= line
+    ul.fields.blocks.inline.halves
+      each option in auth.switch.options
+        li: a.button.router(href='#' + option.location title=option.text)= option.text
+    .note
+      each line in auth.switch.note
+        .small !{line}

@@ -6,6 +6,11 @@
 .auth #auth
   z-index: 9
 
+//  HEADLINE
+#auth h3,
+#auth .h3
+  color: blue-high
+
 //  ANCHOR
 #auth a
   hasOutline: white
@@ -34,6 +39,7 @@
 
 //  BUTTON
 #auth .button
+  margin: 0 auto
   background-color: blue-shade
   color: blue-high
   &:hover
@@ -52,9 +58,22 @@
   .h3 .spans
     spansCurrent()
 
-//  SWITCH
+//  FORMS
 #switch
   makeAbsolute: 50% 50%
-  // width: input-width
-  // margin-{align}: -(input-width*.5)
+  width: input-width
+  margin-{align}: -(input-width*.5)
+
+//  SWITCH
+#switch
   clerkMargin: authHeight.switch
+  .h3
+    height: baseline*2
+    margin-bottom: baseline*.5
+    li
+      makeAbsolute: 0 50%
+      transform: translateX(-50%)
+  .fields
+    margin-top: baseline*.5
+    > *
+      margin-bottom: 0
