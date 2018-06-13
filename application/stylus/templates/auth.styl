@@ -50,19 +50,28 @@
 #auth .background
   makeAbsolute: 0 0 0 0
 
-//  Z-INDEX
+//  CONTAINERS
+#intro,
 #switch
   z-index: -1
-.auth.switch #switch
-  z-index: 2
-  .h3 .spans
-    spansCurrent()
-
-//  FORMS
-#switch
   makeAbsolute: 50% 50%
   width: input-width
   margin-{align}: -(input-width*.5)
+  opacity: 0
+  hasTransition: durationAlt
+.auth.intro #intro,
+.auth.switch #switch
+  z-index: 2
+  opacity: 1
+  .h3 .spans
+    spansCurrent()
+
+//  INTRO
+#intro
+  makeAbsolute: 50% 0 auto 0
+  width: auto
+  margin: 0
+  clerkMargin: authHeight.switch
 
 //  SWITCH
 #switch

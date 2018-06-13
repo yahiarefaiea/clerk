@@ -105,8 +105,18 @@ var Router = {
 				Router.classes.push('auth')
 
 				//	switch
-				if(location[0] == '')
-					Router.classes.push('switch')
+				if(location[0] == '') {
+					Router.classes.push('intro')
+
+					setTimeout(function() {
+						var intro = Router.classes.indexOf('intro')
+						Router.classes.splice(intro, 1)
+						Router.classes.push('switch')
+
+						var classes = Router.classes.toString().replace(/,/g, ' ')
+						$('.wrapper').attr('class', 'wrapper ' + classes)
+					}, 5000)
+				}
 
 				else if(location[0] == 'auth') {
 					//	signin
