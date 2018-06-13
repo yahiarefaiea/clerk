@@ -1,6 +1,6 @@
 [
   {
-    "permission": "anonymous",
+    "permission": "unauthorized",
     "items": [
       {
         "text": "Vacancies",

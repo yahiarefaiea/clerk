@@ -80,9 +80,9 @@ popsSize= 420px
           &:before
             background-color: dark-blue
 @media (min-width: delta)
-  .app.anonymous #land .menu nav[data-permission='anonymous'],
-  .app.identified--applicant #land .menu nav[data-permission='applicant'],
-  .app.identified--company #land .menu nav[data-permission='company']
+  .app.unauthorized #land .menu nav[data-permission='unauthorized'],
+  .app.authorizedAsApplicant #land .menu nav[data-permission='applicant'],
+  .app.authorizedAsCompany #land .menu nav[data-permission='company']
     visibility: visible
     ul li
       opacity: 1
@@ -104,8 +104,8 @@ popsSize= 420px
   .personality.professional-experience #land .headlines .headline[data-location='professional-experience'],
   .personality.personality-and-interests #land .headlines .headline[data-location='personality-and-interests'],
   .personality.insights #land .headlines .headline[data-location='insights'],
-  .identified--applicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
-  .identified--company.applicants #land .headlines .headline[data-location='applicants'],
+  .authorizedAsApplicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
+  .authorizedAsCompany.applicants #land .headlines .headline[data-location='applicants'],
   .app:not(.personality) #land .headlines .headline[data-location='app'],
   .app:not(.apply) #land .headlines .headline[data-location='app'],
   .app:not(.applicants) #land .headlines .headline[data-location='app']
