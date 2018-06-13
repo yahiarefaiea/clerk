@@ -9,8 +9,11 @@ var Router = {
 	// 	id: null
 	// },
 
+	authorized: false,
+	permission: 'user',
+
 	user: {
-		permission: 'anonymous',
+		permission: 'unauthorized',
 		id: null
 	},
 
@@ -22,13 +25,13 @@ var Router = {
 	route: function(location, callback) {
 		Clerk.wait()
 
-		//  Router will return identified == true && user == company || user == applicant
+		//  Router will return authorized == true && user == company || user == applicant
 		// Router.checkSession()
 
 		Router.processLocation(location)
 
-		if(Router.user.permission == 'anonymous') {
-			Router.permissions('anonymous')
+		if(Router.user.permission == 'unauthorized') {
+			Router.permissions('unauthorized')
 		} else {
 			if(Router.user.permission == 'company')
 				Router.permissions('company')
@@ -38,14 +41,14 @@ var Router = {
 
 
 		// if(location == 'home') {
-		// 	if(identified == true) {
+		// 	if(authorized == true) {
 		// 		if(user == 'applicant') {
-		// 			Router.classes= ['app', 'identified--applicant', 'vacancy', 'apply']
+		// 			Router.classes= ['app', 'authorizedAsApplicant', 'vacancy', 'apply']
 		// 		} else if(user == 'company') {
-		// 			Router.classes= ['app', 'identified--company', 'vacancy', 'apply']
+		// 			Router.classes= ['app', 'authorizedAsCompany', 'vacancy', 'apply']
 		// 		}
 		// 	} else {
-		// 		Router.classes= ['app', 'identified--applicant', 'vacancy', 'apply']
+		// 		Router.classes= ['app', 'authorizedAsApplicant', 'vacancy', 'apply']
 		// 	}
 		// }
 
@@ -91,15 +94,42 @@ var Router = {
 		// else if location is defined & it's an empty string => redirect to home
 		// else => redirect to the router
 		// if not found => redirect to not found
-		
-		//	ANONYMOUS
-		if(permission == 'anonymous') {
-			Router.classes = ['anonymous']
+
+		//	unauthorized
+		if(permission == 'unauthorized') {
+			Router.classes = ['unauthorized']
 
 			//	AUTH
 			//	Problem with 'home', '', & undefined
-			if(location[0] == '' || location[0] == 'auth')
+			if(location[0] == '' || location[0] == 'auth') {
 				Router.classes.push('auth')
+
+				//	switch
+				if(location[0] == '')
+					Router.classes.push('switch')
+
+				else if(location[0] == 'auth') {
+					//	signin
+					if(location[1] == '' || location[1] == undefined)
+						Router.classes.push('signIn')
+
+					//	forgot
+					else if(location[1] == 'forgot')
+						Router.classes.push('forgot')
+
+					//	applicant
+					else if(location[1] == 'applicant')
+						Router.classes.push('applicant')
+
+					//	company
+					else if(location[1] == 'company')
+						Router.classes.push('company')
+
+					//	notfound
+					else
+						Router.classes.push('notFound')
+				}
+			}
 
 			else {
 				Router.classes.push('app')
