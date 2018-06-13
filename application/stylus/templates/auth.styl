@@ -1,0 +1,60 @@
+#auth
+  z-index: 0
+  makeAbsolute: 0 0 0 0
+  text-align: center
+  color: blue-high
+.auth #auth
+  z-index: 10
+
+//  ANCHOR
+#auth a
+  hasOutline: white
+  &.link
+    color: blue-high
+    &:before
+      background-color: blue-shade
+    &:hover, &:focus
+      color: dark-blue
+      &:before
+        background-color: dark-blue
+
+//  FIELDS
+#auth .fields
+  margin-top: baseline*.75
+  margin-bottom: baseline*.5
+  .field
+    border-color: blue-shade
+    input
+      color: white
+      +placeholder()
+        color: blue-low
+      &:hover ~ .effect,
+      &:focus ~ .effect
+        background-color: dark-blue
+
+//  BUTTON
+#auth .button
+  background-color: blue-shade
+  color: blue-high
+  &:hover
+    background-color: dark-blue
+    color: white
+
+//  BACKGROUND
+#auth .background
+  makeAbsolute: 0 0 0 0
+
+//  Z-INDEX
+#switch
+  z-index: -1
+.auth.switch #switch
+  z-index: 2
+  .h3 .spans
+    spansCurrent()
+
+//  SWITCH
+#switch
+  makeAbsolute: 50% 50%
+  // width: input-width
+  // margin-{align}: -(input-width*.5)
+  clerkMargin: authHeight.switch
