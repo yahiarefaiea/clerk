@@ -13,7 +13,7 @@
     .h3: .spans= auth.switch.headline
     ul.fields.blocks.inline.halves
       each option in auth.switch.options
-        li: a.button.push(href='#' data-push=option.push
+        li: a.button.router.push(href='#' data-push=option.push
           data-pull=option.pull title=option.text)= option.text
     .note
       each line in auth.switch.note
@@ -27,16 +27,38 @@
         div= line
     .fields
       each field in form.fields
-        +field(field.name, field.placeholder, false, field.type)
+        if field.type == 'fields-group'
+          .fields-group: ul.blocks.inline.halves
+            each input in field.fields
+              li
+                +field(input.name, input.placeholder, false, input.type)
+        else
+          +field(field.name, field.placeholder, false, field.type)
       if form.action.request
         a.button.request(href='#' + form.action.request
           title=form.action.text)= form.action.text
-      if form.action.push
-        a.button.push(href='#' data-push=form.action.push
+      else
+        a.button.router.push(href='#' data-push=form.action.push
           data-pull=form.action.pull title=form.action.text)= form.action.text
-    .small: a.link.push(href='#' data-push=form.link.push
-      data-pull=form.link.pull title=form.link.text)= form.link.text
+    if form.link
+      .small: a.link.router.push(href='#' data-push=form.link.push
+        data-pull=form.link.pull title=form.link.text)= form.link.text
   
   //- SIGN IN
   #signIn(data-request=auth.signIn.request)
     +form(auth.signIn)
+  
+  //- SIGN UP AS APPLICANT
+  #signUpAsApplicant(data-request=auth.signUpAsApplicant.request)
+    .email
+      +form(auth.signUpAsApplicant.email)
+    .password
+      +form(auth.signUpAsApplicant.password)
+  
+  //- SIGN UP AS APPLICANT
+  #signUpAsCompany(data-request=auth.signUpAsCompany.request)
+    .background
+    .email
+      +form(auth.signUpAsCompany.email)
+    .password
+      +form(auth.signUpAsCompany.password)

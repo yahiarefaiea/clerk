@@ -139,3 +139,21 @@
     margin-top: baseline*.5
     > *
       margin-bottom: 0
+
+//  SIGN UP
+#signUpAsApplicant,
+#signUpAsCompany
+  > *
+    makeAbsolute: 0 0 auto 0
+  .background
+    makeAbsolute: 0 0 0 0
+  > *:not(.background)
+    z-index: -1
+    opacity: 0
+    hasTransition: durationAlt
+.auth.signUpAsApplicant.email #signUpAsApplicant .email,
+.auth.signUpAsApplicant.password #signUpAsApplicant .password,
+.auth.signUpAsCompany.email #signUpAsCompany .email,
+.auth.signUpAsCompany.password #signUpAsCompany .password
+  z-index: 2
+  opacity: 1

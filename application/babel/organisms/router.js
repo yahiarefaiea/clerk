@@ -77,7 +77,7 @@ var Router = {
 		//	add callback somewhere
 	},
 
-	navigate: function(add, remove) {
+	push: function(add, remove) {
 		var add = add.split(' ')
 		var remove = remove.split(' ')
 
@@ -214,17 +214,17 @@ var Router = {
 
 	//	LISTEN
 	listen: function() {
-		$('.router').on('click', function(e) {
+		$('.router:not(.push)').on('click', function(e) {
 			var location = $(this).attr('href')
 			Router.route(location, function() {})
 			e.preventDefault()
 		})
-		$('.navigate').on('click', function(e) {
+		$('.router.push').on('click', function(e) {
 
-			var add = $(this).attr('data-add')
-			var remove = $(this).attr('data-remove')
+			var push = $(this).attr('data-push')
+			var pull = $(this).attr('data-pull')
 
-			Router.navigate(add, remove, function() {})
+			Router.push(push, pull, function() {})
 
 			e.preventDefault()
 		})
