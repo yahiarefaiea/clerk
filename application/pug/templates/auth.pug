@@ -13,7 +13,8 @@
     .h3: .spans= auth.switch.headline
     ul.fields.blocks.inline.halves
       each option in auth.switch.options
-        li: a.button.router(href='#' + option.location title=option.text)= option.text
+        li: a.button.router(href='#' + option.location
+          title=option.text)= option.text
     .note
       each line in auth.switch.note
         .small !{line}
