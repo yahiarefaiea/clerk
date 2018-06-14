@@ -52,12 +52,24 @@
 
 //  Z-INDEX
 #intro,
-#switch
+#switch,
+#signIn,
+#signUpAsApplicant,
+#signUpAsCompany,
+#forgot,
+#securityCode,
+#reset
   z-index: -1
   opacity: 0
   hasTransition: durationAlt
 .auth.intro #intro,
-.auth.switch #switch
+.auth.switch #switch,
+.auth.signIn #signIn,
+.auth.signUpAsApplicant #signUpAsApplicant,
+.auth.signUpAsCompany #signUpAsCompany,
+.auth.forgot #forgot,
+.auth.securityCode #securityCode,
+.auth.reset #reset
   z-index: 2
   opacity: 1
   .h3 .spans
@@ -68,14 +80,31 @@
   makeAbsolute: 50% 0 auto 0
 
 //  GLOBAL
-#switch
+#switch,
+#signIn,
+#signUpAsApplicant,
+#signUpAsCompany,
+#forgot,
+#securityCode,
+#reset
   makeAbsolute: 50% 50%
   width: input-width
   margin-{align}: -(input-width*.5)
-
+#signIn,
+#signUpAsApplicant,
+#signUpAsCompany,
+#forgot,
+#securityCode,
+#reset
+  .h3
+    font-weight: weight-black
+  .button
+    width: 100%
 #intro,
 #switch
   clerkMargin: authHeight.switch
+#signIn
+  clerkMargin: authHeight.signUp baseline*.5
 
 //  SWITCH
 #switch

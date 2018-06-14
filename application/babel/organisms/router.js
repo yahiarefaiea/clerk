@@ -129,7 +129,7 @@ var Router = {
 
 					//	applicant
 					else if(location[1] == 'applicant')
-						Router.classes.push('applicant')
+						Router.classes.push('signUpAsApplicant')
 
 					//	company
 					else if(location[1] == 'company')
