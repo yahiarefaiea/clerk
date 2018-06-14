@@ -35,7 +35,7 @@
         else
           +field(field.name, field.placeholder, false, field.type)
       if form.action.request
-        a.button.request(href='#' + form.action.request
+        a.button(href='#' onClick='Auth.' + form.action.request + '()'
           title=form.action.text)= form.action.text
       else
         a.button.router.push(href='#' data-push=form.action.push

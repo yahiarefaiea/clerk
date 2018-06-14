@@ -30,12 +30,12 @@ var Router = {
 
 		Router.processLocation(location)
 
-		if(Router.user.permission == 'unauthorized') {
+		if(Auth.user.permission == 'unauthorized') {
 			Router.permissions('unauthorized')
 		} else {
-			if(Router.user.permission == 'company')
+			if(Auth.user.permission == 'company')
 				Router.permissions('company')
-			else if(Router.user.permission == 'applicant')
+			else if(Auth.user.permission == 'applicant')
 				Router.permissions('applicant')
 		}
 
@@ -66,6 +66,7 @@ var Router = {
 				$('.wrapper').attr('class', 'wrapper ' + classes)
 				window.location.hash = Router.location
 
+				console.log('You\'re signed in as: ' + Auth.user.permission)
 				//	IF NOT EMPTY STRING.. THEN REMOVE THE HASH FROM THE URL
 				// if(Router.location != '')
 				// 	window.location.hash = Router.location
