@@ -77,6 +77,24 @@ var Router = {
 		//	add callback somewhere
 	},
 
+	navigate: function(add, remove) {
+		var add = add.split(' ')
+		var remove = remove.split(' ')
+
+		for (i = 0; i < add.length; i++) {
+			Router.classes.push(add[i])
+		}
+
+		for (i = 0; i < remove.length; i++) {
+			var index = Router.classes.indexOf(remove[i])
+			Router.classes.splice(index, 1)
+		}
+
+		var classes = Router.classes.toString().replace(/,/g, ' ')
+		$('.wrapper').attr('class', 'wrapper ' + classes)
+	},
+
+
 	//	PROCESS LOCATION
 	processLocation: function(location) {
 		if(location == '')
@@ -101,45 +119,62 @@ var Router = {
 
 			//	AUTH
 			//	Problem with 'home', '', & undefined
-			if(location[0] == '' || location[0] == 'auth') {
-				Router.classes.push('auth')
 
-				//	switch
-				if(location[0] == '') {
-					Router.classes.push('intro')
+			if(location[0] == '') {
+				Router.classes.push('auth', 'intro')
 
-					setTimeout(function() {
-						var intro = Router.classes.indexOf('intro')
-						Router.classes.splice(intro, 1)
-						Router.classes.push('switch')
+				setTimeout(function() {
+					var intro = Router.classes.indexOf('intro')
+					Router.classes.splice(intro, 1)
+					Router.classes.push('switch')
 
-						var classes = Router.classes.toString().replace(/,/g, ' ')
-						$('.wrapper').attr('class', 'wrapper ' + classes)
-					}, 5000)
-				}
-
-				else if(location[0] == 'auth') {
-					//	signin
-					if(location[1] == '' || location[1] == undefined)
-						Router.classes.push('signIn')
-
-					//	forgot
-					else if(location[1] == 'forgot')
-						Router.classes.push('forgot')
-
-					//	applicant
-					else if(location[1] == 'applicant')
-						Router.classes.push('signUpAsApplicant')
-
-					//	company
-					else if(location[1] == 'company')
-						Router.classes.push('company')
-
-					//	notfound
-					else
-						Router.classes.push('notFound')
-				}
+					var classes = Router.classes.toString().replace(/,/g, ' ')
+					$('.wrapper').attr('class', 'wrapper ' + classes)
+				}, 5000)
 			}
+
+
+
+
+			// if(location[0] == '' || location[0] == 'auth') {
+			// 	Router.classes.push('auth')
+			//
+			// 	//	switch
+			// 	if(location[0] == '') {
+			// 		Router.classes.push('intro')
+			//
+			// 		setTimeout(function() {
+			// 			var intro = Router.classes.indexOf('intro')
+			// 			Router.classes.splice(intro, 1)
+			// 			Router.classes.push('switch')
+			//
+			// 			var classes = Router.classes.toString().replace(/,/g, ' ')
+			// 			$('.wrapper').attr('class', 'wrapper ' + classes)
+			// 		}, 5000)
+			// 	}
+			//
+			// 	else if(location[0] == 'auth') {
+			// 		//	signin
+			// 		if(location[1] == '' || location[1] == undefined)
+			// 			Router.classes.push('signIn')
+			//
+			// 		//	forgot
+			// 		else if(location[1] == 'forgot')
+			// 			Router.classes.push('forgot')
+			//
+			// 		//	applicant
+			// 		else if(location[1] == 'applicant')
+			// 			Router.classes.push('signUpAsApplicant')
+			//
+			// 		//	company
+			// 		else if(location[1] == 'company')
+			// 			Router.classes.push('company')
+			//
+			// 		//	notfound
+			// 		else
+			// 			Router.classes.push('notFound')
+			// 	}
+			// }
 
 			else {
 				Router.classes.push('app')
@@ -182,6 +217,15 @@ var Router = {
 		$('.router').on('click', function(e) {
 			var location = $(this).attr('href')
 			Router.route(location, function() {})
+			e.preventDefault()
+		})
+		$('.navigate').on('click', function(e) {
+
+			var add = $(this).attr('data-add')
+			var remove = $(this).attr('data-remove')
+
+			Router.navigate(add, remove, function() {})
+
 			e.preventDefault()
 		})
 	}
