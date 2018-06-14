@@ -29,7 +29,7 @@
       each field in form.fields
         if field.type == 'fields-group'
           .fields-group: ul.blocks.inline.halves
-            each input in field.fields
+            each input in field.inputs
               li
                 +field(input.name, input.placeholder, false, input.type)
         else
