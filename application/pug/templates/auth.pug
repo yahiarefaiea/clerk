@@ -34,7 +34,7 @@
       if form.action.location
         a.button.router(href='#' + form.action.location
           title=form.action.text)= form.action.text
-    a.link.small.router(href='#' + form.link.location
+    .small: a.link.router(href='#' + form.link.location
       title=form.link.text)= form.link.text
   
   //- SIGN IN
