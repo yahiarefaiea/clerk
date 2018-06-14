@@ -27,7 +27,7 @@
         div= line
     .fields
       each field in form.fields
-        +field(field.name, field.placeholder, field.type)
+        +field(field.name, field.placeholder, false, field.type)
       if form.action.request
         a.button.request(href='#' + form.action.request
           title=form.action.text)= form.action.text
