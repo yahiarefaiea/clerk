@@ -17,3 +17,25 @@
     .note
       each line in auth.switch.note
         .small !{line}
+  
+  //- FORM
+  mixin form(form)
+    .h3: .spans= form.headline
+    .note.small
+      each line in form.note
+        div= line
+    .fields
+      each field in form.fields
+        +field(field.name, field.placeholder, field.type)
+      if form.action.request
+        a.button.request(href='#' + form.action.request
+          title=form.action.text)= form.action.text
+      if form.action.location
+        a.button.router(href='#' + form.action.location
+          title=form.action.text)= form.action.text
+    a.link.small.router(href='#' + form.link.location
+      title=form.link.text)= form.link.text
+  
+  //- SIGN IN
+  #signIn(data-request=auth.signIn.request)
+    +form(auth.signIn)
