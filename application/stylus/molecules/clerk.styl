@@ -25,6 +25,14 @@ clerkMargin(container, margin=clerk-margin)
   .symbol circle
     transition: all durationAlt ease
     animation: none
+.signIn #clerk,
+.signUpAsApplicant #clerk,
+.signUpAsCompany #clerk,
+.reset #clerk
+  margin-top: -(authHeight.signIn/2)
+.forgot #clerk,
+.securityCode #clerk
+  margin-top: -(authHeight.forgot/2)
 .app #clerk
   makeAbsolute: 0 0
   margin-top: clerk-scale-shortcut + containerMarginVert

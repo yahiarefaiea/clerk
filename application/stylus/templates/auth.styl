@@ -75,6 +75,18 @@
   .h3 .spans
     spansCurrent()
 
+.auth.switch #switch,
+.auth.signIn #signIn,
+.auth.signUpAsApplicant #signUpAsApplicant,
+.auth.signUpAsCompany #signUpAsCompany,
+.auth.forgot #forgot,
+.auth.securityCode #securityCode,
+.auth.reset #reset
+  hasTransition: durationAlt duration
+  .h3 .spans
+    > *
+      spansTransition: 1 15 duration (duration + step)
+
 //  GLOBAL
 #switch,
 #signIn,
@@ -86,6 +98,8 @@
   makeAbsolute: 50% 50%
   width: input-width
   margin-{align}: -(input-width*.5)
+  .h3 .spans > *
+    hasTransition: duration durationAlt
 #signIn,
 #signUpAsApplicant,
 #signUpAsCompany,
