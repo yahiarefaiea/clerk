@@ -21,7 +21,7 @@
         "location": ""
       }, {
         "text": "Sign out",
-        "location": "sign-out"
+        "function": "Auth.signOut()"
       }
     ]
   }, {
@@ -35,7 +35,7 @@
         "location": "profile"
       }, {
         "text": "Sign out",
-        "location": "sign-out"
+        "function": "Auth.signOut()"
       }
     ]
   }
