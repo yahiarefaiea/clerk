@@ -55,3 +55,23 @@
       +authForm(auth.signUpAsApplicant.email)
     .password
       +authForm(auth.signUpAsApplicant.password)
+  
+  //- SIGN UP AS COMPANY
+  #signUpAsCompany(data-form='signUpAsCompany')
+    .background
+    .email
+      +authForm(auth.signUpAsCompany.email)
+    .password
+      +authForm(auth.signUpAsCompany.password)
+  
+  //- FORGOT
+  #forgot(data-form='forgot')
+    +authForm(auth.forgot)
+  
+  //- SECURITY CODE
+  #securityCode(data-form='securityCode')
+    +authForm(auth.securityCode)
+  
+  //- RESET
+  #reset(data-form='reset')
+    +authForm(auth.reset)
