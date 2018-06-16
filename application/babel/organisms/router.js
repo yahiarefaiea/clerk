@@ -1,231 +1,97 @@
 var Router = {
 	classes: [],
-	session: null,
-
 	location: null,
-
-	// user: {
-	// 	permission: null,
-	// 	id: null
-	// },
-
-	authorized: false,
-	permission: 'user',
-
-	user: {
-		permission: 'unauthorized',
-		id: null
-	},
-
-
-	//	save user object info
-
-	//	todo: check language and grammer
 
 	route: function(location, callback) {
 		Clerk.wait()
 
-		//  Router will return authorized == true && user == company || user == applicant
-		// Router.checkSession()
+		var session = Auth.session()
+		var location = Router.location.split('/')
+
+		//	unauthorized
+		if(session == null) {
+			Router.unauthorized(location)
+
+		else if(session.permission == 'applicant')
+			Router.applicant(location)
+
+		else if(session.permission == 'company')
+			Router.company(location)
+
 
 		Router.processLocation(location)
 
-		if(Auth.user.permission == 'unauthorized') {
-			Router.permissions('unauthorized')
-		} else {
-			if(Auth.user.permission == 'company')
-				Router.permissions('company')
-			else if(Auth.user.permission == 'applicant')
-				Router.permissions('applicant')
-		}
-
-
-		// if(location == 'home') {
-		// 	if(authorized == true) {
-		// 		if(user == 'applicant') {
-		// 			Router.classes= ['app', 'authorizedAsApplicant', 'vacancy', 'apply']
-		// 		} else if(user == 'company') {
-		// 			Router.classes= ['app', 'authorizedAsCompany', 'vacancy', 'apply']
-		// 		}
-		// 	} else {
-		// 		Router.classes= ['app', 'authorizedAsApplicant', 'vacancy', 'apply']
-		// 	}
-		// }
-
-
 		// recieve and update data
-
 		//	and update title
 
-		//	These classes should be added
-		var classes = Router.classes.toString().replace(/,/g, ' ')
-		// location =
 
 		setTimeout(function() {
 			Clerk.stop(function() {
-				$('.wrapper').attr('class', 'wrapper ' + classes)
-				window.location.hash = Router.location
+				Router.updateClasses()
+				Router.updateLocation()
 
-				console.log('You\'re signed in as: ' + Auth.user.permission)
-				//	IF NOT EMPTY STRING.. THEN REMOVE THE HASH FROM THE URL
-				// if(Router.location != '')
-				// 	window.location.hash = Router.location
-				// else
-				// 	window.location.href.split('#')[0]
-				callback()
+				if(typeof callback === 'function' && callback)
+					callback()
 			})
 		}, 200)
-		//	add callback somewhere
 	},
 
-	push: function(add, remove) {
-		var add = add.split(' ')
-		var remove = remove.split(' ')
+	push: function(classes) {
+		classes = classes.split(' ')
 
-		for (i = 0; i < add.length; i++) {
-			Router.classes.push(add[i])
+		for (i = 0; i < classes.length; i++) {
+			Router.classes.push(classes[i])
 		}
+	},
 
-		for (i = 0; i < remove.length; i++) {
-			var index = Router.classes.indexOf(remove[i])
+	pull: function(classes) {
+		var classes = classes.split(' ')
+
+		for (i = 0; i < classes.length; i++) {
+			var index = Router.classes.indexOf(classes[i])
 			Router.classes.splice(index, 1)
 		}
+	},
+
+	updateClasses: function(push, pull) {
+		if(push) Router.push(push)
+		if(pull) Router.pull(pull)
 
 		var classes = Router.classes.toString().replace(/,/g, ' ')
 		$('.wrapper').attr('class', 'wrapper ' + classes)
 	},
-
 
 	//	PROCESS LOCATION
 	processLocation: function(location) {
 		if(location == '')
 			location = window.location.hash
 
+		// if location is undefined => copy window.location.hash
+		// else if location is defined & it's an empty string => redirect to home
+		// else => redirect to the router
+
 		Router.location = location.replace('#', '')
 		// Router.location = location.split('#')[0]
 	},
 
-	//	PERMISSIONS
-	permissions: function(permission) {
-		var location = Router.location.split('/')
-
-		// if location is undefined => copy window.location.hash
-		// else if location is defined & it's an empty string => redirect to home
-		// else => redirect to the router
-		// if not found => redirect to not found
-
-		//	unauthorized
-		if(permission == 'unauthorized') {
-			Router.classes = ['unauthorized']
-
-			//	AUTH
-			//	Problem with 'home', '', & undefined
-
-			if(location[0] == '') {
-				Router.classes.push('auth', 'intro')
-
-				setTimeout(function() {
-					var intro = Router.classes.indexOf('intro')
-					Router.classes.splice(intro, 1)
-					Router.classes.push('switch')
-
-					var classes = Router.classes.toString().replace(/,/g, ' ')
-					$('.wrapper').attr('class', 'wrapper ' + classes)
-				}, 5000)
-			}
-
-
-
-
-			// if(location[0] == '' || location[0] == 'auth') {
-			// 	Router.classes.push('auth')
-			//
-			// 	//	switch
-			// 	if(location[0] == '') {
-			// 		Router.classes.push('intro')
-			//
-			// 		setTimeout(function() {
-			// 			var intro = Router.classes.indexOf('intro')
-			// 			Router.classes.splice(intro, 1)
-			// 			Router.classes.push('switch')
-			//
-			// 			var classes = Router.classes.toString().replace(/,/g, ' ')
-			// 			$('.wrapper').attr('class', 'wrapper ' + classes)
-			// 		}, 5000)
-			// 	}
-			//
-			// 	else if(location[0] == 'auth') {
-			// 		//	signin
-			// 		if(location[1] == '' || location[1] == undefined)
-			// 			Router.classes.push('signIn')
-			//
-			// 		//	forgot
-			// 		else if(location[1] == 'forgot')
-			// 			Router.classes.push('forgot')
-			//
-			// 		//	applicant
-			// 		else if(location[1] == 'applicant')
-			// 			Router.classes.push('signUpAsApplicant')
-			//
-			// 		//	company
-			// 		else if(location[1] == 'company')
-			// 			Router.classes.push('company')
-			//
-			// 		//	notfound
-			// 		else
-			// 			Router.classes.push('notFound')
-			// 	}
-			// }
-
-			else {
-				Router.classes.push('app')
-
-				//	VACANCIES
-				if(location[0] == 'vacancies') {
-					Router.classes.push('vacancies')
-				}
-
-				//	COMPANY
-				else {
-					var company = location[0]
-					Router.classes.push('company')
-
-					//	VACANCY
-					if(location[1] != undefined) {
-						var vacancy = location[1]
-						Router.classes.push('vacancy')
-					}
-				}
-			}
-			//  Add route for 404
-		}
-
-		//	COMPANY
-		else if(permission == 'company') {
-			// Router.classes = ['app', 'company']
-			// console.log('inside company')
-		}
-
-		//	APPLICANT
-		else if(permission == 'applicant') {
-			// Router.classes = ['app', 'applicant']
-			// console.log('inside applicant')
-		}
+	updateLocation: function() {
+		if(Router.location != '')
+			window.location.hash = Router.location
+		else
+			window.location.href.split('#')[0]
 	},
 
 	//	LISTEN
 	listen: function() {
-		$('.router:not(.push)').on('click', function(e) {
+		$('.router').on('click', function(e) {
 			var location = $(this).attr('href')
-			Router.route(location, function() {})
-			e.preventDefault()
-		})
-		$('.router.push').on('click', function(e) {
-
 			var push = $(this).attr('data-push')
 			var pull = $(this).attr('data-pull')
 
-			Router.push(push, pull, function() {})
+			if(!$(this).hasClass('push'))
+				Router.route(location, function() {})
+			else
+				Router.updateClasses(push, pull, function() {})
 
 			e.preventDefault()
 		})

@@ -1,17 +1,20 @@
 var Auth = {
-  session: null,
 
-  // permission: null,
+  session: function() {
+    // check session here
 
-  user: {
-    permission: 'unauthorized',
-    id: null
-  },
-
+    // then return the object
+    return {
+      permission: 'company',
+      user: {
+        id: '515'
+      }
+    }
+  }
 
   signedIn: function() {
     setTimeout(function() {
-      Router.route('#musixmatch/ui-designer', function() {
+      Router.route('', function() {
         // callback goes here if you wish to put something..
       })
 		}, 200)
