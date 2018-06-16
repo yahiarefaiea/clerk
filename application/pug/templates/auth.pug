@@ -46,11 +46,11 @@ mixin authForm(form)
         .small !{line}
   
   //- SIGN IN
-  #signIn(data-form='signIn')
+  #signIn.form
     +authForm(auth.signIn)
   
   //- SIGN UP AS APPLICANT
-  #signUpAsApplicant(data-form='signUpAsApplicant')
+  #signUpAsApplicant.form
     .background
     .email
       +authForm(auth.signUpAsApplicant.email)
@@ -58,7 +58,7 @@ mixin authForm(form)
       +authForm(auth.signUpAsApplicant.password)
   
   //- SIGN UP AS COMPANY
-  #signUpAsCompany(data-form='signUpAsCompany')
+  #signUpAsCompany.form
     .background
     .email
       +authForm(auth.signUpAsCompany.email)
@@ -66,13 +66,13 @@ mixin authForm(form)
       +authForm(auth.signUpAsCompany.password)
   
   //- FORGOT
-  #forgot(data-form='forgot')
+  #forgot.form
     +authForm(auth.forgot)
   
   //- SECURITY CODE
-  #securityCode(data-form='securityCode')
+  #securityCode.form
     +authForm(auth.securityCode)
   
   //- RESET
-  #reset(data-form='reset')
+  #reset.form
     +authForm(auth.reset)
