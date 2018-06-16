@@ -27,7 +27,7 @@ var Router = {
 
 		setTimeout(function() {
 			Clerk.stop(function() {
-				Router.updateClasses()
+				Router.shift()
 				Router.updateLocation()
 
 				if(typeof callback === 'function' && callback)
@@ -53,7 +53,7 @@ var Router = {
 		}
 	},
 
-	updateClasses: function(push, pull) {
+	shift: function(push, pull) {
 		if(push) Router.push(push)
 		if(pull) Router.pull(pull)
 
@@ -91,7 +91,7 @@ var Router = {
 			if(!$(this).hasClass('push'))
 				Router.route(location, function() {})
 			else
-				Router.updateClasses(push, pull, function() {})
+				Router.shift(push, pull, function() {})
 
 			e.preventDefault()
 		})
