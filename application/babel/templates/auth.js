@@ -10,7 +10,7 @@ var Auth = {
         id: '515'
       }
     }
-  }
+  },
 
   signedIn: function() {
     setTimeout(function() {

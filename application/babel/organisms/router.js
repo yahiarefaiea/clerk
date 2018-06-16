@@ -9,14 +9,14 @@ var Router = {
 		var location = Router.location.split('/')
 
 		//	unauthorized
-		if(session == null) {
+		if(session == null)
 			Router.unauthorized(location)
 
-		else if(session.permission == 'applicant')
-			Router.applicant(location)
-
-		else if(session.permission == 'company')
-			Router.company(location)
+		// else if(session.permission == 'applicant')
+		// 	Router.applicant(location)
+		//
+		// else if(session.permission == 'company')
+		// 	Router.company(location)
 
 
 		Router.processLocation(location)
