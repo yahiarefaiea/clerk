@@ -20,7 +20,7 @@
         .small !{line}
   
   //- FORM
-  mixin form(form)
+  mixin authForm(form)
     .h3: .spans= form.headline
     .note.small
       each line in form.note
@@ -34,10 +34,10 @@
                 +field(input.name, input.placeholder, false, input.type)
         else
           +field(field.name, field.placeholder, false, field.type)
-      if form.action.request
-        a.button(href='#' onClick='Auth.' + form.action.request + '()'
+      if form.action.function
+        a.button(href='#' onclick=form.action.function
           title=form.action.text)= form.action.text
-      else
+      else if form.action.shift
         a.button.router.shift(href='#' data-push=form.action.shift.push
           data-pull=form.action.shift.pull title=form.action.text)= form.action.text
     if form.link
@@ -45,21 +45,13 @@
         data-pull=form.link.shift.pull title=form.link.text)= form.link.text
   
   //- SIGN IN
-  #signIn(data-request=auth.signIn.request)
-    +form(auth.signIn)
+  #signIn(data-form='signIn')
+    +authForm(auth.signIn)
   
   //- SIGN UP AS APPLICANT
-  #signUpAsApplicant(data-request=auth.signUpAsApplicant.request)
+  #signUpAsApplicant(data-form='signUpAsApplicant')
     .background
     .email
-      +form(auth.signUpAsApplicant.email)
+      +authForm(auth.signUpAsApplicant.email)
     .password
-      +form(auth.signUpAsApplicant.password)
-  
-  //- SIGN UP AS COMPANY
-  #signUpAsCompany(data-request=auth.signUpAsCompany.request)
-    .background
-    .email
-      +form(auth.signUpAsCompany.email)
-    .password
-      +form(auth.signUpAsCompany.password)
+      +authForm(auth.signUpAsApplicant.password)
