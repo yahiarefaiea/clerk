@@ -13,8 +13,8 @@
     .h3: .spans= auth.switch.headline
     ul.fields.blocks.inline.halves
       each option in auth.switch.options
-        li: a.button.router.push(href='#' data-push=option.push
-          data-pull=option.pull title=option.text)= option.text
+        li: a.button.router.shift(href='#' data-push=option.shift.push
+          data-pull=option.shift.pull title=option.text)= option.text
     .note
       each line in auth.switch.note
         .small !{line}
@@ -38,11 +38,11 @@
         a.button(href='#' onClick='Auth.' + form.action.request + '()'
           title=form.action.text)= form.action.text
       else
-        a.button.router.push(href='#' data-push=form.action.push
-          data-pull=form.action.pull title=form.action.text)= form.action.text
+        a.button.router.shift(href='#' data-push=form.action.shift.push
+          data-pull=form.action.shift.pull title=form.action.text)= form.action.text
     if form.link
-      .small: a.link.router.push(href='#' data-push=form.link.push
-        data-pull=form.link.pull title=form.link.text)= form.link.text
+      .small: a.link.router.shift(href='#' data-push=form.link.shift.push
+        data-pull=form.link.shift.pull title=form.link.text)= form.link.text
   
   //- SIGN IN
   #signIn(data-request=auth.signIn.request)
