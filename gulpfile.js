@@ -92,6 +92,9 @@ var babelSrc = [
   root+'/babel/molecules/pops.js',
   root+'/babel/molecules/tippy.js',
   root+'/babel/organisms/router.js',
+  root+'/babel/organisms/routes/unauthorized.js',
+  root+'/babel/organisms/routes/applicant.js',
+  root+'/babel/organisms/routes/company.js',
   root+'/babel/organisms/prepare.js',
   root+'/babel/templates/auth.js',
   root+'/babel/molecules/loader.js'
