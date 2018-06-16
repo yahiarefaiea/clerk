@@ -20,7 +20,10 @@
     each navigation in menu
       nav(data-permission=navigation.permission): ul
         each item in navigation.items
-          li: a.link.router(href='#' + item.location title=item.text)= item.text
+          if item.function
+            li: a.link(href='#' onclick=item.function title=item.text)= item.text
+          else
+            li: a.link.router(href='#' + item.location title=item.text)= item.text
   
   //- HEADLINES
   ul.headlines
