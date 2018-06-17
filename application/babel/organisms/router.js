@@ -25,6 +25,7 @@ var Router = {
 		// 	Clerk.stop(function() {
 		// 		Router.updateWrapper()
 		// 		Router.updateLocation(location)
+		// 		Router.reset()
 		//
 		// 		if(typeof callback === 'function' && callback)
 		// 			callback()
@@ -70,22 +71,28 @@ var Router = {
 
 	//	PUSH
 	push: function(items) {
-		// items = items.split(' ')
-		//
-		// for (i = 0; i < items.length; i++) {
-		// 	Router.wrapper.push(items[i])
-		// }
+		items = items.split(' ')
+
+		for (i = 0; i < items.length; i++) {
+			if(!Router.wrapper.includes(items[i]) && items[i] != '')
+				Router.wrapper.push(items[i])
+		}
 	},
 
 	//	PULL
 	pull: function(items) {
-		// var items = items.split(' ')
-		//
-		// for (i = 0; i < items.length; i++) {
-		// 	var index = Router.wrapper.indexOf(items[i])
-		// 	Router.wrapper.splice(index, 1)
-		// }
+		items = items.split(' ')
+
+		for (i = 0; i < items.length; i++) {
+			if(Router.wrapper.includes(items[i]) && items[i] != '')
+				Router.wrapper.splice(Router.wrapper.indexOf(items[i]), 1)
+		}
 	},
+
+  //  RESET
+  reset: function() {
+    Router.wrapper = []
+  },
 
 	//	LISTEN
 	listen: function() {
