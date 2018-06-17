@@ -4,7 +4,7 @@ Router.unauthorized = function(callback) {
   Router.wrapper = ['unauthorized']
   console.log('session is: unauthorized')
 
-  if(location[0] == '' || location[0] == undefined) {
+  if(location[0] == '' || location[0] === undefined) {
     Router.push('auth intro')
 
     setTimeout(function() {
@@ -12,5 +12,5 @@ Router.unauthorized = function(callback) {
     }, 5000)
   }
 
-  callback()
+  Router.callback(callback)
 }
