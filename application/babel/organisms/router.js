@@ -25,7 +25,6 @@ var Router = {
 		// 	Clerk.stop(function() {
 		// 		Router.updateWrapper()
 		// 		Router.updateLocation(location)
-		// 		Router.reset()
 		//
 		// 		if(typeof callback === 'function' && callback)
 		// 			callback()
@@ -88,11 +87,6 @@ var Router = {
 				Router.wrapper.splice(Router.wrapper.indexOf(items[i]), 1)
 		}
 	},
-
-  //  RESET
-  reset: function() {
-    Router.wrapper = []
-  },
 
 	//	LISTEN
 	listen: function() {
