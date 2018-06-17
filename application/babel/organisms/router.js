@@ -1,22 +1,25 @@
 var Router = {
 	wrapper: [],
+	location: null,
 
 	//	ROUTE
 	route: function(location, callback) {
 		Clerk.wait()
 
 		var session = Auth.session()
-		var location = Router.location(location)
+		Router.location = Router.processLocation(location)
 
 		//	UNAUTHORIZED
-		// if(session == null)
-		// 	Router.unauthorized(location)
+		if(session == null)
+			Router.unauthorized(location, Router.callback(callback))
+	},
 
-		//	CALLBACK
+	//	CALLBACK
+	callback: function(callback) {
 		setTimeout(function() {
 			Clerk.stop(function() {
 				Router.updateWrapper()
-			  window.location.hash = location
+			  window.location.hash = Router.location
 
 				if(typeof callback === 'function' && callback)
 					callback()
@@ -24,8 +27,8 @@ var Router = {
 		}, 200)
 	},
 
-	//	LOCATION
-	location: function(location) {
+	//	PROCESS LOCATION
+	processLocation: function(location) {
 		if(location === undefined)
 			location = window.location.hash
 
