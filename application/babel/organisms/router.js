@@ -8,64 +8,59 @@ var Router = {
 		var session = Auth.session()
 		var location = Router.location(location)
 
-		console.log(typeof location)
-		console.log(location)
-		console.log('\'' + location + '\'')
+		//	UNAUTHORIZED
+		if(session == null)
+			Router.unauthorized(location)
 
-		//	unauthorized
-		// if(session == null)
-		Router.unauthorized(location)
+		//	APPLICANT
+		else if(session.permission == 'applicant')
+			Router.applicant(location)
 
-		// else if(session.permission == 'applicant')
-		// 	Router.applicant(location)
-		//
-		// else if(session.permission == 'company')
-		// 	Router.company(location)
+		//	COMPANY
+		else if(session.permission == 'company')
+			Router.company(location)
 
-		Clerk.stop(function() {
-			Router.shift()
-			Router.updateLocation(location)
+		//	CALLBACK
+		setTimeout(function() {
+			Clerk.stop(function() {
+				Router.updateWrapper()
+				Router.updateLocation(location)
 
-			if(typeof callback === 'function' && callback)
-				callback()
-		})
+				if(typeof callback === 'function' && callback)
+					callback()
+			})
+		}, 200)
+	},
+
+	//	SHIFT
+	shift: function(push, pull) {
+		Clerk.wait()
+
+		setTimeout(function() {
+			Clerk.stop(function() {
+				Router.updateWrapper(push, pull)
+			})
+		}, 200)
 	},
 
 	//	LOCATION
 	location: function(location) {
-		if(location == undefined) {
-			// console.log('URL')
-			return window.location.hash
-		}
-		else if(location == '') {
-			console.log('home')
-		}
-		else {
-			console.log('router')
-		}
+		if(location == undefined)
+			location = window.location.hash
 
-			// location = window.location.hash
-
-		// if location is  => copy window.location.hash
-		// else if location is defined & it's an empty string => redirect to home
-		// else => redirect to the router
-
-		// location = location.split('#')[0]
-		// return location
+		return location.split('#')[0]
 	},
 
 	//	UPDATE LOCATION
 	updateLocation: function(location) {
-		var location = Router.location(location)
-
 		if(location == '')
 			window.location.href.split('#')[0]
 		else
 			window.location.hash = location
 	},
 
-	//	SHIFT
-	shift: function(push, pull) {
+	//	update Wrapper
+	updateWrapper: function(push, pull) {
 		if(push) Router.push(push)
 		if(pull) Router.pull(pull)
 
@@ -98,7 +93,7 @@ var Router = {
 			var location = $(this).attr('href')
 			var push = $(this).attr('data-push')
 			var pull = $(this).attr('data-pull')
-
+		
 			if(!$(this).hasClass('push'))
 				Router.route(location, function() {})
 			else
