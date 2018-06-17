@@ -35,13 +35,13 @@ var Router = {
 
 	//	SHIFT
 	shift: function(push, pull) {
-		// Clerk.wait()
-		//
-		// setTimeout(function() {
-		// 	Clerk.stop(function() {
-		// 		Router.updateWrapper(push, pull)
-		// 	})
-		// }, 200)
+		Clerk.wait()
+
+		setTimeout(function() {
+			Clerk.stop(function() {
+				Router.updateWrapper(push, pull)
+			})
+		}, 200)
 	},
 
 	//	PROCESS LOCATION
@@ -96,18 +96,14 @@ var Router = {
 
 	//	LISTEN
 	listen: function() {
-		// $('.router').on('click', function(e) {
-		// 	var location = $(this).attr('href')
-		// 	var push = $(this).attr('data-push')
-		// 	var pull = $(this).attr('data-pull')
-		//
-		// 	if(!$(this).hasClass('push'))
-		// 		Router.route(location, function() {})
-		// 	else
-		// 		Router.shift(push, pull, function() {})
-		//
-		// 	e.preventDefault()
-		// })
+		$('.router').on('click', function(e) {
+			if($(this).hasClass('shift'))
+				Router.shift($(this).attr('data-push'), $(this).attr('data-pull'))
+			else
+				Router.route($(this).attr('href'))
+
+			e.preventDefault()
+		})
 	}
 }
 
