@@ -11,15 +11,15 @@ var Router = {
 
 		//	UNAUTHORIZED
 		if(session == null)
-			Router.unauthorized(location, Router.callback(callback))
+			Router.unauthorized(Router.callback(callback))
 
 		//	APPLICANT
 		else if(session.permission == 'applicant')
-			Router.applicant(location, Router.callback(callback))
+			Router.applicant(Router.callback(callback))
 
 		//	COMPANY
 		else if(session.permission == 'company')
-			Router.company(location, Router.callback(callback))
+			Router.company(Router.callback(callback))
 	},
 
 	//	CALLBACK

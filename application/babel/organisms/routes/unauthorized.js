@@ -1,5 +1,5 @@
-Router.unauthorized = function(location, callback) {
-  location = Router.location.split('/')
+Router.unauthorized = function(callback) {
+  var location = Router.location.split('/')
 
   Router.wrapper = ['unauthorized']
   console.log('session is: unauthorized')

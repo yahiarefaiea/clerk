@@ -1,3 +1,3 @@
-Router.applicant = function(location, callback) {
+Router.applicant = function(callback) {
   console.log('session is: applicant')
 }

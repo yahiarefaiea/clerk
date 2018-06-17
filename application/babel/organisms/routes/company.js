@@ -1,3 +1,3 @@
-Router.company = function(location, callback) {
+Router.company = function(callback) {
   console.log('session is: company')
 }
