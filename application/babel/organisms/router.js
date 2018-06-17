@@ -14,7 +14,7 @@ var Router = {
 
 		//	unauthorized
 		// if(session == null)
-		// 	Router.unauthorized(location)
+		Router.unauthorized(location)
 
 		// else if(session.permission == 'applicant')
 		// 	Router.applicant(location)
@@ -22,19 +22,20 @@ var Router = {
 		// else if(session.permission == 'company')
 		// 	Router.company(location)
 
-		// Clerk.stop(function() {
-		// 	Router.shift()
-		// 	Router.updateLocation(location)
-		//
-		// 	if(typeof callback === 'function' && callback)
-		// 		callback()
-		// })
+		Clerk.stop(function() {
+			Router.shift()
+			Router.updateLocation(location)
+
+			if(typeof callback === 'function' && callback)
+				callback()
+		})
 	},
 
 	//	LOCATION
 	location: function(location) {
 		if(location == undefined) {
-			console.log('URL')
+			// console.log('URL')
+			return window.location.hash
 		}
 		else if(location == '') {
 			console.log('home')

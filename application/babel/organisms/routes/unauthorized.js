@@ -1,10 +1,15 @@
 Router.unauthorized = function(location) {
 
+  console.log('location from unauthorized:')
+  console.log(location)
   location = location.split('/')
 
-  Router.wrapper = ['unauthorized']
+  console.log('location array:')
+  console.log(location)
 
-  Router.push('app')
+  // Router.wrapper = ['unauthorized']
+
+  // Router.push('app')
 
   // if(location[0] == '' || location[0] == undefined) {
   //   Router.push('auth intro')
