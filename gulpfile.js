@@ -95,7 +95,7 @@ var babelSrc = [
   root+'/babel/organisms/routes/unauthorized.js',
   root+'/babel/organisms/routes/applicant.js',
   root+'/babel/organisms/routes/company.js',
-  root+'/babel/organisms/prepare.js',
+  root+'/babel/organisms/request.js',
   root+'/babel/templates/auth.js',
   root+'/babel/molecules/loader.js'
 ];

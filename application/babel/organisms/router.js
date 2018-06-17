@@ -22,6 +22,14 @@ var Router = {
 			Router.company(callback)
 	},
 
+	//	PROCESS LOCATION
+	processLocation: function(location) {
+		if(location === undefined)
+			location = window.location.hash
+
+		return location.replace('#', '')
+	},
+
 	//	CALLBACK
 	callback: function(callback) {
 		setTimeout(function() {
@@ -34,14 +42,6 @@ var Router = {
 					callback()
 			})
 		}, 200)
-	},
-
-	//	PROCESS LOCATION
-	processLocation: function(location) {
-		if(location === undefined)
-			location = window.location.hash
-
-		return location.replace('#', '')
 	},
 
 	//	SHIFT
