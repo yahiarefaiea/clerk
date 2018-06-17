@@ -28,6 +28,7 @@ var Router = {
 			Clerk.stop(function() {
 				Router.updateWrapper()
 			  window.location.hash = Router.location
+			  Router.location = null
 
 				if(typeof callback === 'function' && callback)
 					callback()
