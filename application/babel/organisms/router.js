@@ -43,8 +43,8 @@ var Router = {
 		// }, 200)
 	},
 
-	//	LOCATION
-	location: function(location) {
+	//	PROCESS LOCATION
+	processLocation: function(location) {
 		// if(location == undefined)
 		// 	location = window.location.hash
 		//
@@ -59,7 +59,7 @@ var Router = {
 		// 	window.location.hash = location
 	},
 
-	//	update Wrapper
+	//	UPDATE WRAPPER
 	updateWrapper: function(push, pull) {
 		// if(push) Router.push(push)
 		// if(pull) Router.pull(pull)
