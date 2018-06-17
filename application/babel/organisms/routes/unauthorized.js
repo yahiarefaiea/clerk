@@ -1,15 +1,14 @@
 Router.unauthorized = function(callback) {
   var location = Router.location.split('/')
-
   Router.wrapper = ['unauthorized']
-  console.log('session is: unauthorized')
 
-  if(location[0] == '' || location[0] === undefined) {
+  //  AUTH
+  if(location[0] == '') {
     Router.push('auth intro')
 
     setTimeout(function() {
       Router.updateWrapper('switch', 'intro')
-    }, 5000)
+    }, 1500 * 4)
   }
 
   Router.callback(callback)
