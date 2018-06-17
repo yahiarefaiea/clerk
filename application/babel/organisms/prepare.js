@@ -31,6 +31,7 @@ var Prepare = {
   // ,
 
 	//	LISTEN
+  //  Do we really need to listen?
 	// listen: function() {
 	// 	$('.request').on('click', function(e) {
 	// 		var request = $(this).attr('href').replace('#', '')
@@ -41,7 +42,3 @@ var Prepare = {
 	// 	})
 	// }
 }
-
-// $(document).ready(function() {
-// 	Prepare.listen()
-// })

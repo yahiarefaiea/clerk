@@ -21,6 +21,7 @@ $(document).ready(function() {
     Router.route(undefined, function() {
 
       //  CALLBACK
+      Router.listen()
       Pops.init()
       $('#loading').removeClass('loading')
       setTimeout(function() {

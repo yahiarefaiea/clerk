@@ -84,8 +84,3 @@ var Router = {
 		})
 	}
 }
-
-//	DOCUMENT READY
-$(document).ready(function() {
-	Router.listen()
-})
