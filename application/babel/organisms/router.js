@@ -62,11 +62,11 @@ var Router = {
 
 	//	UPDATE WRAPPER
 	updateWrapper: function(push, pull) {
-		// if(push) Router.push(push)
-		// if(pull) Router.pull(pull)
-		//
-		// var wrapper = Router.wrapper.toString().replace(/,/g, ' ')
-		// $('.wrapper').attr('class', 'wrapper ' + wrapper)
+		if(push) Router.push(push)
+		if(pull) Router.pull(pull)
+
+		var wrapper = Router.wrapper.toString().replace(/,/g, ' ')
+		$('.wrapper').attr('class', 'wrapper ' + wrapper)
 	},
 
 	//	PUSH
