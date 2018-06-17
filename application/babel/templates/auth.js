@@ -4,12 +4,13 @@ var Auth = {
     // check session here
 
     // then return the object
-    return {
-      permission: 'company',
-      user: {
-        id: '515'
-      }
-    }
+    return null
+    // return {
+    //   permission: 'company',
+    //   user: {
+    //     id: '515'
+    //   }
+    // }
   },
 
   signedIn: function() {

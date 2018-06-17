@@ -18,7 +18,7 @@ $(document).ready(function() {
     loaderVPos: 0,
     splashVPos: 0
   }, function() {
-    Router.route('', function() {
+    Router.route(undefined, function() {
 
       //  CALLBACK
       Pops.init()

@@ -4,14 +4,17 @@ var Router = {
 	//	ROUTE
 	route: function(location, callback) {
 		Clerk.wait()
-		Router.location(location)
 
 		var session = Auth.session()
-		var location = Router.location.split('/')
+		var location = Router.location(location)
+
+		console.log(typeof location)
+		console.log(location)
+		console.log('\'' + location + '\'')
 
 		//	unauthorized
-		if(session == null)
-			Router.unauthorized(location)
+		// if(session == null)
+		// 	Router.unauthorized(location)
 
 		// else if(session.permission == 'applicant')
 		// 	Router.applicant(location)
@@ -19,34 +22,45 @@ var Router = {
 		// else if(session.permission == 'company')
 		// 	Router.company(location)
 
-		Clerk.stop(function() {
-			Router.shift()
-			Router.updateLocation()
-
-			if(typeof callback === 'function' && callback)
-				callback()
-		})
+		// Clerk.stop(function() {
+		// 	Router.shift()
+		// 	Router.updateLocation(location)
+		//
+		// 	if(typeof callback === 'function' && callback)
+		// 		callback()
+		// })
 	},
 
 	//	LOCATION
 	location: function(location) {
-		if(location == '')
-			location = window.location.hash
+		if(location == undefined) {
+			console.log('URL')
+		}
+		else if(location == '') {
+			console.log('home')
+		}
+		else {
+			console.log('router')
+		}
 
-		// if location is undefined => copy window.location.hash
+			// location = window.location.hash
+
+		// if location is  => copy window.location.hash
 		// else if location is defined & it's an empty string => redirect to home
 		// else => redirect to the router
 
-		location = location.split('#')[0]
-		return location
+		// location = location.split('#')[0]
+		// return location
 	},
 
 	//	UPDATE LOCATION
-	updateLocation: function() {
-		if(Router.location != '')
-			window.location.hash = Router.location
-		else
+	updateLocation: function(location) {
+		var location = Router.location(location)
+
+		if(location == '')
 			window.location.href.split('#')[0]
+		else
+			window.location.hash = location
 	},
 
 	//	SHIFT
