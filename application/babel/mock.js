@@ -4,59 +4,55 @@ var Mock = {
   Session: null,
 
   //  SESSION: APPLICANT
-  Session: {
-    Permission: 'company',
-    User: {
-      Id: '515'
-    }
-  },
+  // Session: {
+  //   Permission: 'applicant',
+  //   UserID: '1'
+  // },
 
   //  SESSION: COMPANY
-  Session: {
-    Permission: 'company',
-    User: {
-      Id: '515'
-    }
-  },
+  // Session: {
+  //   Permission: 'company',
+  //   UserID: '1'
+  // },
 
   //  APPLICANT
   Applicant: {
     UserID: '1',
-    FirstName: 'testname',
-    SurName: 'testsur',
-    Email: 'testname@gmail.com',
-    Gender: 'male',
+    FirstName: 'Yahia',
+    SurName: 'Refaiea',
+    Email: 'hello@yahiarefaiea.com',
+    Gender: 'Male',
     DOB: {
-      MM: 12,
-      DD: 12,
-      YYYY: 1990
+      MM: 2,
+      DD: 9,
+      YYYY: 1997
     },
-    PhoneNumber: '485985656',
-    Address: 'sy',
-    WebsiteURL: 'http://www.website1.com',
-    Major: 'IT',
-    Tagline: '6',
-    ExperienceYears: '6',
-    About: 'non',
-    Education: 'Essay',
-    Essay: 'Essay',
-    Handedness: 'left',
-    Power: 'non',
-    Animal: 'non',
-    Movies: 'non',
-    Interests: 'non',
-    TechnicalSkills: ['css', 'html'],
+    PhoneNumber: '00963 12 3456 789',
+    Address: 'Damascus, Syria',
+    WebsiteURL: 'http://yahiarefaiea.com',
+    Major: 'Non',
+    Tagline: 'Interaction Designer',
+    ExperienceYears: '5',
+    About: 'I’m Yahia Refaiea, an interaction web and mobile designer with three years of professional experience; working with many startups and companies on innovative projects. I dropped out high school five years ago pursuing entrepreneurship life and to find my passion. What I\'m trying to do is to help as many people as I can with the things I know; to make this world looks like a better place.',
+    Education: 'Dropped out high school',
+    Essay: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+    Handedness: 'Right',
+    Power: 'Flying',
+    Animal: 'A cat',
+    Movies: 'Romance',
+    Interests: 'Travelling',
+    TechnicalSkills: ['Communication', 'Leadership'],
     Personality: {
-      Type: 'INFJ',
-      Meaning: '',
-      Analysis: '',
+      Type: 'ESFJ',
+      Meaning: 'Extraverted, Sensing, Feeling, and Judging',
+      Analysis: 'Warmly interested in people. Creative and inspirational. Sensitive and complex. Dislike dealing with details and routine work. Excellent written communication skills. Prefer to work alone, and may have problems working on teams',
       Strengths: [
-        'css',
-        'html'
+        'Put forth a lot of effort to fulfill their duties and obligations.',
+        'Warm, friendly and affirming by nature.'
       ],
       Weaknesses: [
-        'css',
-        'html'
+        'Service-oriented, they want to please others.',
+        'Take their commitments very seriously, and seek lifelong relationships.'
       ]
     }
   },
@@ -64,39 +60,55 @@ var Mock = {
   //  COMPANY
   Company: {
     CompanyID: '4',
-    CompanyName: '444',
-    Description: 'fddfsd',
-    WebsiteURL: 'http://www.website1.com',
-    PhoneNumber: '444444554',
-    Email: 'test11@gmail.com',
-    Address: 'kk',
-    EmployeesNumber: '55',
-    WhyClerk: 'no reason',
-    OfferType: '$1500',
+    CompanyName: 'Musixmatch',
+    Industry: 'Music',
+    Description: 'Musixmatch is the world’s largest lyrics platform - where you can search, enjoy, and share lyrics from any track, anywhere in the world. Musixmatch was founded in 2010 with the mission to change the way people experience music and lyrics. Now, Musixmatch is a team which includes over 30 international and talented individuals working on a product reaching millions of music lovers. Help us build a product reaching millions of music lovers, we’re always on the lookout for talented people to join our unique team.',
+    Email: 'hello@musixmatch.com',
+    PhoneNumber: '00963 12 3456 789',
+    Address: 'Damascus, Syria',
+    WebsiteURL: 'http://musixmatch.com',
+    EmployeesNumber: '1',
+    WhyClerk: 'Non',
+    OfferType: 'Non',
 
     //  VACANCIES
     Vacancies: [{
       CompanyID: '1',
       VacancyID: '1',
-      Title: 'test',
-      Description: 'good',
-      StartDate: '2018-02-02',
-      EndDate: '2018-11-14',
+      Title: 'Senior Web Frontend Developer',
+      Major: 'Computer Science',
+      Description: 'Musixmatch is looking for an experienced front-end developer with a passion for shipping elegant, responsive interfaces that will be used by millions of people. You are an excellent team player, keen on new challenges in a start-up environment. Oh, and you love music, great food...and Bologna, Italy!',
+      Hours: 'Full time',
+      StartDate: {
+        MM: 02,
+        DD: 02,
+        YYYY: 2018
+      },
+      EndDate: {
+        MM: 14,
+        DD: 11,
+        YYYY: 2018
+      },
       ExperienceYears: '3',
-      AdditionalInformation: 'non',
+      Responsibilities: [
+        'Write front-end code in HTML/CSS/Javascript.',
+        'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
+      ],
+      RequiredSkills: [
+        'Rapidly fix bugs and solve problems.',
+        'Pro-actively look for ways to make Musixmatch better.'
+      ],
+      AdditionalSkills: [
+        'Write front-end code in HTML/CSS/Javascript.',
+        'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
+      ],
       PersonalityType: 'INJF',
-      Major: 'CS',
       Applicants: [{
-
-      }, {
-
-      }, {
-
+        PositionExperience: 'good',
+        AdditionalInformation: 'non',
+        PositionExperienceYears: '4',
+        User: Mock.Applicant
       }]
-    }, {
-
-    }, {
-
     }]
   }
 }
