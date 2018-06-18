@@ -38,6 +38,7 @@ var Mock = {
     Tagline: '6',
     ExperienceYears: '6',
     About: 'non',
+    Education: 'Essay',
     Essay: 'Essay',
     Handedness: 'left',
     Power: 'non',
@@ -45,7 +46,19 @@ var Mock = {
     Movies: 'non',
     Interests: 'non',
     TechnicalSkills: ['css', 'html'],
-    Personality: 'INFJ'
+    Personality: {
+      Type: 'INFJ',
+      Meaning: '',
+      Analysis: '',
+      Strengths: [
+        'css',
+        'html'
+      ],
+      Weaknesses: [
+        'css',
+        'html'
+      ]
+    }
   },
 
   //  COMPANY
