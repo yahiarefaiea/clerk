@@ -67,9 +67,6 @@ var Mock = {
     PhoneNumber: '00963 12 3456 789',
     Address: 'Damascus, Syria',
     WebsiteURL: 'http://musixmatch.com',
-    EmployeesNumber: 5,
-    WhyClerk: null,
-    OfferType: null,
 
     //  VACANCIES
     Vacancies: [{
@@ -102,7 +99,6 @@ var Mock = {
         'Write front-end code in HTML/CSS/Javascript.',
         'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
       ],
-      PersonalityType: 'ESFJ',
       Applicants: [{
         UserID: '1',
         FirstName: 'Yahia',
@@ -142,9 +138,9 @@ var Mock = {
             'Take their commitments very seriously, and seek lifelong relationships.'
           ]
         },
+        PositionExperienceYears: 3,
         PositionExperience: 'Internship at Google',
-        AdditionalInformation: null,
-        PositionExperienceYears: 3
+        AdditionalInformation: null
       }]
     }]
   }
