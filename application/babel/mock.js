@@ -1,6 +1,6 @@
 var Mock = {
 
-  //  SESSION
+  //  SESSION: UNAUTHORIZED
   Session: null,
 
   //  SESSION: APPLICANT
@@ -30,18 +30,18 @@ var Mock = {
     PhoneNumber: '00963 12 3456 789',
     Address: 'Damascus, Syria',
     WebsiteURL: 'http://yahiarefaiea.com',
-    Major: 'Non',
+    Major: null,
     Tagline: 'Interaction Designer',
-    ExperienceYears: '5',
+    ExperienceYears: 5,
     About: 'I’m Yahia Refaiea, an interaction web and mobile designer with three years of professional experience; working with many startups and companies on innovative projects. I dropped out high school five years ago pursuing entrepreneurship life and to find my passion. What I\'m trying to do is to help as many people as I can with the things I know; to make this world looks like a better place.',
-    Education: 'Dropped out high school',
+    Education: 'Dropped out of high school',
     Essay: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
     Handedness: 'Right',
     Power: 'Flying',
     Animal: 'A cat',
     Movies: 'Romance',
     Interests: 'Travelling',
-    TechnicalSkills: ['Communication', 'Leadership'],
+    Skills: ['Communication', 'Leadership'],
     Personality: {
       Type: 'ESFJ',
       Meaning: 'Extraverted, Sensing, Feeling, and Judging',
@@ -67,9 +67,9 @@ var Mock = {
     PhoneNumber: '00963 12 3456 789',
     Address: 'Damascus, Syria',
     WebsiteURL: 'http://musixmatch.com',
-    EmployeesNumber: '1',
-    WhyClerk: 'Non',
-    OfferType: 'Non',
+    EmployeesNumber: 5,
+    WhyClerk: null,
+    OfferType: null,
 
     //  VACANCIES
     Vacancies: [{
@@ -80,16 +80,16 @@ var Mock = {
       Description: 'Musixmatch is looking for an experienced front-end developer with a passion for shipping elegant, responsive interfaces that will be used by millions of people. You are an excellent team player, keen on new challenges in a start-up environment. Oh, and you love music, great food...and Bologna, Italy!',
       Hours: 'Full time',
       StartDate: {
-        MM: 02,
-        DD: 02,
+        MM: 2,
+        DD: 9,
         YYYY: 2018
       },
       EndDate: {
-        MM: 14,
-        DD: 11,
+        MM: 8,
+        DD: 13,
         YYYY: 2018
       },
-      ExperienceYears: '3',
+      ExperienceYears: 5,
       Responsibilities: [
         'Write front-end code in HTML/CSS/Javascript.',
         'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
@@ -102,11 +102,11 @@ var Mock = {
         'Write front-end code in HTML/CSS/Javascript.',
         'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
       ],
-      PersonalityType: 'INJF',
+      PersonalityType: 'ESFJ',
       Applicants: [{
-        PositionExperience: 'good',
-        AdditionalInformation: 'non',
-        PositionExperienceYears: '4',
+        PositionExperience: 'Internship at Google',
+        AdditionalInformation: null,
+        PositionExperienceYears: 3,
         User: Mock.Applicant
       }]
     }]
