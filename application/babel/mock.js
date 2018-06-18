@@ -104,10 +104,47 @@ var Mock = {
       ],
       PersonalityType: 'ESFJ',
       Applicants: [{
+        UserID: '1',
+        FirstName: 'Yahia',
+        SurName: 'Refaiea',
+        Email: 'hello@yahiarefaiea.com',
+        Gender: 'Male',
+        DOB: {
+          MM: 2,
+          DD: 9,
+          YYYY: 1997
+        },
+        PhoneNumber: '00963 12 3456 789',
+        Address: 'Damascus, Syria',
+        WebsiteURL: 'http://yahiarefaiea.com',
+        Major: null,
+        Tagline: 'Interaction Designer',
+        ExperienceYears: 5,
+        About: 'I’m Yahia Refaiea, an interaction web and mobile designer with three years of professional experience; working with many startups and companies on innovative projects. I dropped out high school five years ago pursuing entrepreneurship life and to find my passion. What I\'m trying to do is to help as many people as I can with the things I know; to make this world looks like a better place.',
+        Education: 'Dropped out of high school',
+        Essay: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+        Handedness: 'Right',
+        Power: 'Flying',
+        Animal: 'A cat',
+        Movies: 'Romance',
+        Interests: 'Travelling',
+        Skills: ['Communication', 'Leadership'],
+        Personality: {
+          Type: 'ESFJ',
+          Meaning: 'Extraverted, Sensing, Feeling, and Judging',
+          Analysis: 'Warmly interested in people. Creative and inspirational. Sensitive and complex. Dislike dealing with details and routine work. Excellent written communication skills. Prefer to work alone, and may have problems working on teams',
+          Strengths: [
+            'Put forth a lot of effort to fulfill their duties and obligations.',
+            'Warm, friendly and affirming by nature.'
+          ],
+          Weaknesses: [
+            'Service-oriented, they want to please others.',
+            'Take their commitments very seriously, and seek lifelong relationships.'
+          ]
+        },
         PositionExperience: 'Internship at Google',
         AdditionalInformation: null,
-        PositionExperienceYears: 3,
-        User: Mock.Applicant
+        PositionExperienceYears: 3
       }]
     }]
   }
