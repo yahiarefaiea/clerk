@@ -1,10 +1,11 @@
 var Request = {
+  url: 'includes/php/file.php',
 
   //  FETCH
   fetch: function(data, callback) {
     $.ajax({
-      type: 'POST',
-      url: 'includes/php/file.php',
+      type: 'GET',
+      url: Request.url,
       data: {data: JSON.stringify(data)},
       dataType: 'json',
 
