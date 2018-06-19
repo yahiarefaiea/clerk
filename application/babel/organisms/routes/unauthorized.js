@@ -43,11 +43,11 @@ Router.unauthorized = function(callback) {
           Router.push('vacancy')
         }
 
-        //  NOT FOUND
         else Router.push('notFound')
       }
     }
   }
 
+  //  CALLBACK
   Router.callback(callback)
 }
