@@ -1,9 +1,9 @@
 Router.unauthorized = function(callback) {
-  var location = Router.location.split('/')
+  var location = Router.location.split('/').filter(Boolean)
   Router.wrapper = ['unauthorized']
 
   //  AUTH
-  if(location[0] == '') {
+  if(location[0] === undefined) {
     Router.push('auth intro')
 
     setTimeout(function() {
@@ -16,7 +16,7 @@ Router.unauthorized = function(callback) {
     Router.push('app')
 
     //  VACANCIES
-    if(location[0] == 'vacancies') {
+    if(location[0] == 'vacancies' && location[1] === undefined) {
       Router.push('vacancies')
     }
 
@@ -25,7 +25,7 @@ Router.unauthorized = function(callback) {
       var company = location[0]
 
       if(location[1] === undefined) {
-        console.log('Requested a company')
+        Router.push('company')
       }
 
       //  VACANCY
@@ -33,12 +33,11 @@ Router.unauthorized = function(callback) {
         var vacancy = location[1]
 
         if(location[2] === undefined) {
-          console.log('Requested a vacancy')
+          Router.push('vacancy')
         }
 
-        //  ERROR
-        else
-          Router.error()
+        //  NOT FOUND
+        else Router.push('notFound')
       }
     }
   }
