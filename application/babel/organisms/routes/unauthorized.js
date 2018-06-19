@@ -16,13 +16,9 @@ Router.unauthorized = function(callback) {
     Router.push('app')
 
     //  VACANCIES
-    if(location[0] == 'vacancies') {
-      if(location[1] === undefined) {
-        // TODO: Add a fetch request
-        Router.push('vacancies')
-      }
-
-      else Router.push('notFound')
+    if(location[0] == 'vacancies' && location[1] === undefined) {
+      // TODO: Add a fetch request
+      Router.push('vacancies')
     }
 
     //  COMPANY
