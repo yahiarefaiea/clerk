@@ -59,7 +59,7 @@ var Mock = {
 
   //  COMPANY
   Company: {
-    CompanyID: '4',
+    CompanyID: '1',
     CompanyName: 'Musixmatch',
     Industry: 'Music',
     Description: 'Musixmatch is the world\'s largest lyrics platform - where you can search, enjoy, and share lyrics from any track, anywhere in the world. Musixmatch was founded in 2010 with the mission to change the way people experience music and lyrics. Now, Musixmatch is a team which includes over 30 international and talented individuals working on a product reaching millions of music lovers. Help us build a product reaching millions of music lovers, we\'re always on the lookout for talented people to join our unique team.',
