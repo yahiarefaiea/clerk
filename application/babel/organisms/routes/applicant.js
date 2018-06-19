@@ -1,22 +1,30 @@
 Router.applicant = function(callback) {
   var location = Router.location.split('/').filter(Boolean)
-  Router.wrapper = ['applicant']
+  Router.wrapper = ['authorizedAsApplicant app']
 
-  //  AUTH
-  if(location[0] === undefined) {
-    Router.push('auth intro')
+  //  PERSONALITY
+  if(location[0] === undefined || location[0] == 'personality') {
+    Router.push('applicant personality')
 
-    setTimeout(function() {
-      Router.updateWrapper('switch', 'intro')
-    }, 1500 * 4)
+    //  INSIGHTS
+    if(location[1] === undefined) {
+      // TODO: Add a fetch request
+      Router.push('insights')
+    }
+
+    //  UPDATE
+    else {
+      if(location[2] === undefined) {
+        // TODO: Add a fetch request
+        Router.push('update')
+      }
+
+      else Router.push('notFound')
+    }
   }
 
-  //  APP
-  else {
-    Router.push('app')
-
     //  VACANCIES
-    if(location[0] == 'vacancies') {
+    else if(location[0] == 'vacancies') {
       if(location[1] === undefined) {
         // TODO: Add a fetch request
         Router.push('vacancies')
@@ -46,7 +54,6 @@ Router.applicant = function(callback) {
         else Router.push('notFound')
       }
     }
-  }
 
   //  CALLBACK
   Router.callback(callback)
