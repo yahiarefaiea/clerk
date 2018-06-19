@@ -106,8 +106,6 @@ popsSize= 420px
   .personality.insights #land .headlines .headline[data-location='insights'],
   .authorizedAsApplicant.vacancy.apply #land .headlines .headline[data-location='vacancy'],
   .authorizedAsCompany.applicants #land .headlines .headline[data-location='applicants'],
-  .app:not(.personality) #land .headlines .headline[data-location='app'],
-  .app:not(.apply) #land .headlines .headline[data-location='app'],
-  .app:not(.applicants) #land .headlines .headline[data-location='app']
+  .app:not(.personality):not(.apply):not(.applicants) #land .headlines .headline[data-location='app']
     .spans
       spansCurrent()
