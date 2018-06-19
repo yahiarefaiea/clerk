@@ -7,7 +7,6 @@ var Router = {
 		Clerk.wait()
 
 		var session = Auth.session()
-		var permission = session.Permission
 		Router.location = Router.processLocation(location)
 
 		//	UNAUTHORIZED
@@ -15,11 +14,11 @@ var Router = {
 			Router.unauthorized(callback)
 
 		//	APPLICANT
-		else if(permission == 'applicant')
+		else if(session.Permission == 'applicant')
 			Router.applicant(callback)
 
 		//	COMPANY
-		else if(permission == 'company')
+		else if(session.Permission == 'company')
 			Router.company(callback)
 	},
 
