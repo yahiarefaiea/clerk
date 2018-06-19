@@ -4,7 +4,7 @@ var Auth = {
     // check session here
 
     // then return the object
-    return null
+    return Mock.Session
     // return {
     //   permission: 'company',
     //   user: {
