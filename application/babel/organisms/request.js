@@ -1,11 +1,11 @@
 var Request = {
-  url: 'includes/php/file.php',
+  baseUrl: 'http://clerk.technology/',
 
   //  FETCH
-  fetch: function(data, callback) {
+  fetch: function(template, data, url, callback) {
     $.ajax({
       type: 'GET',
-      url: Request.url,
+      url: Request.baseUrl + url,
       data: {data: JSON.stringify(data)},
       dataType: 'json',
 
@@ -16,15 +16,21 @@ var Request = {
 
       //  SUCCESS
       success: function(data) {
-        Request.inject(data, callback)
+        Request.inject(template, data, callback)
       }
     })
   },
 
   //  INJECT
-  inject: function(data, callback) {
-    console.log(data)
+  inject: function(template, data, callback) {
+    var elements = $('.template[data-template="' + template + '"]').find('[data-inject]')
 
+    for (i = 0; i < elements.length; i++) {
+      var type = $(elements[i]).attr('data-inject')
+      $(elements[i]).text(data[type])
+    }
+
+    Router.push(template)
     if(typeof callback === 'function' && callback)
       callback()
   },

@@ -25,14 +25,7 @@ Router.unauthorized = function(callback) {
       var company = location[0]
 
       if(location[1] === undefined) {
-        Request.fetch({
-          type: 'company',
-          companyName: company
-        }, function(data) {
-          Request.inject(data, function() {
-            Router.push('company')
-          })
-        })
+        console.log('Requested a company')
       }
 
       //  VACANCY
@@ -40,15 +33,7 @@ Router.unauthorized = function(callback) {
         var vacancy = location[1]
 
         if(location[2] === undefined) {
-          Request.fetch({
-            type: 'vacancy',
-            companyName: company,
-            jobTitle: vacancy
-          }, function(data) {
-            Request.inject(data, function() {
-              Router.push('vacancy')
-            })
-          })
+          console.log('Requested a vacancy')
         }
 
         //  ERROR
