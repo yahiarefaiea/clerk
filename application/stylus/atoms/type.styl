@@ -58,6 +58,7 @@ a
 
   //  LINK EFFECT
   linkEffect()
+    display: inline-block
     position: relative
     &:before
       content: ''
@@ -70,7 +71,6 @@ a
 
   //  LINK
   &.link
-    display: inline-block
     linkEffect()
     &:hover, &:focus
       color: link-color-hover
@@ -83,11 +83,16 @@ a
   &.link-group
     display: block
     .h3
-      line-height: baseline*1.25
       margin: 0
+      line-height: baseline*1.25
+      color: text-dark
+      > span:before
+        bottom: 24%
     .p
       line-height: baseline*.75
       color: text-light
+      > span:before
+        bottom: 10%
     > * > span
       linkEffect()
       hasTransition()
@@ -100,4 +105,4 @@ a
           {align-alt}: 0
       > *:nth-child(2) > span
         &, &:before
-          hasTransition: duration 0 step*4
+          hasTransition: duration 0 step*3
