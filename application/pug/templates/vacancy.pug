@@ -6,7 +6,7 @@
     p
       span(data-inject='Hours')
       |  at 
-      a.link.router(data-inject='CompanyName' data-router='company' target='_blank')
+      a.link.router(data-inject='CompanyName' data-router='company')
     .small
       ul(data-permission='applicant')
         li
@@ -29,8 +29,7 @@
   
   //- MAIN
   main
-    section
-      p(data-inject='Description')
+    section: p(data-inject='Description')
     
     section
       .h2 Responsibilities
