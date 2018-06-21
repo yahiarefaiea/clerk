@@ -2,8 +2,35 @@
   
   //- HEADER
   header
-    
+    h1
+      span(data-inject='FirstName')
+      | 
+      span(data-inject='SurName')
+    p
+      span(data-inject='Personality.Type')
+      |  - 
+      span(data-inject='Personality.Meaning')
+    .small
+      ul(data-permission='applicant')
+        li: span This is how companies you
+        li: span apply to see your profile
+      ul(data-permission='company')
+        li: a.link(data-inject='Email')
+        li: span(data-inject='PhoneNumber')
   
   //- MAIN
   main
+    section
+      p(data-inject='Personality.Analysis')
     
+    section
+      .h2
+        span(data-inject='FirstName')
+        |'s personality strengths
+      ol.list(data-inject='Personality.Strengths')
+    
+    section
+      .h2
+        span(data-inject='FirstName')
+        |'s personality weaknesses
+      ol.list(data-inject='Personality.Weaknesses')
