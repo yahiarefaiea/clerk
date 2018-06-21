@@ -14,22 +14,22 @@
   main p
     line-height: baseline*1.25
     color: text-dark
-  header p
-    line-height: baseline*.75
-    color: text-light
-    a
-      color: text-default
-      &:before
-        bottom: 10%
-  header .small
-    makeAbsolute: 0 auto auto 0
-    text-align: align-alt
-    line-height: baseline
-    color: text-light
-    ul
+  header
+    p
+      line-height: baseline*.75
+      color: text-light
+      a
+        color: text-default
+        &:before
+          bottom: 10%
+    .small
       makeAbsolute: 0 auto auto 0
-      white-space: nowrap
-
+      text-align: align-alt
+      line-height: baseline
+      color: text-light
+      ul
+        makeAbsolute: 0 auto auto 0
+        white-space: nowrap
 @media (max-width: delta - 1)
   .template
     {align}: 0
