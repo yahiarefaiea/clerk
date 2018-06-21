@@ -6,6 +6,9 @@
       "in the <mark>right position</mark>."
     ]
   }, {
+    "location": "basic-information",
+    "text": ["<mark>Basic information</mark>"]
+  }, {
     "location": "personal-information",
     "text": ["<mark>Personal information</mark>"]
   }, {
