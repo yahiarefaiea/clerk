@@ -86,7 +86,7 @@ var Router = {
 
 	//	LISTEN
 	listen: function() {
-		$('.router').on('click', function(e) {
+		$('.wrapper').on('click', '.router', function(e) {
 			if($(this).hasClass('shift'))
 				Router.shift($(this).attr('data-push'), $(this).attr('data-pull'))
 			else
