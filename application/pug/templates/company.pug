@@ -1,0 +1,23 @@
+.template(data-template='company'): .container
+  
+  //- HEADER
+  header
+    h1(data-inject='CompanyName')
+    p
+      span(data-inject='Industry')
+      |  - 
+      a.link(data-inject='WebsiteURL' target='_blank')
+    .small
+      ul(data-permission='company')
+        li: span This is how applicants see your profile
+  
+  //- MAIN
+  main
+    section
+      p(data-inject='Description')
+    
+    section
+      .h2
+        |Available vacancies at 
+        span(data-inject='CompanyName')
+      ul.blocks.links(data-inject='Vacancies')

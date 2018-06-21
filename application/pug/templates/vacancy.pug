@@ -1,0 +1,45 @@
+.template(data-template='vacancy'): .container
+  
+  //- HEADER
+  header
+    h1(data-inject='Title')
+    p
+      span(data-inject='Hours')
+      |  at 
+      a.link.router(data-inject='CompanyName' data-router='company' target='_blank')
+    .small
+      ul(data-permission='applicant')
+        li
+          |Starting on 
+          span(data-inject='StartDate.MM')
+          |/
+          span(data-inject='StartDate.DD')
+          |/
+          span(data-inject='StartDate.YYYY')
+        li
+          |Ending on 
+          span(data-inject='EndDate.MM')
+          |/
+          span(data-inject='EndDate.DD')
+          |/
+          span(data-inject='EndDate.YYYY')
+      ul(data-permission='company')
+        li: span(data-inject='ApplicantsTotal')
+        li applicants
+  
+  //- MAIN
+  main
+    section
+      p(data-inject='Description')
+    
+    section
+      .h2 Responsibilities
+      ol.list(data-inject='Responsibilities')
+    
+    section
+      .h2 Required skills
+      ol.list(data-inject='RequiredSkills')
+    
+    section
+      .h2 Additional skills
+      ol.list(data-inject='AdditionalSkills')
