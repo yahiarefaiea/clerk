@@ -72,6 +72,7 @@ var Mock = {
     Vacancies: [{
       CompanyID: '1',
       VacancyID: '1',
+      CompanyName: 'Musixmatch',
       Title: 'Senior Web Frontend Developer',
       Major: 'Computer Science',
       Description: 'Musixmatch is looking for an experienced front-end developer with a passion for shipping elegant, responsive interfaces that will be used by millions of people. You are an excellent team player, keen on new challenges in a start-up environment. Oh, and you love music, great food...and Bologna, Italy!',
@@ -99,7 +100,10 @@ var Mock = {
         'Write front-end code in HTML/CSS/Javascript.',
         'Work closely with, and incorporate feedback from, product management, interaction designers, and back-end engineers.'
       ],
+      ApplicantsTotal: 25,
       Applicants: [{
+        CompanyID: '1',
+        VacancyID: '1',
         UserID: '1',
         FirstName: 'Yahia',
         SurName: 'Refaiea',
@@ -113,7 +117,7 @@ var Mock = {
         PhoneNumber: '00963 12 3456 789',
         Address: 'Damascus, Syria',
         WebsiteURL: 'http://yahiarefaiea.com',
-        Major: null,
+        Major: 'Design',
         Tagline: 'Interaction Designer',
         ExperienceYears: 5,
         About: 'I\'m Yahia Refaiea, an interaction web and mobile designer with three years of professional experience; working with many startups and companies on innovative projects. I dropped out high school five years ago pursuing entrepreneurship life and to find my passion. What I\'m trying to do is to help as many people as I can with the things I know; to make this world looks like a better place.',
@@ -141,7 +145,33 @@ var Mock = {
         PositionExperienceYears: 3,
         PositionExperience: 'Internship at Google',
         AdditionalInformation: null
+      }, {
+        CompanyID: '2',
+        VacancyID: '2',
+        UserID: '2',
+        FirstName: 'John',
+        SurName: 'Doe',
+        Major: 'Computer Science'
+      }, {
+        CompanyID: '3',
+        VacancyID: '3',
+        UserID: '3',
+        FirstName: 'Sed',
+        SurName: 'Do',
+        Major: 'Communications'
       }]
+    }, {
+      CompanyID: '2',
+      VacancyID: '2',
+      CompanyName: 'Clerk',
+      Title: 'UI Designer',
+      Hours: 'Full time'
+    }, {
+      CompanyID: '3',
+      VacancyID: '3',
+      CompanyName: 'Nuotron',
+      Title: 'Android Developer',
+      Hours: 'Part time'
     }]
   }
 }
