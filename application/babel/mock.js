@@ -30,7 +30,7 @@ var Mock = {
     PhoneNumber: '00963 12 3456 789',
     Address: 'Damascus, Syria',
     WebsiteURL: 'http://yahiarefaiea.com',
-    Major: null,
+    Major: 'Design',
     Tagline: 'Interaction Designer',
     ExperienceYears: 5,
     About: 'I\'m Yahia Refaiea, an interaction web and mobile designer with three years of professional experience; working with many startups and companies on innovative projects. I dropped out high school five years ago pursuing entrepreneurship life and to find my passion. What I\'m trying to do is to help as many people as I can with the things I know; to make this world looks like a better place.',
