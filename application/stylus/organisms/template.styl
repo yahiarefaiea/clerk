@@ -27,7 +27,7 @@
       text-align: align-alt
       line-height: baseline
       color: text-light
-      ul
+      > *
         makeAbsolute: 0 auto auto 0
         white-space: nowrap
 @media (max-width: delta - 1)
@@ -46,13 +46,15 @@
 
 //  ELEMENTS ANIMATIONS
 //  TODO: Fix animation for small
-.template header .small ul
+.template header .small > *
   visibility: hidden
   // li
   //   opacity: 0
   //   transform: translateY(baseline)
   //   multiTransition: 1 3 duration duration
-.app.applicant .template header .small ul[data-permission='applicant']
+.app.applicant .template header .small > *[data-permission='applicant'],
+.app.company .template header .small > *[data-permission='company'],
+.app.vacancy .template header .small > *[data-permission='applicant']
   visibility: visible
   // li
   //   opacity: 1
