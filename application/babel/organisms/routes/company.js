@@ -50,8 +50,8 @@ Router.company = function(callback) {
         else {
           var applicant = location[3]
 
-          if(location[3] === undefined) {
-            Router.push('vacancy')
+          if(location[4] === undefined) {
+            Router.push('applicant')
           }
 
           else Router.push('notFound')
