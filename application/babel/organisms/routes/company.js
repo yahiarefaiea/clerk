@@ -63,29 +63,29 @@ Router.company = function(callback) {
   }
 
   //  VACANCIES
-  // else if(location[0] == 'vacancies' && location[1] === undefined) {
-  //   Router.push('vacancies')
-  // }
+  else if(location[0] == 'vacancies' && location[1] === undefined) {
+    Router.push('vacancies')
+  }
 
   //  COMPANY
-  // else {
-  //   var company = location[0]
-  //
-  //   if(location[1] === undefined) {
-  //     Router.push('company')
-  //   }
-  //
-  //   //  VACANCY
-  //   else {
-  //     var vacancy = location[1]
-  //
-  //     if(location[2] === undefined) {
-  //       Router.push('vacancy')
-  //     }
-  //
-  //     else Router.push('notFound')
-  //   }
-  // }
+  else {
+    var company = location[0]
+
+    if(location[1] === undefined) {
+      Router.push('company')
+    }
+
+    //  VACANCY
+    else {
+      var vacancy = location[1]
+
+      if(location[2] === undefined) {
+        Router.push('vacancy')
+      }
+
+      else Router.push('notFound')
+    }
+  }
 
   //  CALLBACK
   Router.callback(callback)
