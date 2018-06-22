@@ -8,20 +8,20 @@ Router.company = function(callback) {
   }
 
   //  PROFILE
-  // else if(location[0] == 'profile') {
-  //
-  //   //  COMPANY
-  //   if(location[1] === undefined) {
-  //     Router.push('profile company')
-  //   }
-  //
-  //   //  UPDATE
-  //   else if(location[1] == 'update' && location[2] === undefined) {
-  //     Router.push('profile update')
-  //   }
-  //
-  //   else Router.push('notFound')
-  // }
+  else if(location[0] == 'profile') {
+
+    //  COMPANY
+    if(location[1] === undefined) {
+      Router.push('profile company')
+    }
+
+    //  UPDATE
+    else if(location[1] == 'update' && location[2] === undefined) {
+      Router.push('profile update')
+    }
+
+    else Router.push('notFound')
+  }
 
   //  VACANCY
   // else if(location[0] == 'vacancy' && location[1] != undefined) {
