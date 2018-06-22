@@ -1,0 +1,9 @@
+.template(data-template='applicants'): .container
+  
+  //- HEADER
+  header: h1
+    |Applicants for 
+    span(data-inject='CompanyName')
+  
+  //- MAIN
+  main: ul.blocks.links(data-inject='Applicants')
