@@ -4,7 +4,7 @@ var Request = {
   //  FETCH
   fetch: function(template, data, url, callback) {
     $.ajax({
-      type: 'GET',
+      type: 'POST',
       url: Request.baseUrl + url,
       data: {data: JSON.stringify(data)},
       dataType: 'json',
