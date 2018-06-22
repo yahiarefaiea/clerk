@@ -32,34 +32,34 @@ Router.company = function(callback) {
     }
 
     //  VACANCY
-    // else if(location[1] != undefined) {
-    //   var vacancy = location[1]
-    //
-    //   if(location[2] === undefined) {
-    //     Router.push('vacancy')
-    //   }
-    //
-    //   // else if(location[2] == 'applicants') {
-    //   //
-    //   //   //  APPLICANTS
-    //   //   if(location[3] === undefined) {
-    //   //     Router.push('applicants')
-    //   //   }
-    //   //
-    //   //   //  APPLICANT
-    //   //   else {
-    //   //     var applicant = location[3]
-    //   //
-    //   //     if(location[3] === undefined) {
-    //   //       Router.push('vacancy')
-    //   //     }
-    //   //
-    //   //     else Router.push('notFound')
-    //   //   }
-    //   // }
-    //
-    //   else Router.push('notFound')
-    // }
+    else if(location[1] != undefined) {
+      var vacancy = location[1]
+
+      if(location[2] === undefined) {
+        Router.push('vacancy')
+      }
+
+      // else if(location[2] == 'applicants') {
+      //
+      //   //  APPLICANTS
+      //   if(location[3] === undefined) {
+      //     Router.push('applicants')
+      //   }
+      //
+      //   //  APPLICANT
+      //   else {
+      //     var applicant = location[3]
+      //
+      //     if(location[3] === undefined) {
+      //       Router.push('vacancy')
+      //     }
+      //
+      //     else Router.push('notFound')
+      //   }
+      // }
+
+      else Router.push('notFound')
+    }
 
     else Router.push('notFound')
   }
