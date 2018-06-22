@@ -39,24 +39,23 @@ Router.company = function(callback) {
         Router.push('vacancy')
       }
 
+      //  APPLICANTS
       else if(location[2] == 'applicants') {
 
-        console.log('We\'re in applicants')
-        // //  APPLICANTS
-        // if(location[3] === undefined) {
-        //   Router.push('applicants')
-        // }
-        //
-        // //  APPLICANT
-        // else {
-        //   var applicant = location[3]
-        //
-        //   if(location[3] === undefined) {
-        //     Router.push('vacancy')
-        //   }
-        //
-        //   else Router.push('notFound')
-        // }
+        if(location[3] === undefined) {
+          Router.push('applicants')
+        }
+
+        //  APPLICANT
+        else {
+          var applicant = location[3]
+
+          if(location[3] === undefined) {
+            Router.push('vacancy')
+          }
+
+          else Router.push('notFound')
+        }
       }
 
       else Router.push('notFound')
