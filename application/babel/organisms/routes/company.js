@@ -24,7 +24,7 @@ Router.company = function(callback) {
   }
 
   //  MY VACANCIES
-  else if(location[0] == 'vacancy') {
+  else if(location[0] == 'vacancy' && location[1] != undefined) {
 
     //  CREATE
     if(location[1] == 'create' && location[2] === undefined) {
@@ -32,14 +32,14 @@ Router.company = function(callback) {
     }
 
     //  VACANCY
-    else if(location[1] != undefined) {
+    else {
       var vacancy = location[1]
 
       console.log(vacancy)
-      // if(location[2] === undefined) {
-      //   Router.push('vacancy')
-      // }
-      //
+      if(location[2] === undefined) {
+        Router.push('vacancy')
+      }
+
       // else if(location[2] == 'applicants') {
       //
       //   //  APPLICANTS
@@ -58,11 +58,9 @@ Router.company = function(callback) {
       //     else Router.push('notFound')
       //   }
       // }
-      //
-      // else Router.push('notFound')
-    }
 
-    else Router.push('notFound')
+      else Router.push('notFound')
+    }
   }
 
   //  VACANCIES
