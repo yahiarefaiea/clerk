@@ -55,15 +55,26 @@ var Request = {
         if(!Array.isArray(data)) data = findObject(data, type)
 
         for (var j = 0; j < data.length; j++) {
-          if(element.closest('.template').attr('data-template', 'applicants')) {
-            var href = 'vacancy/' + data[j].VacancyID + '/applicants/' + data[j].UserID
-            var title = data[j].FirstName + ' ' + data[j].SurName
-            var subtitle = data[j].Major
+          var href, title, subtitle
+          if(element.closest('.template[data-template="applicants"]').length != 0) {
+            href = 'vacancy/' + data[j].VacancyID + '/applicants/' + data[j].UserID
+            title = data[j].FirstName + ' ' + data[j].SurName
+            subtitle = data[j].Major
           }
           else {
-            var href = data[j].CompanyID + '/' + data[j].VacancyID
-            var title = data[j].Title
-            var subtitle = data[j].Hours + ' at ' + data[j].CompanyName
+            if(Mock.Session) {
+              console.log('passing..')
+              if(Mock.Session.UserID == data[j].CompanyID) {
+                href = 'vacancy/' + data[j].VacancyID
+                title = data[j].Title
+                subtitle = data[j].Hours + ' at ' + data[j].CompanyName
+              }
+            }
+            else {
+              href = data[j].CompanyID + '/' + data[j].VacancyID
+              title = data[j].Title
+              subtitle = data[j].Hours + ' at ' + data[j].CompanyName
+            }
           }
 
           var linkGroup = $('<a class="link-group router" href="#' + href + '" title="' + title + '"></a>')
