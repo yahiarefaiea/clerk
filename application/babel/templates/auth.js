@@ -42,7 +42,6 @@ var Auth = {
         console.log('something went wrong..')
       }
 
-      //  TODOS: Ajax request goes here
       // $.ajax({
       //   type: 'POST',
       //   url: '...',

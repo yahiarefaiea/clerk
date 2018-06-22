@@ -8,14 +8,11 @@ Router.applicant = function(callback) {
 
     //  INSIGHTS
     if(location[1] === undefined) {
-      // TODO: Add a fetch request
       Router.push('personality applicant insights')
     }
 
     //  UPDATE
     else if(location[1] == 'update' && location[2] === undefined) {
-      // TODO: Add a fetch request
-      // Take care.. this one is a bit different.
       Router.push('personality update')
     }
 
@@ -24,7 +21,6 @@ Router.applicant = function(callback) {
 
   //  VACANCIES
   else if(location[0] == 'vacancies' && location[1] === undefined) {
-    // TODO: Add a fetch request
     Router.push('vacancies')
   }
 
@@ -33,7 +29,6 @@ Router.applicant = function(callback) {
     var company = location[0]
 
     if(location[1] === undefined) {
-      // TODO: Add a fetch request
       Router.push('company')
     }
 
@@ -42,7 +37,6 @@ Router.applicant = function(callback) {
       var vacancy = location[1]
 
       if(location[2] === undefined) {
-        // TODO: Add a fetch request
         Router.push('vacancy')
       }
 

@@ -17,7 +17,6 @@ Router.unauthorized = function(callback) {
 
     //  VACANCIES
     if(location[0] == 'vacancies' && location[1] === undefined) {
-      // TODO: Add a fetch request
       Router.push('vacancies')
     }
 
@@ -26,7 +25,6 @@ Router.unauthorized = function(callback) {
       var company = location[0]
 
       if(location[1] === undefined) {
-        // TODO: Add a fetch request
         Router.push('company')
       }
 
@@ -35,7 +33,6 @@ Router.unauthorized = function(callback) {
         var vacancy = location[1]
 
         if(location[2] === undefined) {
-          // TODO: Add a fetch request
           Router.push('vacancy')
         }
 
