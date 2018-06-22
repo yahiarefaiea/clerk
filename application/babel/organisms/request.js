@@ -1,5 +1,5 @@
 var Request = {
-  baseUrl: 'http://clerk.technology/',
+  baseUrl: 'http://beta.clerk.technology/v2/',
 
   //  FETCH
   fetch: function(template, data, url, callback) {
