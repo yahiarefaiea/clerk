@@ -32,16 +32,16 @@ var Auth = {
 
   //  FORGOT
   forgot: function(e) {
-
+    console.log('Not available right now..')
   },
 
   //  SECURITY CODE
   securityCode: function(e) {
-
+    console.log('Not available right now..')
   },
 
   //  RESET
   reset: function(e) {
-
+    console.log('Not available right now..')
   }
 }
