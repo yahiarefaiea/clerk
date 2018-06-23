@@ -38,8 +38,7 @@ var Router = {
 			  window.location.hash = Router.location
 			  Router.location = null
 
-				if(typeof callback === 'function' && callback)
-					callback()
+				if(typeof callback === 'function' && callback) callback()
 			})
 		}, 200)
 	},

@@ -42,8 +42,7 @@ var Clerk = {
   //  STOPPING
   stopping: function() {
     clearInterval(Clerk.interval)
-    if(typeof Clerk.callback === 'function' && Clerk.callback)
-      Clerk.callback()
+    if(typeof Clerk.callback === 'function' && Clerk.callback) Clerk.callback()
 
     setTimeout(Clerk.reset, 200)
   },
