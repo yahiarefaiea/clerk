@@ -2,11 +2,7 @@ var Request = {
   origin: 'http://beta.clerk.technology/v2/',
 
   //  CLAIM
-  claim: function(url, onSuccess, onError, body, method) {
-    if(body === undefined) body = null
-    if(method === undefined) method = 'POST'
-
-    //  AJAX
+  claim: function(method, url, body, onSuccess, onError) {
     $.ajax({
       type: method,
       url: Request.origin + url,
@@ -28,7 +24,9 @@ var Request = {
 
   //  FETCH
   fetch: function(template, url, body, callback) {
-
+    Request.claim('POST', url, body, function(response) {
+      Request.inject(template, response, callback)
+    })
   },
 
   //  INJECT
