@@ -22,12 +22,12 @@ var Request = {
   },
 
   //  SUBMIT
-  submit: function(template, url, body, callback) {
+  submit: function(form, url, body, callback) {
 
   },
 
   //  PREPARE
-  prepare: function(template, data, callback) {
+  prepare: function(form, data, callback) {
 
   }
 }
