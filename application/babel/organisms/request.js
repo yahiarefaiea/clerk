@@ -22,7 +22,7 @@ var Request = {
   },
 
   //  SUBMIT
-  submit: function(template, callback) {
+  submit: function(template, url, callback) {
 
   },
 

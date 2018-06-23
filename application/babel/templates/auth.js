@@ -5,18 +5,18 @@ var Auth = {
 
   },
 
-  //  SIGN IN
-  signIn: function(e) {
-
-  },
-
   //  AUTHORIZED
   authorized: function() {
 
   },
 
+  //  SIGN IN
+  signIn: function(e) {
+
+  },
+
   //  SIGN OUT
-  signOut: function() {
+  signOut: function(e) {
 
   },
 
