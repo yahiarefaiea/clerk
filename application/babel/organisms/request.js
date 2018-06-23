@@ -7,7 +7,7 @@ var Request = {
   },
 
   //  FETCH
-  fetch: function(template, url, callback) {
+  fetch: function(template, url, body, callback) {
 
   },
 
@@ -22,7 +22,7 @@ var Request = {
   },
 
   //  SUBMIT
-  submit: function(template, url, callback) {
+  submit: function(template, url, body, callback) {
 
   },
 
