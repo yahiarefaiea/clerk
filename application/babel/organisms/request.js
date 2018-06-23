@@ -2,7 +2,7 @@ var Request = {
   origin: 'http://beta.clerk.technology/v2/',
 
   //  CLAIM
-  claim: function(url, onSuccess, onError, data, method) {
+  claim: function(url, onSuccess, onError, body, method) {
 
   },
 
@@ -16,14 +16,14 @@ var Request = {
 
   },
 
-  //  INJECT
+  //  SEPARATE
   separate: function() {
 
   },
 
   //  SUBMIT
   submit: function(template, callback) {
-    
+
   },
 
   //  PREPARE
