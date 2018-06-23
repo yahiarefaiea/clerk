@@ -3,7 +3,27 @@ var Request = {
 
   //  CLAIM
   claim: function(url, onSuccess, onError, body, method) {
+    if(body === undefined) body = null
+    if(method === undefined) method = 'POST'
 
+    //  AJAX
+    $.ajax({
+      type: method,
+      url: Request.origin + url,
+      data: {data: JSON.stringify(body)},
+      dataType: 'json',
+
+      //  ERROR
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        if(typeof onError === 'function' && onError) onError()
+        else Router.push('error')
+      },
+
+      //  SUCCESS
+      success: function(response) {
+        if(typeof onSuccess === 'function' && onSuccess) onSuccess(response)
+      }
+    })
   },
 
   //  FETCH
