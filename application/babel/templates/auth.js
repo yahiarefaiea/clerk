@@ -64,6 +64,30 @@ var Auth = {
 
   signUpAsApplicant: function(e) {
 
+    var baseUrl = 'http://beta.clerk.technology/v2/'
+    var url = 'session.php'
+
+    $.ajax({
+      type: 'POST',
+      url: baseUrl + url,
+      // data: {data: JSON.stringify(data)},
+      dataType: 'json',
+
+      //  ERROR
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        // Router.error()
+        console.log(XMLHttpRequest)
+        console.log(textStatus)
+        console.log(errorThrown)
+      },
+
+      //  SUCCESS
+      success: function(data) {
+        console.log(data)
+        return data
+      }
+    })
+
     // Clerk.wait()
     // var form = '[data-request="signUpAsApplicant"]'
     //
