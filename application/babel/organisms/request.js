@@ -6,7 +6,7 @@ var Request = {
     $.ajax({
       type: method,
       url: Request.origin + url,
-      data: {data: JSON.stringify(body)},
+      data: body,
       dataType: 'json',
 
       //  ERROR
