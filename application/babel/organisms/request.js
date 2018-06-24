@@ -5,14 +5,14 @@ var Request = {
   claim: function(method, url, body, onSuccess, onError) {
     $.ajax({
       type: method,
-      url: Request.origin + url,
+      url: Request.origin + url + '.php',
       data: body,
       dataType: 'json',
 
       //  ERROR
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        if(typeof onError === 'function' && onError) onError()
-        else Router.push('error')
+        // if(typeof onError === 'function' && onError) onError()
+        // else Router.push('error')
       },
 
       //  SUCCESS
