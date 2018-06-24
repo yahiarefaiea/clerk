@@ -1,8 +1,13 @@
 var Auth = {
+  token: function() {
+    return {
+      Token: localStorage.getItem('token')
+    }
+  },
 
   //  SESSION
   session: function(callback) {
-
+    callback({Permission: 'company'})
   },
 
   //  AUTHORIZED
