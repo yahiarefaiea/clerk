@@ -9,7 +9,7 @@ var Router = {
 
 		Auth.session(function(session) {
 			//	UNAUTHORIZED
-			if(session == null)
+			if(session === null)
 				Router.unauthorized(callback)
 
 			//	APPLICANT
