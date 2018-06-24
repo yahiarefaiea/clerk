@@ -24,9 +24,7 @@ var Request = {
 
   //  FETCH
   fetch: function(template, url, body, callback) {
-    Request.claim('POST', url, body, function(response) {
-      Request.inject(template, response, callback)
-    })
+
   },
 
   //  INJECT
