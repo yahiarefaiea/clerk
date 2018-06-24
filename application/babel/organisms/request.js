@@ -13,6 +13,7 @@ var Request = {
       error: function(XMLHttpRequest, textStatus, errorThrown) {
         // if(typeof onError === 'function' && onError) onError()
         // else Router.push('error')
+        console.log(textStatus)
       },
 
       //  SUCCESS
