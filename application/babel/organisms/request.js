@@ -20,30 +20,5 @@ var Request = {
         if(typeof onSuccess === 'function' && onSuccess) onSuccess(response)
       }
     })
-  },
-
-  //  FETCH
-  fetch: function(template, url, body, callback) {
-
-  },
-
-  //  INJECT
-  inject: function(template, data, callback) {
-
-  },
-
-  //  SEPARATE
-  separate: function() {
-
-  },
-
-  //  SUBMIT
-  submit: function(form, url, body, callback) {
-
-  },
-
-  //  PREPARE
-  prepare: function(form, data, callback) {
-
   }
 }
