@@ -5,21 +5,21 @@ var Router = {
 	//	ROUTE
 	route: function(location, callback) {
 		Clerk.wait()
-
-		var session = Auth.session()
 		Router.location = Router.processLocation(location)
 
-		//	UNAUTHORIZED
-		if(session == null)
-			Router.unauthorized(callback)
+		Auth.session(session) {
+			//	UNAUTHORIZED
+			if(session == null)
+				Router.unauthorized(callback)
 
-		//	APPLICANT
-		else if(session.Permission == 'applicant')
-			Router.applicant(callback)
+			//	APPLICANT
+			else if(session.Permission == 'applicant')
+				Router.applicant(callback)
 
-		//	COMPANY
-		else if(session.Permission == 'company')
-			Router.company(callback)
+			//	COMPANY
+			else if(session.Permission == 'company')
+				Router.company(callback)
+		}
 	},
 
 	//	PROCESS LOCATION

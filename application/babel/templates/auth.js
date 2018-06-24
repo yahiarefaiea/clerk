@@ -1,7 +1,7 @@
 var Auth = {
 
   //  SESSION
-  session: function() {
+  session: function(callback) {
 
   },
 
