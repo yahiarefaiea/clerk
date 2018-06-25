@@ -13,11 +13,11 @@ var Router = {
 				Router.unauthorized(callback)
 
 			//	APPLICANT
-			else if(session.Permission == 'applicant')
+			else if(session.Permission === 'applicant')
 				Router.applicant(callback)
 
 			//	COMPANY
-			else if(session.Permission == 'company')
+			else if(session.Permission === 'company')
 				Router.company(callback)
 		})
 	},
