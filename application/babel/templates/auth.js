@@ -21,10 +21,33 @@ var Auth = {
   signIn: function() {
     Clerk.wait()
     Request.push('signIn', 'signin', function(response) {
-      localStorage.setItem('token', response.Email)
-      Router.route('#')
+      Auth.authorized(response)
     })
     return false
+  },
+
+  //  SIGN UP AS APPLICANT
+  signUpAsApplicant: function() {
+    Clerk.wait()
+    Request.push('signUpAsApplicant', 'User/methods/signup', function(response) {
+      Auth.authorized(response)
+    })
+    return false
+  },
+
+  //  SIGN UP AS COMPANY
+  signUpAsCompany: function() {
+    Clerk.wait()
+    Request.push('signUpAsCompany', 'Company/methods/signup', function(response) {
+      Auth.authorized(response)
+    })
+    return false
+  },
+
+  //  AUTHORIZED
+  authorized: function(user) {
+    localStorage.setItem('token', user.Email)
+    Router.route('#')
   },
 
   //  SIGN OUT
