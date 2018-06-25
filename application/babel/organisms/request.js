@@ -9,16 +9,16 @@ var Request = {
       data: body,
       dataType: 'json',
 
-      //  ERROR
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
-        Request.error(textStatus, onError)
-      },
-
       //  SUCCESS
       success: function(response) {
         if(response.success === 1 && typeof onSuccess === 'function' && onSuccess)
           onSuccess(response.message)
         else Request.error(response, onError)
+      },
+
+      //  ERROR
+      error: function(XMLHttpRequest, textStatus, errorThrown) {
+        Request.error(textStatus, onError)
       }
     })
   },
