@@ -30,7 +30,11 @@ var Request = {
 
   //  PUSH
   push: function(form, url, callback) {
-
+    Prepare.make(form, function(body) {
+      Request.claim('POST', url, body, function(response) {
+        if(typeof callback === 'function' && callback) callback(response)
+      })
+    })
   },
 
   //  ERROR
