@@ -1,4 +1,6 @@
 var Auth = {
+
+  //  TOKEN
   token: function() {
     if(localStorage.getItem('token')) {
       return {
