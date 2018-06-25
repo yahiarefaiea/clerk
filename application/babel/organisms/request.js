@@ -18,7 +18,12 @@ var Request = {
 
       //  SUCCESS
       success: function(response) {
-        if(typeof onSuccess === 'function' && onSuccess) onSuccess(response)
+        console.log(response)
+        if(response.success === 1 && typeof onSuccess === 'function' && onSuccess) {
+          onSuccess(response.message)
+        } else {
+          Clerk.stop()
+        }
       }
     })
   }
