@@ -19,11 +19,19 @@ var Auth = {
 
   //  SIGN IN
   signIn: function(e) {
-
+    Clerk.wait()
+    Request.push('signIn', 'signin', function(response) {
+      localStorage.setItem('token', response.Email)
+      Router.route('#')
+    })
   },
 
   //  SIGN OUT
   signOut: function(e) {
-
+    Clerk.wait()
+    Request.claim('POST', 'signout', Auth.token(), function(response) {
+      localStorage.removeItem('token')
+      Router.route('#')
+    })
   }
 }
