@@ -9,10 +9,7 @@ var Auth = {
 
   //  SESSION
   session: function(callback) {
-    Request.claim('POST', 'session', Auth.token(), function(response) {
-      if(response === null) localStorage.removeItem('token')
-      if(typeof callback === 'function' && callback) callback(response)
-    })
+
   },
 
   //  SIGN IN
