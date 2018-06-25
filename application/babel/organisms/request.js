@@ -11,20 +11,22 @@ var Request = {
 
       //  ERROR
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        // if(typeof onError === 'function' && onError) onError()
-        // else Router.push('error')
-        console.log(textStatus)
+        Request.error(textStatus)
       },
 
       //  SUCCESS
       success: function(response) {
-        console.log(response)
-        if(response.success === 1 && typeof onSuccess === 'function' && onSuccess) {
+        if(response.success === 1 && typeof onSuccess === 'function' && onSuccess)
           onSuccess(response.message)
-        } else {
-          Clerk.stop()
-        }
+        else Request.error(response)
       }
+    })
+  },
+
+  //  ERROR
+  error: function(error) {
+    Clerk.stop(function() {
+      console.log(error)
     })
   }
 }
