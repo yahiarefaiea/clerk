@@ -1,8 +1,8 @@
 var Prepare = {
-  data: [],
+  data: {},
 
   //  MAKE
-  make: function(form, data, callback) {
+  make: function(form, callback) {
 
   }
 }

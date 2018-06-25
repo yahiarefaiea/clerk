@@ -1,5 +1,5 @@
 var Inject = {
-  data: [],
+  data: {},
 
   //  UPDATE
   update: function(template, data, callback) {

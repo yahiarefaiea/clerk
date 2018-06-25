@@ -29,14 +29,14 @@ var Request = {
   },
 
   //  PUSH
-  push: function(form, url, body, callback) {
+  push: function(form, url, callback) {
 
   },
 
   //  ERROR
   error: function(error, callback) {
     Clerk.stop(function() {
-      if(typeof callback === 'function' && callback) callback()
+      if(typeof callback === 'function' && callback) callback(error)
     })
   }
 }
