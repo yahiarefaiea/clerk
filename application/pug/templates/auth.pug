@@ -14,7 +14,7 @@ mixin authForm(form)
       else
         +field(field.name, field.placeholder, false, field.type)
     if form.action.function
-      a.button(href='#' onclick=form.action.function
+      a.button(href='#' onclick='return ' + form.action.function
         title=form.action.text)= form.action.text
     else if form.action.shift
       a.button.router.shift(href='#' data-push=form.action.shift.push

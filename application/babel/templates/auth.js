@@ -18,20 +18,22 @@ var Auth = {
   },
 
   //  SIGN IN
-  signIn: function(e) {
+  signIn: function() {
     Clerk.wait()
     Request.push('signIn', 'signin', function(response) {
       localStorage.setItem('token', response.Email)
       Router.route('#')
     })
+    return false
   },
 
   //  SIGN OUT
-  signOut: function(e) {
+  signOut: function() {
     Clerk.wait()
     Request.claim('POST', 'signout', Auth.token(), function(response) {
       localStorage.removeItem('token')
       Router.route('#')
     })
+    return false
   }
 }
