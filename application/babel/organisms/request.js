@@ -11,14 +11,14 @@ var Request = {
 
       //  ERROR
       error: function(XMLHttpRequest, textStatus, errorThrown) {
-        Request.error(textStatus)
+        Request.error(textStatus, onError)
       },
 
       //  SUCCESS
       success: function(response) {
         if(response.success === 1 && typeof onSuccess === 'function' && onSuccess)
           onSuccess(response.message)
-        else Request.error(response)
+        else Request.error(response, onError)
       }
     })
   },
@@ -28,15 +28,15 @@ var Request = {
 
   },
 
-  //  SUBMIT
-  submit: function(form, url, body, callback) {
+  //  PUSH
+  push: function(form, url, body, callback) {
 
   },
 
   //  ERROR
-  error: function(error) {
+  error: function(error, callback) {
     Clerk.stop(function() {
-      console.log(error)
+      if(typeof callback === 'function' && callback) callback()
     })
   }
 }
