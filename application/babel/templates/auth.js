@@ -62,19 +62,16 @@ var Auth = {
 
   //  FORGOT
   forgot: function() {
-    Clerk.wait()
     return false
   },
 
   //  SECURITY CODE
   securityCode: function() {
-    Clerk.wait()
     return false
   },
 
   //  RESET
   reset: function() {
-    Clerk.wait()
     return false
   }
 }
