@@ -5,6 +5,7 @@ var Router = {
 	//	ROUTE
 	route: function(location, callback) {
 		Clerk.wait()
+		$('#clerk, #burger').removeClass('hidden')
 		Router.location = Router.processLocation(location)
 
 		Auth.session(function(session) {
