@@ -1,6 +1,6 @@
 Router.unauthorized = function(callback) {
-  var location = Router.location.split('/').filter(Boolean)
   Router.wrapper = ['unauthorized']
+  var location = Router.location.split('/').filter(Boolean)
 
   //  AUTH
   if(location[0] === undefined) {

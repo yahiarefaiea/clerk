@@ -1,7 +1,10 @@
-Router.applicant = function(callback) {
+Router.applicant = function(session, callback) {
+  Router.wrapper = ['authorizedAsApplicant app']
   if(Router.location == '') Router.location = 'personality'
   var location = Router.location.split('/').filter(Boolean)
-  Router.wrapper = ['authorizedAsApplicant app']
+  var user = {
+    id: session.UserID
+  }
 
   //  PERSONALITY
   if(location[0] == 'personality') {

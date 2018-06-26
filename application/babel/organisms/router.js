@@ -14,11 +14,11 @@ var Router = {
 
 			//	APPLICANT
 			else if(session.Permission === 'applicant')
-				Router.applicant(callback)
+				Router.applicant(session, callback)
 
 			//	COMPANY
 			else if(session.Permission === 'company')
-				Router.company(callback)
+				Router.company(session, callback)
 		})
 	},
 

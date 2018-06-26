@@ -1,6 +1,9 @@
-Router.company = function(callback) {
-  var location = Router.location.split('/').filter(Boolean)
+Router.company = function(session, callback) {
   Router.wrapper = ['authorizedAsCompany app']
+  var location = Router.location.split('/').filter(Boolean)
+  var user = {
+    id: session.UserID
+  }
 
   //  DASHBOARD
   if(location[0] === undefined) {
