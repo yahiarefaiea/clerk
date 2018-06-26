@@ -58,5 +58,23 @@ var Auth = {
       Router.route('#')
     })
     return false
+  },
+
+  //  FORGOT
+  forgot: function() {
+    Clerk.wait()
+    return false
+  },
+
+  //  SECURITY CODE
+  securityCode: function() {
+    Clerk.wait()
+    return false
+  },
+
+  //  RESET
+  reset: function() {
+    Clerk.wait()
+    return false
   }
 }
