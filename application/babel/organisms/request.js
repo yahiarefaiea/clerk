@@ -1,5 +1,5 @@
 var Request = {
-  origin: 'http://beta.clerk.technology/v2/',
+  origin: 'http://beta.clerk.technology/v4/',
 
   //  CLAIM
   claim: function(method, url, body, onSuccess, onError) {
