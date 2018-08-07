@@ -9,6 +9,9 @@
     "location": "basic-information",
     "text": ["<mark>Basic information</mark>"]
   }, {
+    "location": "security",
+    "text": ["<mark>Security</mark>"]
+  }, {
     "location": "personal-information",
     "text": ["<mark>Personal information</mark>"]
   }, {
