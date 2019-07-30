@@ -17,7 +17,7 @@ Router.unauthorized = function(callback) {
 
     //  VACANCIES
     if(location[0] == 'vacancies' && location[1] === undefined) {
-      Router.push('vacancies')
+      Request.inject('vacancies', Mock.Company.Vacancies)
     }
 
     //  COMPANY
@@ -25,7 +25,7 @@ Router.unauthorized = function(callback) {
       var company = location[0]
 
       if(location[1] === undefined) {
-        Router.push('company')
+        Request.inject('company', Mock.Company)
       }
 
       //  VACANCY
@@ -33,7 +33,7 @@ Router.unauthorized = function(callback) {
         var vacancy = location[1]
 
         if(location[2] === undefined) {
-          Router.push('vacancy')
+          Request.inject('vacancy', Mock.Company.Vacancies[0])
         }
 
         else Router.push('notFound')

@@ -17,7 +17,7 @@ var Mock = {
 
   //  APPLICANT
   Applicant: {
-    UserID: '1',
+    UserID: 'YahiaRefaiea',
     FirstName: 'Yahia',
     SurName: 'Refaiea',
     Email: 'hello@yahiarefaiea.com',
@@ -59,7 +59,7 @@ var Mock = {
 
   //  COMPANY
   Company: {
-    CompanyID: '1',
+    CompanyID: 'musixmatch',
     CompanyName: 'Musixmatch',
     Industry: 'Music',
     Description: 'Musixmatch is the world\'s largest lyrics platform - where you can search, enjoy, and share lyrics from any track, anywhere in the world. Musixmatch was founded in 2010 with the mission to change the way people experience music and lyrics. Now, Musixmatch is a team which includes over 30 international and talented individuals working on a product reaching millions of music lovers. Help us build a product reaching millions of music lovers, we\'re always on the lookout for talented people to join our unique team.',
@@ -70,8 +70,8 @@ var Mock = {
 
     //  VACANCIES
     Vacancies: [{
-      CompanyID: '1',
-      VacancyID: '1',
+      CompanyID: 'musixmatch',
+      VacancyID: 'senior-web-frontend-developer',
       CompanyName: 'Musixmatch',
       Title: 'Senior Web Frontend Developer',
       Major: 'Computer Science',
@@ -102,9 +102,9 @@ var Mock = {
       ],
       ApplicantsTotal: 25,
       Applicants: [{
-        CompanyID: '1',
-        VacancyID: '1',
-        UserID: '1',
+        CompanyID: 'musixmatch',
+        VacancyID: 'senior-web-frontend-developer',
+        UserID: 'YahiaRefaiea',
         FirstName: 'Yahia',
         SurName: 'Refaiea',
         Email: 'hello@yahiarefaiea.com',
@@ -146,29 +146,29 @@ var Mock = {
         PositionExperience: 'Internship at Google',
         AdditionalInformation: null
       }, {
-        CompanyID: '2',
-        VacancyID: '2',
-        UserID: '2',
+        CompanyID: 'musixmatch',
+        VacancyID: 'senior-web-frontend-developer',
+        UserID: 'YahiaRefaiea',
         FirstName: 'John',
         SurName: 'Doe',
         Major: 'Computer Science'
       }, {
-        CompanyID: '3',
-        VacancyID: '3',
-        UserID: '3',
+        CompanyID: 'musixmatch',
+        VacancyID: 'senior-web-frontend-developer',
+        UserID: 'YahiaRefaiea',
         FirstName: 'Sed',
         SurName: 'Do',
         Major: 'Communications'
       }]
     }, {
-      CompanyID: '2',
-      VacancyID: '2',
+      CompanyID: 'musixmatch',
+      VacancyID: 'senior-web-frontend-developer',
       CompanyName: 'Clerk',
       Title: 'UI Designer',
       Hours: 'Full time'
     }, {
-      CompanyID: '3',
-      VacancyID: '3',
+      CompanyID: 'musixmatch',
+      VacancyID: 'senior-web-frontend-developer',
       CompanyName: 'Nuotron',
       Title: 'Android Developer',
       Hours: 'Part time'

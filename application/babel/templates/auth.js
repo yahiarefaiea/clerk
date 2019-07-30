@@ -14,56 +14,57 @@ var Auth = {
   },
 
   signedIn: function() {
-    setTimeout(function() {
-      Router.route('', function() {
-        // callback goes here if you wish to put something..
-      })
-		}, 200)
+    Router.route('vacancies')
+    // setTimeout(function() {
+    //   Router.route('', function() {
+    //     // callback goes here if you wish to put something..
+    //   })
+		// }, 200)
   },
 
   signIn: function(e) {
-
-    Clerk.wait()
-    var form = '[data-request="signIn"]'
-
-    Prepare.push(form, function() {
-      var data = Prepare.data
-
-      console.log(data)
-
-
-      var success = true
-      if(success == true) {
-        Auth.session = 'user'
-        Auth.user.permission = 'comp'
-        Auth.signedIn()
-      } else {
-        Clerk.stop()
-        console.log('something went wrong..')
-      }
-
-      // $.ajax({
-      //   type: 'POST',
-      //   url: '...',
-      //   data: {d: JSON.stringify(data)},
-      //   dataType: 'json',
-      //   error: function(XMLHttpRequest, textStatus, errorThrown) {
-      //     console.log('error')
-      //   },
-      //   success: function(data) {
-      //     Auth.session = 'user'
-      //     Auth.permission = 'comp'
-      //     Auth.signedIn(data.status)
-      //   }
-      // })
-
-    })
+    Auth.signedIn()
+    // Clerk.wait()
+    // var form = '[data-request="signIn"]'
+    // 
+    // Prepare.push(form, function() {
+    //   var data = Prepare.data
+    // 
+    //   console.log(data)
+    // 
+    // 
+    //   var success = true
+    //   if(success == true) {
+    //     Auth.session = 'user'
+    //     Auth.user.permission = 'comp'
+    //     Auth.signedIn()
+    //   } else {
+    //     Clerk.stop()
+    //     console.log('something went wrong..')
+    //   }
+    // 
+    //   // $.ajax({
+    //   //   type: 'POST',
+    //   //   url: '...',
+    //   //   data: {d: JSON.stringify(data)},
+    //   //   dataType: 'json',
+    //   //   error: function(XMLHttpRequest, textStatus, errorThrown) {
+    //   //     console.log('error')
+    //   //   },
+    //   //   success: function(data) {
+    //   //     Auth.session = 'user'
+    //   //     Auth.permission = 'comp'
+    //   //     Auth.signedIn(data.status)
+    //   //   }
+    //   // })
+    // 
+    // })
 
     // e.preventDefault()
   },
 
   signUpAsApplicant: function(e) {
-
+    Auth.signedIn()
     // Clerk.wait()
     // var form = '[data-request="signUpAsApplicant"]'
     //
@@ -75,7 +76,7 @@ var Auth = {
   },
 
   signUpAsCompany: function(e) {
-
+    Auth.signedIn()
     // Clerk.wait()
     // var form = '[data-request="signUpAsCompany"]'
     //
